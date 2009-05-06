@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="project.installation">
+
+	<property name="installation.dir" value="${build.dir}\installation" />
+
+	<target name="load_local_properties">
+	    <property name="application.manifest" value="${installation.dir}\${assembly.version}\${app.output}.manifest" />
+	    <property name="deployment.manifest" value="${installation.dir}\${app.output}.application" />
+		<property name="mage.exe" value="${dot.net.sdk.dir}\mage.exe" />
+		<property name="mage.scrub.exe" value="${build.tools.dir}\mage.scrub\mage.scrub.exe" />
+	</target>
+	
+	<target name="create.installation.dir" depends="deploy">
+		<delete dir="${installation.dir}\${assembly.version}" failonerror="false" />
+		<mkdir dir="${installation.dir}\${assembly.version}" />
+		
+		<copy todir="${installation.dir}\${assembly.version}" flatten="false" >
+			<fileset basedir="${build.compile.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+
+  <target name="convert.bootstrap">
+    <copy file="${bootstrap.file}.template" tofile="${bootstrap.file}" overwrite="true">
+      <filterchain>
+        <replacetokens>
+          <token key="deployment.manifest" value="${deployment.manifest}" />
+          <token key="deployment.manifest.file.name" value="${app.output}.application" />
+          <token key="installation.dir" value="${installation.dir}" />
+          <token key="deployment.url" value="${deployment.url}" />
+        </replacetokens>
+      </filterchain>
+    </copy>
+  </target>
+  
+  <target name="create.bootstrap" depends="load_local_properties">
+    <property name="bootstrap.file" value="${build.config.dir}\bootstrap.xml" />
+    <call target="convert.bootstrap" />
+    <property name="msbuild.exe" value="${framework.dir}\msbuild.exe" />
+    <exec program="${msbuild.exe}" commandline="/toolsversion:3.5 ${bootstrap.file}" />
+  </target>
+	
+	<target name="create.installer" depends="load_local_properties,create.installation.dir,create.bootstrap">		
+		<property name="args.new.application" value="-n Application -t ${application.manifest} -fd ${build.compile.dir} -v ${assembly.version} -n gorilla.commons -cf ${certificate.filename} -pwd ${certificate.password} -pub mokhan.ca -tr FullTrust -UseManifestForTrust true -wpf false" />
+		<property name="args.new.deployment" value="-n Deployment -t ${deployment.manifest} -pu ${deployment.url}/${app.output}.application -appm ${application.manifest} -i true -v ${assembly.version} -appc ${deployment.url}\${assembly.version}\${app.output}.manifest -cf ${certificate.filename} -pwd ${certificate.password} -n gorilla.commons -pub mokhan.ca -wpf false" />
+		<property name="args.update.deployment" value="-u ${deployment.manifest} -appm ${application.manifest} -v ${assembly.version}" />	
+		<property name="args.sign.application" value="-s ${application.manifest} -cf ${certificate.filename} -Password ${certificate.password}" />
+		<property name="args.sign.deployment" value="-s ${deployment.manifest} -cf ${certificate.filename} -Password ${certificate.password}" />
+		
+		<exec program="${mage.exe}" commandline="${args.new.application}" />
+		<!--<exec program="${mage.scrub.exe}" commandline="${application.manifest}" />-->
+		<exec program="${mage.exe}" commandline="${args.sign.application}" />
+		<exec program="${mage.exe}" commandline="${args.new.deployment}" />
+		<exec program="${mage.exe}" commandline="${args.update.deployment}" />
+		<exec program="${mage.exe}" commandline="${args.sign.deployment}" />
+	</target>
+  
+</project>
