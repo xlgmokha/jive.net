@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gorilla.Commons.Infrastructure</RootNamespace>
+    <AssemblyName>Gorilla.Commons.Infrastructure.ThirdParty</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutofacContrib.DynamicProxy2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac.contrib\AutofacContrib.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autofac\AutofacDependencyRegistry.cs" />
+    <Compile Include="Autofac\AutofacDependencyRegistryBuilder.cs" />
+    <Compile Include="Autofac\AutofacSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RaiseEventInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnUIThread.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\SynchronizedInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Castle\Windsor\WindsorExtensions.cs" />
+    <Compile Include="IDependencyRegistration.cs" />
+    <Compile Include="Log4Net\Log4NetLogFactory.cs" />
+    <Compile Include="Log4Net\Log4NetLogger.cs" />
+    <Compile Include="Castle\DynamicProxy\IConstraintSelector.cs" />
+    <Compile Include="Castle\DynamicProxy\IInterceptorConstraint.cs" />
+    <Compile Include="Castle\DynamicProxy\IInterceptorConstraintFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\IMethodCallTrackerFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\InterceptorConstraintFactorySpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\InterceptorConstraintSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\IMethodCallTracker.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTracker.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTrackerSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptorSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\SelectiveInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\IProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\IProxyFactory.cs" />
+    <Compile Include="Lazy.cs" />
+    <Compile Include="Castle\DynamicProxy\LazyLoadedInterceptor.cs" />
+    <Compile Include="LazySpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyBuilderSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyFactorySpecs.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
+    <Compile Include="Castle\Windsor\Configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Castle\Windsor\Configuration\LogComponent.cs" />
+    <Compile Include="Castle\Windsor\Configuration\LoggingInterceptor.cs" />
+    <Compile Include="Castle\Windsor\Configuration\RegisterComponentContract.cs" />
+    <Compile Include="Castle\Windsor\WindsorContainerFactory.cs" />
+    <Compile Include="Castle\Windsor\WindsorDependencyRegistry.cs" />
+    <Compile Include="Castle\Windsor\WindsorDependencyRegistrySpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>Gorilla.Commons.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>Gorilla.Commons.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

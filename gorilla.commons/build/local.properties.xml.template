@@ -1,0 +1,18 @@
+<project name="local.properties">
+	<property name="debug" value="false" />
+	<property name="log.level" value="DEBUG"/>
+	<property name="assembly.title" value="Gorilla.Commons" />
+	<property name="assembly.description" value="common libraries" />
+	<property name="assembly.company" value="http://mokhan.ca" />
+	<property name="assembly.version" value="${datetime::get-year(datetime::now())}.${datetime::get-month(datetime::now())}.${datetime::get-day(datetime::now())}.${datetime::get-hour(datetime::now())}${datetime::get-minute(datetime::now())}" />
+	<property name="editor.exe" value="notepad.exe" />
+  
+	<property name="dot.net.sdk.dir" value="C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin" />
+	<property name="framework.dir" value="c:\windows\microsoft.net\framework\v3.5" />
+	<property name="deployment.url" value="http://mokhan.ca/GorillaCommons/" />
+  
+	<property name="certificate.filename" value="${build.config.dir}\mokhan.pfx" />
+	<property name="certificate.password" value="" />
+  
+  <property name="browser.exe" value="c:\program files\mozilla firefox\firefox.exe" />
+</project>

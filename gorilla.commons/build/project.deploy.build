@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="project.deployment">
+	<property name="assembly.config" value="${build.config.dir}\AssemblyInfo.cs" />
+
+	<property name="log4net.config" value="${build.config.dir}\log4net.config.xml" />
+
+	<target name="copy.app.dependencies">
+		<copy todir="${build.compile.dir}" flatten="true">
+			<fileset basedir="${build.lib.dir}\app">
+				<include name="\**\*.dll" />
+			</fileset>
+		</copy>
+		<property name="target" value="${log4net.config}" />
+		<call target="expand.template.file" />
+		<copy file="${log4net.config}" tofile="${build.compile.dir}\log4net.config.xml" />
+	</target>
+
+	<target name="create.licenses" depends="clean">
+		<copy todir="${build.compile.dir}" flatten="true">
+			<fileset basedir="${build.lib.dir}\app">
+				<include name="\**\*.dll" />
+				<include name="${build.lib.dir}\app\licenses.licx" />
+			</fileset>
+		</copy>
+		<exec 
+			basedir="${build.compile.dir}"
+			workingdir="${build.compile.dir}"
+			program="${dot.net.sdk.dir}\lc.exe"
+			commandline="/target:${app.output} /complist:licenses.licx /i:componentfactory.krypton.navigator.dll /i:componentfactory.krypton.ribbon.dll /i:componentfactory.krypton.toolkit.dll /i:componentfactory.krypton.workspace.dll /nologo /outdir:${build.lib.dir}\app"
+		/>
+	</target>     
+	
+	<!--<target name="deploy" depends="create.licenses">-->
+	<target name="deploy">
+		<property name="target" value="${assembly.config}" />
+		<call target="expand.template.file" />
+
+		<delete dir="${build.artifacts.dir}" />
+
+		<property name="app.output" value="gorilla.commons.utility.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.utility" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+
+		<property name="app.output" value="gorilla.commons.infrastructure.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.infrastructure" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+
+		<property name="app.output" value="gorilla.commons.infrastructure.thirdparty.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.infrastructure.thirdparty" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+
+		<property name="app.output" value="gorilla.commons.windows.forms.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.windows.forms" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+
+		<property name="app.output" value="gorilla.commons.windows.forms.thirdparty.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.windows.forms.thirdparty" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+
+		<!--
+		<property name="app.output" value="gorilla.testing.dll" />
+		<property name="product.dir" value="${base.dir}\product\gorilla.commons.testing" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
+		-->
+
+		<call target="copy.app.dependencies" />		
+	</target>
+	
+</project>
