@@ -10,10 +10,10 @@ _ReSharper.*
 *.sql
 *.swp
 *.swo
-/build/config/assemblyinfo.cs
-/build/config/bootstrap.xml
-/build/config/log4net.config.xml
-/build/artifacts                 
-/build/installation                 
-/build/compile                 
-/build/local.properties.xml                 
+*.properties.xml
+*.config.xml
+*.bootstrap.xml
+*.assemblyinfo.cs
+compile
+artifacts
+installation
