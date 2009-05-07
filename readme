@@ -1,0 +1,24 @@
+building gorilla.commons
+------------------------
+hopefully you will enjoy using these libraries. i had a lot of fun writing them,
+and it's served as a sandbox for me to play in. it's a place where i can continue
+to play and try out new ideas, so please don't count on me to maintain its stability
+
+if you like any of the content, please fork it if you like.
+
+to get started
+---------------
+1. go to the build directory and copy the 'local.properties.xml.template' file
+and name it local.properties.xml
+2. open the local.properties.xml file and change any settings in it that apply
+to you specific machine
+3. open a command prompt in the build folder and type:
+>build deploy
+
+to run the tests
+>build test
+
+to run the bdd doc report
+>build bdd.doc
+
+
