@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<project name="project.ci">
-	
-	<target name="run.ci.tests" depends="test.compile">
-		<property name="xunit.arguments" value="${build.compile.dir}/${test.output} /rt:xml /rd:${build.compile.dir}" />
-		<call target="run.test" />
-	</target>
-	
-</project>
