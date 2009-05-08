@@ -37,17 +37,17 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         IDictionary get_items()
         {
-            var id = Thread.CurrentThread.ManagedThreadId;
+            var id = System.Threading.Thread.CurrentThread.ManagedThreadId;
             within_lock(() =>
                             {
                                 if (!slots.ContainsKey(id))
                                 {
-                                    var slot = Thread.GetNamedDataSlot(GetType().FullName);
+                                    var slot = System.Threading.Thread.GetNamedDataSlot(GetType().FullName);
                                     slots.Add(id, slot);
-                                    Thread.SetData(slot, new Hashtable());
+                                    System.Threading.Thread.SetData(slot, new Hashtable());
                                 }
                             });
-            return (IDictionary) Thread.GetData(slots[id]);
+            return (IDictionary) System.Threading.Thread.GetData(slots[id]);
         }
 
         void within_lock(Action action)
