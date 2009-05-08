@@ -2,6 +2,6 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 {
     public interface IThread
     {
-        T provide_slot_for<T>() where T : new();
+        T provide_slot_for<T>() where T : class, new();
     }
 }

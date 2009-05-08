@@ -132,7 +132,7 @@
     <Compile Include="Transactions\Context.cs" />
     <Compile Include="Transactions\ContextFactory.cs" />
     <Compile Include="Transactions\ContextFactorySpecs.cs" />
-    <Compile Include="Transactions\Thread.cs" />
+    <Compile Include="Transactions\CurrentThread.cs" />
     <Compile Include="Transactions\EmptyUnitOfWork.cs" />
     <Compile Include="Transactions\IChangeTracker.cs" />
     <Compile Include="Transactions\IChangeTrackerFactory.cs" />
