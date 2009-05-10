@@ -156,6 +156,7 @@
     <Compile Include="Transactions\SessionNotStartedException.cs" />
     <Compile Include="Transactions\SessionProvider.cs" />
     <Compile Include="Transactions\SessionSpecs.cs" />
+    <Compile Include="Transactions\SingletonScopedStorage.cs" />
     <Compile Include="Transactions\StatementRegistry.cs" />
     <Compile Include="Transactions\TrackerEntry.cs" />
     <Compile Include="Transactions\TrackerEntryMapper.cs" />

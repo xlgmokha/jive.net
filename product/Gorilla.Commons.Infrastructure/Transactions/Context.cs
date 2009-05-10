@@ -6,10 +6,6 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
         readonly IDictionary items;
 
-        //public Context() : this(new Hashtable())
-        //{
-        //}
-
         public Context(IDictionary items)
         {
             this.items = items;
