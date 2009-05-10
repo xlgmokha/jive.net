@@ -5,14 +5,15 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
-    [Concern(typeof (InterceptorConstraint<string>))]
-    public class behaves_like_constraint : concerns_for<IInterceptorConstraint<string>, InterceptorConstraint<string>>
+    [Concern(typeof (InterceptorConstraint<>))]
+    public abstract class behaves_like_constraint : concerns_for<IInterceptorConstraint<string>, InterceptorConstraint<string>>
     {
         context c = () => { method_call_tracker = the_dependency<IMethodCallTracker<string>>(); };
 
         protected static IMethodCallTracker<string> method_call_tracker;
     }
 
+    [Concern(typeof (InterceptorConstraint<>))]
     public class when_asking_for_all_the_methods_to_intercept : behaves_like_constraint
     {
         static IEnumerable<string> result;

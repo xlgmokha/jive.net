@@ -4,7 +4,7 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Windows.Forms.Databinding
 {
-    [Concern(typeof (PropertyBinder<IAnInterface, string>))]
+    [Concern(typeof (PropertyBinder<,>))]
     public abstract class behaves_like_a_property_binder :
         concerns_for<IPropertyBinder<IAnInterface, string>, PropertyBinder<IAnInterface, string>>
     {
@@ -23,6 +23,7 @@ namespace Gorilla.Commons.Windows.Forms.Databinding
         static protected PropertyInfo property;
     }
 
+    [Concern(typeof (PropertyBinder<,>))]
     public class when_changing_the_value_of_correctly_bound_property : behaves_like_a_property_binder
     {
         it should_update_the_value_of_the_property_of_the_target_of_the_binder =
@@ -33,6 +34,7 @@ namespace Gorilla.Commons.Windows.Forms.Databinding
         const string first_name = "mo";
     }
 
+    [Concern(typeof (PropertyBinder<,>))]
     public class when_retrieving_the_current_value_of_a_bound_property : behaves_like_a_property_binder
     {
         it should_return_the_correct_value = () => result.should_be_equal_to("malik");

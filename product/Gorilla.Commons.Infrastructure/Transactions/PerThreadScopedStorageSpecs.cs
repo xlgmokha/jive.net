@@ -9,6 +9,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
     }
 
+    [Concern(typeof (PerThreadScopedStorage))]
     public class when_retrieving_the_storage_for_a_specific_thread :
         concerns_for<IScopedStorage, PerThreadScopedStorage>
     {

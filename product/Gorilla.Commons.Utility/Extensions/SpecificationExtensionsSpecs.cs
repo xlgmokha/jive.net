@@ -4,7 +4,7 @@ using Gorilla.Commons.Utility.Core;
 
 namespace Gorilla.Commons.Utility.Extensions
 {
-    public class when_evaluating_two_conditions : concerns
+    public abstract class when_evaluating_two_conditions : concerns
     {
         context c = () =>
                         {
@@ -16,6 +16,7 @@ namespace Gorilla.Commons.Utility.Extensions
         static protected ISpecification<int> right;
     }
 
+    [Concern(typeof (SpecificationExtensions))]
     public class when_checking_if_two_conditions_are_met_and_they_are : when_evaluating_two_conditions
     {
         it should_return_true = () => result.should_be_true();
@@ -31,6 +32,7 @@ namespace Gorilla.Commons.Utility.Extensions
         static bool result;
     }
 
+    [Concern(typeof (SpecificationExtensions))]
     public class when_checking_if_one_of_two_conditions_are_met_and_the_left_one_is_not : when_evaluating_two_conditions
     {
         it should_return_true = () => result.should_be_true();
@@ -46,6 +48,7 @@ namespace Gorilla.Commons.Utility.Extensions
         static bool result;
     }
 
+    [Concern(typeof (SpecificationExtensions))]
     public class when_checking_if_one_of_two_conditions_are_met_and_the_right_one_is_not :
         when_evaluating_two_conditions
     {

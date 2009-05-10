@@ -9,6 +9,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
     }
 
+    [Concern(typeof (ChangeTrackerFactory))]
     public class when_creating_a_change_tracker_for_an_item : concerns_for<IChangeTrackerFactory, ChangeTrackerFactory>
     {
         it should_return_a_new_tracker = () => result.should_not_be_null();

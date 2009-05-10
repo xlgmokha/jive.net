@@ -14,6 +14,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         }
     }
 
+    [Concern(typeof (TimerFactory))]
     public class when_creating_a_timer : behaves_like_a_timer_factory
     {
         it should_return_a_timer_with_the_correct_interval = () => result.Interval.should_be_equal_to(1000);
@@ -23,6 +24,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         static Timer result;
     }
 
+    [Concern(typeof (TimerFactory))]
     public class when_creating_a_timer_with_an_interval_in_milliseconds : behaves_like_a_timer_factory
     {
         it should_return_a_timer_with_the_correct_polling_interval =

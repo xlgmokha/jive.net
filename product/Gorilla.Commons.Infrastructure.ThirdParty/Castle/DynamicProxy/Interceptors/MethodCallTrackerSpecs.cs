@@ -6,7 +6,7 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
-    [Concern(typeof (MethodCallTracker<IAnInterface>))]
+    [Concern(typeof (MethodCallTracker<>))]
     public class behaves_like_method_call_tracker :
         concerns_for<IMethodCallTracker<IAnInterface>, MethodCallTracker<IAnInterface>>
     {
@@ -16,6 +16,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
         }
     }
 
+    [Concern(typeof (MethodCallTracker<>))]
     public class when_tracking_the_calls_to_intercept_on_a_type : behaves_like_method_call_tracker
     {
         static IInvocation invocation;

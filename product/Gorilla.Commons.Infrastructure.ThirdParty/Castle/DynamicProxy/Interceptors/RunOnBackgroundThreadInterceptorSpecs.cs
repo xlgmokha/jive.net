@@ -7,7 +7,7 @@ using MoMoney.Utility.Core;
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
-    public class behaves_like_background_thread_interceptor :
+    public abstract class behaves_like_background_thread_interceptor :
         concerns_for<IInterceptor, RunOnBackgroundThreadInterceptor<IDisposableCommand>>
     {
         context c = () => { thread_factory = the_dependency<IBackgroundThreadFactory>(); };
@@ -15,6 +15,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
         static protected IBackgroundThreadFactory thread_factory;
     }
 
+    [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
     public class when_intercepting_a_call_to_a_method_that_takes_a_long_time_to_complete :
         behaves_like_background_thread_interceptor
     {

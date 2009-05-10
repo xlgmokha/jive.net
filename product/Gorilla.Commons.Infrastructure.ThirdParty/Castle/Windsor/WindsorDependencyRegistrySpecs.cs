@@ -7,12 +7,12 @@ using Gorilla.Commons.Testing;
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
     [Concern(typeof (WindsorDependencyRegistry))]
-    internal class behaves_like_windsor_dependency_registry :
-        concerns_for<IDependencyRegistry, WindsorDependencyRegistry>
+    public abstract class behaves_like_windsor_dependency_registry : concerns_for<IDependencyRegistry, WindsorDependencyRegistry>
     {
     }
 
-    internal class when_registering_a_singleton_component_with_the_windsor_container :
+    [Concern(typeof (WindsorDependencyRegistry))]
+    public class when_registering_a_singleton_component_with_the_windsor_container :
         behaves_like_windsor_dependency_registry
     {
         it should_return_the_same_instance_each_time_its_resolved =

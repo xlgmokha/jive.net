@@ -8,6 +8,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
     }
 
+    [Concern(typeof (ContextFactory))]
     public class when_creating_a_new_context : concerns_for<IContextFactory, ContextFactory>
     {
         context c = () =>

@@ -9,7 +9,7 @@ namespace Gorilla.Commons.Windows.Forms.Databinding
     {
     }
 
-    [Concern(typeof (BindingSelector<IAnInterface>))]
+    [Concern(typeof (BindingSelector<>))]
     public class when_selecting_a_property_as_the_target_of_a_binding : concerns_for<IBindingSelector<IAnInterface>>
     {
         it should_return_a_binder_bound_to_the_correct_property =

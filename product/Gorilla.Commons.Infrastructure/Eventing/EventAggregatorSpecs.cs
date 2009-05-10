@@ -6,7 +6,7 @@ using Rhino.Mocks;
 
 namespace Gorilla.Commons.Infrastructure.Eventing
 {
-    public class behaves_like_event_aggregator : concerns_for<IEventAggregator, EventAggregator>
+    public abstract class behaves_like_event_aggregator : concerns_for<IEventAggregator, EventAggregator>
     {
         public override IEventAggregator create_sut()
         {
@@ -14,6 +14,7 @@ namespace Gorilla.Commons.Infrastructure.Eventing
         }
     }
 
+    [Concern(typeof(EventAggregator))]
     public class when_a_event_is_raised_in_the_system : behaves_like_event_aggregator
     {
         it should_notify_all_subscribers_of_the_event = () =>
@@ -46,6 +47,7 @@ namespace Gorilla.Commons.Infrastructure.Eventing
         static IEventSubscriber<AnotherEvent> incorrect_subscriber;
     }
 
+    [Concern(typeof(EventAggregator))]
     public class when_publishing_a_call_to_all_subscribers : behaves_like_event_aggregator
     {
         it should_make_the_call_on_each_subscriber = () => connection.was_told_to(x => x.ChangeDatabase("localhost"));

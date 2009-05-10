@@ -22,6 +22,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static protected IDatabase database;
     }
 
+    [Concern(typeof (Session))]
     public class when_saving_a_transient_item_to_a_session : behaves_like_session
     {
         it should_add_the_entity_to_the_identity_map = () => map.was_told_to(x => x.add(guid, entity));
@@ -45,6 +46,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static Guid guid;
     }
 
+    [Concern(typeof (Session))]
     public class when_commiting_the_changes_made_in_a_session : behaves_like_session
     {
         it should_commit_all_the_changes_from_the_running_transaction =
@@ -60,6 +62,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
                         };
     }
 
+    [Concern(typeof (Session))]
     public class when_closing_a_session_before_flushing_the_changes : behaves_like_session
     {
         it should_rollback_any_changes_made_in_the_current_transaction =
@@ -68,6 +71,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         because b = () => sut.Dispose();
     }
 
+    [Concern(typeof (Session))]
     public class when_loading_all_instances_of_a_certain_type_and_some_have_already_been_loaded : behaves_like_session
     {
         it should_return_the_items_from_the_cache = () => results.should_contain(cached_item);
@@ -112,6 +116,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static ITestEntity uncached_item;
     }
 
+    [Concern(typeof (Session))]
     public class when_looking_up_a_specific_entity_by_its_id_and_it_has_not_been_loaded_into_the_cache :
         behaves_like_session
     {
@@ -143,6 +148,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static IIdentityMap<Guid, ITestEntity> map;
     }
 
+    [Concern(typeof (Session))]
     public class when_deleting_an_item_from_the_database : behaves_like_session
     {
         it should_remove_that_item_from_the_cache = () => map.was_told_to(x => x.evict(id));

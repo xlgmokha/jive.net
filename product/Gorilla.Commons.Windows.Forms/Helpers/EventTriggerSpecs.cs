@@ -5,13 +5,14 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Windows.Forms.Helpers
 {
+    [Concern(typeof (EventTrigger))]
     public class when_invoking_a_call_on_a_target_via_reflection : concerns
     {
         it should_correctly_call_that_method =
             () =>
                 {
-                    Assertions.should_be_true(control.called_on_key_press);
-                    Assertions.should_be_false(control.called_on_enter);
+                    control.called_on_key_press.should_be_true();
+                    control.called_on_enter.should_be_false();
                 };
 
         context c = () => { control = new TestControl(); };
@@ -23,6 +24,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         static TestControl control;
     }
 
+    [Concern(typeof (EventTrigger))]
     public class when_invoking_a_call_on_a_target_by_passing_in_a_parameter : concerns
     {
         it should_make_the_call_correctly = () => control.key_press_arguments.should_be_equal_to(args);

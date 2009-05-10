@@ -13,6 +13,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         protected static IDependencyRegistry registry;
     }
 
+    [Concern(typeof (BackgroundThreadFactory))]
     public class when_creating_a_background_thread : behaves_like_a_background_thread_factory
     {
         it should_return_an_instance_of_a_background_thread = () => result.should_not_be_null();

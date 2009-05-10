@@ -14,6 +14,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         protected static ITimerFactory factory;
     }
 
+    [Concern(typeof (IntervalTimer))]
     public class when_starting_a_timer_for_a_new_client : behaves_like_an_interval_timer
     {
         static ITimerClient client;
@@ -34,6 +35,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         because b = () => sut.start_notifying(client, new TimeSpan(0, 10, 0));
     }
 
+    [Concern(typeof (IntervalTimer))]
     public class when_starting_a_timer_for_an_existing_client : behaves_like_an_interval_timer
     {
         it should_stop_the_previously_started_timer = () =>
@@ -65,6 +67,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         static Timer second_timer;
     }
 
+    [Concern(typeof (IntervalTimer))]
     public class when_a_timer_elapses : behaves_like_an_interval_timer
     {
         it should_notify_the_timer_client = () => client.was_told_to(c => c.notify());
@@ -86,6 +89,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
                         };
     }
 
+    [Concern(typeof (IntervalTimer))]
     public class when_stopping_notifications_for_an_existing_timer_client : behaves_like_an_interval_timer
     {
         static ITimerClient client;
@@ -111,6 +115,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
                         };
     }
 
+    [Concern(typeof (IntervalTimer))]
     public class when_attempting_to_stop_notification_for_a_client_that_doesnt_have_a_timer_started_for_it :
         behaves_like_an_interval_timer
     {

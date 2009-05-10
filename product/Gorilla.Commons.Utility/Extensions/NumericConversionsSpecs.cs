@@ -3,6 +3,7 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Utility.Extensions
 {
+    [Concern(typeof (NumericConversions))]
     public class when_converting_a_valid_string_to_a_long : concerns
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(88L);
@@ -15,6 +16,7 @@ namespace Gorilla.Commons.Utility.Extensions
         static string valid_numeric_string;
     }
 
+    [Concern(typeof (NumericConversions))]
     public class when_converting_a_valid_string_to_an_int : concerns
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(66);

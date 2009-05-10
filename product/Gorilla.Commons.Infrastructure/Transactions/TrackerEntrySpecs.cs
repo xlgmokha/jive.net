@@ -14,6 +14,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
     }
 
+    [Concern(typeof (ITrackerEntry<>))]
     public class when_comparing_the_current_instance_of_a_component_with_its_original_and_it_has_changes :
         behaves_like_tracker_entry
     {
@@ -29,6 +30,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static bool result;
     }
 
+    [Concern(typeof (ITrackerEntry<>))]
     public class when_the_original_instance_has_a_null_field_that_is_now_not_null :
         behaves_like_tracker_entry
     {
@@ -44,6 +46,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static bool result;
     }
 
+    [Concern(typeof (ITrackerEntry<>))]
     public class when_the_original_instance_had_a_non_null_field_and_the_current_instance_has_a_null_field :
         behaves_like_tracker_entry
     {
@@ -68,6 +71,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static Pillow current;
     }
 
+    [Concern(typeof (ITrackerEntry<>))]
     public class when_the_original_instance_has_the_same_value_as_the_current_instance :
         behaves_like_tracker_entry
     {

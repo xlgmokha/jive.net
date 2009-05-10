@@ -18,6 +18,7 @@ namespace Gorilla.Commons.Infrastructure
         protected static IDependencyRegistry test_container;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_calling_a_method_with_no_arguments_on_a_lazy_loaded_proxy : behaves_like_a_lazy_loaded_object
     {
         it should_forward_the_original_call_to_the_target = () => target.was_told_to<ITargetObject>(t => t.OneMethod());
@@ -37,6 +38,7 @@ namespace Gorilla.Commons.Infrastructure
         static ITargetObject target;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_calling_a_method_that_returns_an_argument_on_a_lazy_loaded_proxy :
         behaves_like_a_lazy_loaded_object
     {
@@ -59,6 +61,7 @@ namespace Gorilla.Commons.Infrastructure
         static int result;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_calling_different_methods_on_an_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_only_load_the_object_once =
@@ -78,6 +81,7 @@ namespace Gorilla.Commons.Infrastructure
                         };
     }
 
+    [Concern(typeof (Lazy))]
     public class when_calling_a_method_that_takes_in_a_single_input_parameter_on_a_proxied_object :
         behaves_like_a_lazy_loaded_object
     {
@@ -104,6 +108,7 @@ namespace Gorilla.Commons.Infrastructure
         static int result;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_accessing_the_value_of_a_property_on_a_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_return_the_correct_value = () => result.should_be_equal_to("mo");
@@ -125,6 +130,7 @@ namespace Gorilla.Commons.Infrastructure
         static string result;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_setting_the_value_of_a_property_on_a_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_set_the_value_on_the_original_target =
@@ -145,6 +151,7 @@ namespace Gorilla.Commons.Infrastructure
         static ITargetObject target;
     }
 
+    [Concern(typeof (Lazy))]
     public class when_calling_a_generic_method_on_a_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_forward_the_call_to_the_target =

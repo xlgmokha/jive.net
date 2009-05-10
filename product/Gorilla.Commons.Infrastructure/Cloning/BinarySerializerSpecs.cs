@@ -21,6 +21,7 @@ namespace Gorilla.Commons.Infrastructure.Cloning
         protected static string file_name;
     }
 
+    [Concern(typeof(BinarySerializer<TestItem>))]
     public class when_serializing_an_item : behaves_like_serializer
     {
         it should_serialize_the_item_to_a_file = () => FileAssert.Exists(file_name);
@@ -28,6 +29,7 @@ namespace Gorilla.Commons.Infrastructure.Cloning
         because b = () => sut.serialize(new TestItem(string.Empty));
     }
 
+    [Concern(typeof(BinarySerializer<TestItem>))]
     public class when_deserializing_an_item : behaves_like_serializer
     {
         it should_be_able_to_deserialize_from_a_serialized_file = () => result.should_be_equal_to(original);

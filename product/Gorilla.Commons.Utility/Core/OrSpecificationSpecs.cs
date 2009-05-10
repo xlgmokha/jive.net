@@ -3,8 +3,8 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Utility.Core
 {
-    public abstract class when_checking_if_one_of_two_conditions_are_met :
-        concerns_for<ISpecification<int>, OrSpecification<int>>
+    [Concern(typeof (OrSpecification<>))]
+    public abstract class when_checking_if_one_of_two_conditions_are_met : concerns_for<ISpecification<int>, OrSpecification<int>>
     {
         public override ISpecification<int> create_sut()
         {
@@ -21,6 +21,7 @@ namespace Gorilla.Commons.Utility.Core
         protected static ISpecification<int> right;
     }
 
+    [Concern(typeof (OrSpecification<>))]
     public class when_one_of_the_conditions_is_met : when_checking_if_one_of_two_conditions_are_met
     {
         it should_return_true = () => result.should_be_true();
@@ -31,6 +32,7 @@ namespace Gorilla.Commons.Utility.Core
         static bool result;
     }
 
+    [Concern(typeof (OrSpecification<>))]
     public class when_the_second_condition_is_met : when_checking_if_one_of_two_conditions_are_met
     {
         it should_return_true = () => result.should_be_true();
@@ -41,6 +43,7 @@ namespace Gorilla.Commons.Utility.Core
         static bool result;
     }
 
+    [Concern(typeof (OrSpecification<>))]
     public class when_neither_conditions_are_met : when_checking_if_one_of_two_conditions_are_met
     {
         it should_return_false = () => result.should_be_false();

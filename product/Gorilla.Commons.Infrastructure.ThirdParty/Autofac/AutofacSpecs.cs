@@ -8,6 +8,7 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Infrastructure.Autofac
 {
+    [Concern(typeof (ContainerBuilder))]
     public class when_trying_to_register_a_single_item_in_the_autofac_container : concerns
     {
         it should_resolve_that_item = () => result.should_be_an_instance_of<A>();
@@ -28,6 +29,7 @@ namespace Gorilla.Commons.Infrastructure.Autofac
         static ITestItem result;
     }
 
+    [Concern(typeof (ContainerBuilder))]
     public class when_trying_to_resolve_all_the_components_that_implement_a_common_interface : concerns
     {
         it should_return_each_component = () =>

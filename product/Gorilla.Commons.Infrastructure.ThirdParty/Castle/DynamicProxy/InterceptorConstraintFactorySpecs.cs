@@ -4,7 +4,7 @@ using Gorilla.Commons.Testing;
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     [Concern(typeof (InterceptorConstraintFactory))]
-    public class behaves_like_constraint_factory :
+    public abstract class behaves_like_constraint_factory :
         concerns_for<IInterceptorConstraintFactory, InterceptorConstraintFactory>
     {
         context c = () => { method_call_tracker_factory = the_dependency<IMethodCallTrackerFactory>(); };
@@ -12,6 +12,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         protected static IMethodCallTrackerFactory method_call_tracker_factory;
     }
 
+    [Concern(typeof (InterceptorConstraintFactory))]
     public class when_creating_a_constraint_for_a_type_to_intercept_on : behaves_like_constraint_factory
     {
         static IInterceptorConstraint<string> result;

@@ -16,6 +16,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         }
     }
 
+    [Concern(typeof(ProxyFactory))]
     public class when_creating_a_proxy_with_a_target : behaves_like_proxy_factory
     {
         it should_forward_all_calls_to_the_target = () => target.was_told_to(x => x.Open());
@@ -43,6 +44,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         static TestInterceptor interceptor;
     }
 
+    [Concern(typeof(ProxyFactory))]
     public class when_creating_a_proxy_of_a_target_but_a_call_has_not_been_made_to_the_proxy_yet :
         behaves_like_proxy_factory
     {
@@ -57,6 +59,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         static IDisposable result;
     }
 
+    [Concern(typeof(ProxyFactory))]
     public class when_creating_a_proxy_of_a_component_that_does_not_implement_an_interface : behaves_like_proxy_factory
     {
         it should_return_a_proxy = () => AssertionExtensions.should_not_be_null(result);

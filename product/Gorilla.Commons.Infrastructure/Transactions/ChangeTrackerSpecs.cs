@@ -23,6 +23,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static protected IStatementRegistry registry;
     }
 
+    [Concern(typeof (ChangeTracker<IIdentifiable<Guid>>))]
     public class when_commit_that_changes_made_to_an_item : behaves_like_change_tracker
     {
         it should_save_the_changes_to_the_database = () => database.was_told_to(x => x.apply(statement));
@@ -51,6 +52,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static IStatement statement;
     }
 
+    [Concern(typeof (ChangeTracker<IIdentifiable<Guid>>))]
     public class when_checking_if_there_are_changes_and_there_are : behaves_like_change_tracker
     {
         it should_tell_the_truth = () => result.should_be_true();
@@ -75,6 +77,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static IIdentifiable<Guid> item;
     }
 
+    [Concern(typeof (ChangeTracker<IIdentifiable<Guid>>))]
     public class when_checking_if_there_are_changes_and_there_are_not : behaves_like_change_tracker
     {
         it should_tell_the_truth = () => result.should_be_false();

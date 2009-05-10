@@ -12,6 +12,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         }
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_getting_an_item_from_the_identity_map_for_an_item_that_has_been_added : behaves_like_identity_map
     {
         it should_return_the_item_that_was_added_for_the_given_key = () => result.should_be_equal_to("1");
@@ -25,6 +26,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static string result;
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_getting_an_item_from_the_identity_map_that_has_not_been_added : behaves_like_identity_map
     {
         it should_return_the_default_value_for_that_type = () => result.should_be_equal_to(null);
@@ -34,6 +36,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static string result;
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_checking_if_an_item_has_been_added_to_the_identity_map_that_has_been_added :
         behaves_like_identity_map
     {
@@ -48,6 +51,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static bool result;
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_checking_if_an_item_has_been_added_to_the_identity_map_that_has_not_been_added :
         behaves_like_identity_map
     {
@@ -58,6 +62,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static bool result;
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_updating_the_value_for_a_key_that_has_already_been_added_to_the_identity_map :
         behaves_like_identity_map
     {
@@ -73,6 +78,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         static string result;
     }
 
+    [Concern(typeof (IdentityMap<,>))]
     public class when_updating_the_value_for_a_key_that_has_not_been_added_to_the_identity_map :
         behaves_like_identity_map
     {

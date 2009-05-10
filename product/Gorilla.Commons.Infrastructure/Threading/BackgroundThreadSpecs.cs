@@ -18,6 +18,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         protected static IWorkerThread worker_thread;
     }
 
+    [Concern(typeof (BackgroundThread))]
     public class when_executing_a_command_on_a_background_thread : behaves_like_a_background_thread
     {
         it should_execute_the_command_asynchronously = () => command_to_execute.was_told_to(c => c.run());
@@ -31,6 +32,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
                         };
     }
 
+    [Concern(typeof (BackgroundThread))]
     public class when_disposing_a_background_thread : behaves_like_a_background_thread
     {
         it should_dispose_the_command_running_on_the_thread = () => worker_thread.was_told_to(w => w.Dispose());

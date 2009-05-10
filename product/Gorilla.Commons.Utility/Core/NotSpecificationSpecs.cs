@@ -7,6 +7,7 @@ namespace Gorilla.Commons.Utility.Core
     {
     }
 
+    [Concern(typeof (NotSpecification<>))]
     public class when_checking_if_a_condition_is_not_met : concerns_for<ISpecification<int>, NotSpecification<int>>
     {
         static protected ISpecification<int> criteria;
@@ -19,6 +20,7 @@ namespace Gorilla.Commons.Utility.Core
         }
     }
 
+    [Concern(typeof (NotSpecification<>))]
     public class when_a_condition_is_not_met : when_checking_if_a_condition_is_not_met
     {
         context c = () => when_the(criteria).is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
@@ -30,6 +32,7 @@ namespace Gorilla.Commons.Utility.Core
         static bool result;
     }
 
+    [Concern(typeof (NotSpecification<>))]
     public class when_a_condition_is_met : when_checking_if_a_condition_is_not_met
     {
         context c = () => when_the(criteria).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);

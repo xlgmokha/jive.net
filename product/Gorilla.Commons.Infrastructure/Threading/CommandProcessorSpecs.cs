@@ -9,6 +9,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
     {
     }
 
+    [Concern(typeof (CommandProcessor))]
     public class when_running_all_the_queued_commands_waiting_for_execution : behaves_like_a_command_processor
     {
         it should_run_the_first_command_in_the_queue = () => first_command.was_told_to(f => f.run());
@@ -32,6 +33,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         static ICommand second_command;
     }
 
+    [Concern(typeof (CommandProcessor))]
     public class when_attempting_to_rerun_the_command_processor : behaves_like_a_command_processor
     {
         it should_not_re_run_the_commands_that_have_already_executed =

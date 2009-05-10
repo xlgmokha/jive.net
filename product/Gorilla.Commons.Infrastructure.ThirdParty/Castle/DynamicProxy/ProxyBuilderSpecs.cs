@@ -8,8 +8,8 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
-    [Concern(typeof (ProxyBuilder<IAnInterface>))]
-    public class behaves_like_proxy_builder : concerns_for<IProxyBuilder<IAnInterface>, ProxyBuilder<IAnInterface>>
+    [Concern(typeof (ProxyBuilder<>))]
+    public abstract class behaves_like_proxy_builder : concerns_for<IProxyBuilder<IAnInterface>, ProxyBuilder<IAnInterface>>
     {
         public override IProxyBuilder<IAnInterface> create_sut()
         {
@@ -17,6 +17,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         }
     }
 
+    [Concern(typeof (ProxyBuilder<>))]
     public class when_building_a_proxy_for_a_type : behaves_like_proxy_builder
     {
         it should_make_sure_the_original_call_gets_forwarded_to_the_item_to_proxy =
@@ -54,6 +55,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
     }
 
     [Integration]
+    [Concern(typeof (ProxyBuilder<>))]
     public class when_building_a_proxy_to_target_certain_methods_on_a_type : behaves_like_proxy_builder
     {
         it should_only_intercept_calls_on_the_method_that_was_specified =
@@ -84,6 +86,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         static IAnInterface an_implementation;
     }
 
+    [Concern(typeof (ProxyBuilder<>))]
     public class when_proxying_all_calls_on_a_target : behaves_like_proxy_builder
     {
         it should_intercept_each_call =

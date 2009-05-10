@@ -9,7 +9,7 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
-    internal class WindsorDependencyRegistry : IDependencyRegistration, IDependencyRegistry
+    public class WindsorDependencyRegistry : IDependencyRegistration, IDependencyRegistry
     {
         readonly IWindsorContainer underlying_container;
 

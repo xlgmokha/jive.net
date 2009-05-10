@@ -4,7 +4,7 @@ using Gorilla.Commons.Testing;
 
 namespace Gorilla.Commons.Windows.Forms.Databinding
 {
-    [Concern(typeof (PropertyInspector<IAnInterface, string>))]
+    [Concern(typeof (PropertyInspector<,>))]
     public class when_parsing_a_valie_expression_for_the_information_on_the_property :
         concerns_for<IPropertyInspector<IAnInterface, string>, PropertyInspector<IAnInterface, string>>
     {

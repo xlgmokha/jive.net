@@ -10,6 +10,7 @@ namespace Gorilla.Commons.Infrastructure.Container
     {
     }
 
+    [Concern(typeof(Resolve))]
     public class when_resolving_a_dependency_using_the_container : behaves_like_a_inversion_of_control_container
     {
         context c = () =>
@@ -34,6 +35,7 @@ namespace Gorilla.Commons.Infrastructure.Container
         static ICommand presenter;
     }
 
+    [Concern(typeof(Resolve))]
     public class when_resolving_a_dependency_that_is_not_registered_ : behaves_like_a_inversion_of_control_container
     {
         context c = () =>

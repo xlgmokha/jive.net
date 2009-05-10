@@ -7,6 +7,7 @@ namespace Gorilla.Commons.Infrastructure.Proxies
     {
     }
 
+    [Concern(typeof(ProxyFactory))]
     public class when_proxying_a_class_with_interceptors_applied : concerns
     {
         context c = () =>

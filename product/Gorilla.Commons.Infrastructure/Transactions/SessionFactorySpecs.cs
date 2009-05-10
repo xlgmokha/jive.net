@@ -7,6 +7,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
     }
 
+    [Concern(typeof (SessionFactory))]
     public class when_creating_a_new_session : concerns_for<ISessionFactory, SessionFactory>
     {
         it should_return_a_new_session = () => result.should_not_be_null();
