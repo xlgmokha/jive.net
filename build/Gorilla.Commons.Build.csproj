@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="build.bat" />
     <None Include="config\AssemblyInfo.cs.template" />
     <None Include="config\bootStrap.xml.template" />
     <None Include="config\log4net.config.xml.template" />

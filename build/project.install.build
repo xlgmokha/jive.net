@@ -6,8 +6,7 @@
 	<target name="load_local_properties">
 	    <property name="application.manifest" value="${installation.dir}\${assembly.version}\${app.output}.manifest" />
 	    <property name="deployment.manifest" value="${installation.dir}\${app.output}.application" />
-		<property name="mage.exe" value="${dot.net.sdk.dir}\mage.exe" />
-		<property name="mage.scrub.exe" value="${build.tools.dir}\mage.scrub\mage.scrub.exe" />
+  		<property name="mage.exe" value="${dot.net.sdk.dir}\mage.exe" />
 	</target>
 	
 	<target name="create.installation.dir" depends="deploy">
@@ -49,7 +48,6 @@
 		<property name="args.sign.deployment" value="-s ${deployment.manifest} -cf ${certificate.filename} -Password ${certificate.password}" />
 		
 		<exec program="${mage.exe}" commandline="${args.new.application}" />
-		<!--<exec program="${mage.scrub.exe}" commandline="${application.manifest}" />-->
 		<exec program="${mage.exe}" commandline="${args.sign.application}" />
 		<exec program="${mage.exe}" commandline="${args.new.deployment}" />
 		<exec program="${mage.exe}" commandline="${args.update.deployment}" />
