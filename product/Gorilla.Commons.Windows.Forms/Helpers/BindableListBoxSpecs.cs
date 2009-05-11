@@ -8,6 +8,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
     {
     }
 
+    [Concern(typeof(BindableListBox<>))]
     public class behaves_like_bindable_list : concerns_for<IBindableList<string>, BindableListBox<string>>
     {
         context c = () => { control = the_dependency<IListControl<string>>(); };
@@ -15,6 +16,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         static protected IListControl<string> control;
     }
 
+    [Concern(typeof(BindableListBox<>))]
     public class when_binding_a_bunch_of_items_to_a_list_control : behaves_like_bindable_list
     {
         it should_add_each_item_to_the_list_control = () =>
@@ -26,6 +28,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         because b = () => sut.bind_to(new List<string> {"timone", "pumba",});
     }
 
+    [Concern(typeof(BindableListBox<>))]
     public class when_assigning_the_selected_item_of_a_list_control : behaves_like_bindable_list
     {
         it should_tell_the_list_control_to_select_that_item =
@@ -34,6 +37,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         because b = () => sut.set_selected_item("arthur");
     }
 
+    [Concern(typeof(BindableListBox<>))]
     public class when_getting_the_selected_item_from_a_list_control : behaves_like_bindable_list
     {
         it should_return_the_selected_item = () => result.should_be_equal_to("curious george");
