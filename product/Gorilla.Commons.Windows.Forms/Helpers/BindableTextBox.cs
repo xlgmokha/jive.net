@@ -4,6 +4,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
     {
         void bind_to(T item);
         T get_selected_value();
+        string text();
     }
 
     public class BindableTextBox<T> : IBindableTextBox<T>
@@ -23,6 +24,11 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         public T get_selected_value()
         {
             return control.get_selected_item();
+        }
+
+        public string text()
+        {
+            return control.text();
         }
     }
 }

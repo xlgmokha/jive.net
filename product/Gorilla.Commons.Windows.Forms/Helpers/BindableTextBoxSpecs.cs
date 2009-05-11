@@ -33,4 +33,14 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
 
         static string result;
     }
+
+    //public class when_the_value_of_a_textbox_changes : concerns_for_text_box
+    //{
+    //    it should_apply_the_new_value_to_the_text_control = () => {
+                         
+    //    };
+
+    //    because b = () => {
+    //    };
+    //}
 }

@@ -96,8 +96,11 @@
     <Compile Include="Helpers\IBindableList.cs" />
     <Compile Include="Helpers\IEventTarget.cs" />
     <Compile Include="Helpers\IListControl.cs" />
+    <Compile Include="Helpers\ITextBoxCommand.cs" />
     <Compile Include="Helpers\ITextControl.cs" />
     <Compile Include="Helpers\ListBoxListControl.cs" />
+    <Compile Include="Helpers\RebindTextBoxCommand.cs" />
+    <Compile Include="Helpers\RebindTextBoxCommandSpecs.cs" />
     <Compile Include="Helpers\SuspendLayout.cs" />
     <Compile Include="Helpers\TextControl.cs" />
     <Compile Include="Helpers\TextControlSpecs.cs" />

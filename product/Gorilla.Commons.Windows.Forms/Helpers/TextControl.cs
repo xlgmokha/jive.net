@@ -22,5 +22,10 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         {
             return selected_item;
         }
+
+        public string text()
+        {
+            return textbox.Text;
+        }
     }
 }

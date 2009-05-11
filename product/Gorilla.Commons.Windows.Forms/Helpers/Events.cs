@@ -21,6 +21,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
             void OnMouseWheel(MouseEventArgs args);
             void OnValidated(EventArgs args);
             void OnValidating(CancelEventArgs args);
+            void OnLeave(EventArgs args);
         }
 
         public interface FormEvents : ControlEvents
