@@ -77,6 +77,7 @@
     <Compile Include="Databinding\TextBoxDataBindingSpecs.cs" />
     <Compile Include="Databinding\TextPropertyBinding.cs" />
     <Compile Include="Helpers\BindableListBox.cs" />
+    <Compile Include="Helpers\BindableListBoxSpecs.cs" />
     <Compile Include="Helpers\BindableListExtensions.cs" />
     <Compile Include="Helpers\BindableListFactory.cs" />
     <Compile Include="Helpers\BitmapRegion.cs" />
