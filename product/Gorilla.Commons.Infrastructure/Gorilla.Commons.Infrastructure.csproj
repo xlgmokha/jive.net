@@ -111,7 +111,6 @@
     <Compile Include="Threading\ICommandProcessor.cs" />
     <Compile Include="Threading\IntervalTimer.cs" />
     <Compile Include="Threading\IntervalTimerSpecs.cs" />
-    <Compile Include="Threading\ISynchronizationContext.cs" />
     <Compile Include="Threading\ITimerClient.cs" />
     <Compile Include="Threading\IWorkerThread.cs" />
     <Compile Include="Threading\SynchronizationContextFactory.cs" />
@@ -166,6 +165,8 @@
     <Compile Include="Transactions\TypedKey.cs" />
     <Compile Include="Transactions\UnitOfWork.cs" />
     <Compile Include="Transactions\UnitOfWorkFactory.cs" />
+    <Compile Include="Transactions\UnitOfWorkFactorySpecs.cs" />
+    <Compile Include="Transactions\UnitOfWorkSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

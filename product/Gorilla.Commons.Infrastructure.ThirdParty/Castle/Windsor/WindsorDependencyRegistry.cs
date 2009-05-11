@@ -20,7 +20,8 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 
         public Interface get_a<Interface>()
         {
-            return underlying_container.Kernel.Resolve<Interface>();
+            return underlying_container.Resolve<Interface>();
+            //return underlying_container.Kernel.Resolve<Interface>();
         }
 
         public IEnumerable<Interface> all_the<Interface>()

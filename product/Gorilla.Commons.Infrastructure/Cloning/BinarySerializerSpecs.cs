@@ -6,31 +6,31 @@ using MbUnit.Framework;
 
 namespace Gorilla.Commons.Infrastructure.Cloning
 {
-    [Concern(typeof(BinarySerializer<TestItem>))]
-    public abstract class behaves_like_serializer : concerns_for<ISerializer<TestItem>>
+    [Concern(typeof (BinarySerializer<TestItem>))]
+    public abstract class when_a_file_is_specified_to_serialize_an_item_to : concerns_for<ISerializer<TestItem>, BinarySerializer<TestItem>>
     {
         public override ISerializer<TestItem> create_sut()
         {
             return new BinarySerializer<TestItem>(file_name);
         }
 
-        context c = () => { file_name = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Serialized.dat"); };
+        context c = () => { file_name = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "serialized.dat"); };
 
         after_each_observation aeo = () => { if (File.Exists(file_name)) File.Delete(file_name); };
 
-        protected static string file_name;
+        static protected string file_name;
     }
 
-    [Concern(typeof(BinarySerializer<TestItem>))]
-    public class when_serializing_an_item : behaves_like_serializer
+    [Concern(typeof (BinarySerializer<TestItem>))]
+    public class when_serializing_an_item : when_a_file_is_specified_to_serialize_an_item_to
     {
         it should_serialize_the_item_to_a_file = () => FileAssert.Exists(file_name);
 
         because b = () => sut.serialize(new TestItem(string.Empty));
     }
 
-    [Concern(typeof(BinarySerializer<TestItem>))]
-    public class when_deserializing_an_item : behaves_like_serializer
+    [Concern(typeof (BinarySerializer<TestItem>))]
+    public class when_deserializing_an_item : when_a_file_is_specified_to_serialize_an_item_to
     {
         it should_be_able_to_deserialize_from_a_serialized_file = () => result.should_be_equal_to(original);
 

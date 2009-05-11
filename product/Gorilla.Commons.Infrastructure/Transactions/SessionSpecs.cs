@@ -27,8 +27,6 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
         it should_add_the_entity_to_the_identity_map = () => map.was_told_to(x => x.add(guid, entity));
 
-        //it should_add_the_item_to_the_current_transaction = () => transaction.was_told_to(x => x.add_transient(entity));
-
         context c = () =>
                         {
                             guid = Guid.NewGuid();
@@ -93,8 +91,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
                             when_the(cached_item).is_told_to(x => x.id).it_will_return(id);
                             when_the(database_item).is_told_to(x => x.id).it_will_return(id);
                             when_the(uncached_item).is_told_to(x => x.id).it_will_return(id_of_the_uncached_item);
-                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(
-                                identity_map);
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return( identity_map);
                             when_the(identity_map).is_told_to(x => x.contains_an_item_for(id)).it_will_return(true);
                             when_the(identity_map).is_told_to(x => x.all()).it_will_return(cached_item);
                             when_the(database).is_told_to(x => x.fetch_all<ITestEntity>())
@@ -152,8 +149,6 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     public class when_deleting_an_item_from_the_database : behaves_like_session
     {
         it should_remove_that_item_from_the_cache = () => map.was_told_to(x => x.evict(id));
-
-        //it should_mark_the_item_for_deletion_when_the_transaction_is_committed = () => transaction.was_told_to(x => x.mark_for_deletion(entity));
 
         context c = () =>
                         {

@@ -6,31 +6,31 @@ namespace Gorilla.Commons.Infrastructure.Threading
     [Serializable]
     internal class WorkItem : IAsyncResult
     {
-        readonly object[] m_Args;
-        readonly object m_AsyncState;
-        bool m_Completed;
-        readonly Delegate m_Method;
-        readonly ManualResetEvent m_Event;
-        object m_MethodReturnedValue;
+        readonly object[] args;
+        readonly object async_state;
+        bool completed;
+        readonly Delegate method;
+        readonly ManualResetEvent reset_event;
+        object returned_value;
 
         internal WorkItem(object async_state, Delegate method, object[] args)
         {
-            m_AsyncState = async_state;
-            m_Method = method;
-            m_Args = args;
-            m_Event = new ManualResetEvent(false);
-            m_Completed = false;
+            this.async_state = async_state;
+            this.method = method;
+            this.args = args;
+            reset_event = new ManualResetEvent(false);
+            completed = false;
         }
 
         //IAsyncResult properties 
         object IAsyncResult.AsyncState
         {
-            get { return m_AsyncState; }
+            get { return async_state; }
         }
 
         WaitHandle IAsyncResult.AsyncWaitHandle
         {
-            get { return m_Event; }
+            get { return reset_event; }
         }
 
         bool IAsyncResult.CompletedSynchronously
@@ -49,14 +49,14 @@ namespace Gorilla.Commons.Infrastructure.Threading
             {
                 lock (this)
                 {
-                    return m_Completed;
+                    return completed;
                 }
             }
             set
             {
                 lock (this)
                 {
-                    m_Completed = value;
+                    completed = value;
                 }
             }
         }
@@ -64,9 +64,9 @@ namespace Gorilla.Commons.Infrastructure.Threading
         //This method is called on the worker thread to execute the method
         internal void CallBack()
         {
-            MethodReturnedValue = m_Method.DynamicInvoke(m_Args);
+            MethodReturnedValue = method.DynamicInvoke(args);
             //Method is done. Signal the world
-            m_Event.Set();
+            reset_event.Set();
             Completed = true;
         }
 
@@ -74,18 +74,18 @@ namespace Gorilla.Commons.Infrastructure.Threading
         {
             get
             {
-                object methodReturnedValue;
+                object method_returned_value;
                 lock (this)
                 {
-                    methodReturnedValue = m_MethodReturnedValue;
+                    method_returned_value = returned_value;
                 }
-                return methodReturnedValue;
+                return method_returned_value;
             }
             set
             {
                 lock (this)
                 {
-                    m_MethodReturnedValue = value;
+                    returned_value = value;
                 }
             }
         }

@@ -16,27 +16,27 @@ namespace Gorilla.Commons.Infrastructure.Proxies
             this.call = call;
             this.target = target;
             this.interceptors = new Stack<IInterceptor>(interceptors);
-            Arguments = call.Properties["__Args"].downcast_to<object[]>();
-            Method = call.MethodBase.downcast_to<MethodInfo>();
+            arguments = call.Properties["__Args"].downcast_to<object[]>();
+            method = call.MethodBase.downcast_to<MethodInfo>();
         }
 
-        public object[] Arguments { get; set; }
+        public object[] arguments { get; set; }
 
-        public MethodInfo Method { get; set; }
+        public MethodInfo method { get; set; }
 
-        public object ReturnValue { get; set; }
+        public object return_value { get; set; }
 
-        public void Proceed()
+        public void proceed()
         {
             if (interceptors.Count > 0)
             {
-                interceptors.Pop().Intercept(this);
+                interceptors.Pop().intercept(this);
                 return;
             }
 
             try
             {
-                ReturnValue = call.MethodBase.Invoke(target, Arguments);
+                return_value = call.MethodBase.Invoke(target, arguments);
             }
             catch (TargetInvocationException e)
             {

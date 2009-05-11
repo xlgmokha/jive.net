@@ -14,12 +14,10 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     {
         context c = () =>
                         {
-                            registry = the_dependency<IStatementRegistry>();
                             database = the_dependency<IDatabase>();
                             factory = the_dependency<IChangeTrackerFactory>();
                         };
 
-        static protected IStatementRegistry registry;
         static protected IDatabase database;
         static protected IChangeTrackerFactory factory;
     }
@@ -37,7 +35,8 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     [Concern(typeof (Transaction))]
     public class when_committing_a_transaction_and_an_item_in_the_identity_map_has_changed : behaves_like_transaction
     {
-        it should_commit_the_changes_to_that_item = () => tracker.was_told_to<IChangeTracker<IMovie>>(x => x.commit_to(database));
+        it should_commit_the_changes_to_that_item =
+            () => tracker.was_told_to<IChangeTracker<IMovie>>(x => x.commit_to(database));
 
         context c = () =>
                         {

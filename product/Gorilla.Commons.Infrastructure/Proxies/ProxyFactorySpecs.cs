@@ -17,7 +17,7 @@ namespace Gorilla.Commons.Infrastructure.Proxies
                         };
 
         because b =
-            () => { some_celebrity = ProxyFactory.Create<IPerson>(marshal_mathers, interceptors); };
+            () => { some_celebrity = ProxyFactory.create<IPerson>(marshal_mathers, interceptors); };
 
         it should_all_each_interceptor_to_intercept_the_invocation =
             () => some_celebrity.what_is_your_name().should_be_equal_to("slim shady");
@@ -49,10 +49,10 @@ namespace Gorilla.Commons.Infrastructure.Proxies
 
     public class MyNameIsSlimShadyInterceptor : IInterceptor
     {
-        public void Intercept(IInvocation invocation)
+        public void intercept(IInvocation invocation)
         {
-            invocation.Proceed();
-            invocation.ReturnValue = "slim shady";
+            invocation.proceed();
+            invocation.return_value = "slim shady";
         }
     }
 }
