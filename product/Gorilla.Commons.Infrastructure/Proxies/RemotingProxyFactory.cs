@@ -23,12 +23,12 @@ namespace Gorilla.Commons.Infrastructure.Proxies
                 var call = message.downcast_to<IMethodCallMessage>();
                 var invocation = new MethodCallInvocation<T>(interceptors, call, target);
                 invocation.Proceed();
-                return ReturnValue(invocation.ReturnValue, invocation.Arguments, call);
+                return return_value(invocation.ReturnValue, invocation.Arguments, call);
             }
             return null;
         }
 
-        IMessage ReturnValue(object return_value, object[] out_parameters, IMethodCallMessage call)
+        IMessage return_value(object return_value, object[] out_parameters, IMethodCallMessage call)
         {
             return new ReturnMessage(return_value,
                                      out_parameters,
@@ -36,7 +36,7 @@ namespace Gorilla.Commons.Infrastructure.Proxies
                                      call.LogicalCallContext, call);
         }
 
-        public T CreateProxy()
+        public T create_proxy()
         {
             return GetTransparentProxy().downcast_to<T>();
         }
