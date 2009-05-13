@@ -9,6 +9,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         void bind_to(T item);
         T get_selected_value();
         string text();
+        void on_leave(Action<IBindableTextBox<T>> action);
     }
 
     public class BindableTextBox<T> : IBindableTextBox<T>

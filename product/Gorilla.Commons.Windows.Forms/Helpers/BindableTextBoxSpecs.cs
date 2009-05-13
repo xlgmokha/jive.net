@@ -45,7 +45,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
 
         because b = () =>
                         {
-                            sut.downcast_to<BindableTextBox<string>>().on_leave(x => action.run());
+                            sut.on_leave(x => action.run());
                             control.when_text_is_changed();
                         };
 
