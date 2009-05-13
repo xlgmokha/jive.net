@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 
 namespace Gorilla.Commons.Windows.Forms.Helpers
@@ -10,6 +11,8 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         public TextControl(TextBox textbox)
         {
             this.textbox = textbox;
+            when_text_is_changed = () => { };
+            textbox.Leave += (sender, args) => when_text_is_changed();
         }
 
         public void set_selected_item(ItemToStore item)
@@ -27,5 +30,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         {
             return textbox.Text;
         }
+
+        public Action when_text_is_changed { get; set; }
     }
 }

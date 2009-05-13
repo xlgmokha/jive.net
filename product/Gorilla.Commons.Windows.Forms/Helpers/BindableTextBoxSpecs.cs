@@ -1,5 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Windows.Forms.Helpers
 {
@@ -34,13 +36,19 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         static string result;
     }
 
-    //public class when_the_value_of_a_textbox_changes : concerns_for_text_box
-    //{
-    //    it should_apply_the_new_value_to_the_text_control = () => {
-                         
-    //    };
+    [Concern(typeof (BindableTextBox<>))]
+    public class when_an_action_needs_to_be_performed_when_the_value_of_a_textbox_changes : concerns_for_text_box
+    {
+        it should_perform_that_action = () => action.was_told_to(x => x.run());
 
-    //    because b = () => {
-    //    };
-    //}
+        context c = () => { action = an<ICommand>(); };
+
+        because b = () =>
+                        {
+                            sut.downcast_to<BindableTextBox<string>>().on_leave(x => action.run());
+                            control.when_text_is_changed();
+                        };
+
+        static ICommand action;
+    }
 }

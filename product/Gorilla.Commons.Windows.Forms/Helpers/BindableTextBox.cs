@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
+
 namespace Gorilla.Commons.Windows.Forms.Helpers
 {
     public interface IBindableTextBox<T>
@@ -10,10 +14,12 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
     public class BindableTextBox<T> : IBindableTextBox<T>
     {
         readonly ITextControl<T> control;
+        readonly IList<Action<IBindableTextBox<T>>> actions = new List<Action<IBindableTextBox<T>>>();
 
         public BindableTextBox(ITextControl<T> control)
         {
             this.control = control;
+            control.when_text_is_changed = () => actions.each(x => x(this));
         }
 
         public void bind_to(T item)
@@ -29,6 +35,11 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         public string text()
         {
             return control.text();
+        }
+
+        public void on_leave(Action<IBindableTextBox<T>> action)
+        {
+            actions.Add(action);
         }
     }
 }
