@@ -75,6 +75,7 @@
     <Compile Include="Databinding\PropertyInspectorFactory.cs" />
     <Compile Include="Databinding\PropertyInspectorSpecs.cs" />
     <Compile Include="Databinding\TextBoxDataBindingSpecs.cs" />
+    <Compile Include="Databinding\TextBoxExtensions.cs" />
     <Compile Include="Databinding\TextPropertyBinding.cs" />
     <Compile Include="Helpers\BindableListBox.cs" />
     <Compile Include="Helpers\BindableListBoxSpecs.cs" />

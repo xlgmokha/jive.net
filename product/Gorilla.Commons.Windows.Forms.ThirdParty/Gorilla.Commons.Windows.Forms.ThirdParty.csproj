@@ -53,6 +53,8 @@
     <Compile Include="Krypton\BindableListExtensions.cs" />
     <Compile Include="Krypton\KryptonComboBoxListControl.cs" />
     <Compile Include="Krypton\KryptonListBoxListControl.cs" />
+    <Compile Include="Krypton\KryptonTextControl.cs" />
+    <Compile Include="Krypton\TextBoxExtensions.cs" />
     <Compile Include="Krypton\ListboxExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
