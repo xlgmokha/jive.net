@@ -81,7 +81,8 @@
     <Compile Include="Helpers\BindableListExtensions.cs" />
     <Compile Include="Helpers\BindableListFactory.cs" />
     <Compile Include="Helpers\BindableTextBox.cs" />
-    <Compile Include="Helpers\BindableTextBoxFactory.cs" />
+    <Compile Include="Helpers\BindableTextBoxExtensions.cs" />
+    <Compile Include="Helpers\BindableTextBoxExtensionsSpecs.cs" />
     <Compile Include="Helpers\BindableTextBoxSpecs.cs" />
     <Compile Include="Helpers\BitmapRegion.cs" />
     <Compile Include="Helpers\ButtonExtensions.cs" />
