@@ -49,10 +49,10 @@ namespace Gorilla.Commons.Infrastructure.Proxies
 
     public class MyNameIsSlimShadyInterceptor : IInterceptor
     {
-        public void Intercept(IInvocation invocation)
+        public void intercept(IInvocation invocation)
         {
-            invocation.Proceed();
-            invocation.ReturnValue = "slim shady";
+            invocation.proceed();
+            invocation.return_value = "slim shady";
         }
     }
 }

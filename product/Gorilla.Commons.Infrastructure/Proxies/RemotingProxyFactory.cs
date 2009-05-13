@@ -22,8 +22,8 @@ namespace Gorilla.Commons.Infrastructure.Proxies
             {
                 var call = message.downcast_to<IMethodCallMessage>();
                 var invocation = new MethodCallInvocation<T>(interceptors, call, target);
-                invocation.Proceed();
-                return return_value(invocation.ReturnValue, invocation.Arguments, call);
+                invocation.proceed();
+                return return_value(invocation.return_value, invocation.arguments, call);
             }
             return null;
         }

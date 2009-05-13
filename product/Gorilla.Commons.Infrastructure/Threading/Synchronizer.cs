@@ -25,7 +25,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         public IAsyncResult BeginInvoke(Delegate method, object[] args)
         {
             var result = new WorkItem(null, method, args);
-            worker_thread.QueueWorkItem(result);
+            worker_thread.queue_work_item(result);
             return result;
         }
 
@@ -46,7 +46,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
 
         public void Dispose()
         {
-            worker_thread.Kill();
+            worker_thread.kill();
         }
 
         class WorkerThread
@@ -66,14 +66,14 @@ namespace Gorilla.Commons.Infrastructure.Threading
                 end_loop_mutex = new Mutex();
                 item_added = new AutoResetEvent(false);
                 work_item_queue = new Queue();
-                CreateThread(true);
+                create_thread(true);
             }
 
-            internal void QueueWorkItem(WorkItem workItem)
+            internal void queue_work_item(WorkItem work_item)
             {
                 lock (work_item_queue.SyncRoot)
                 {
-                    work_item_queue.Enqueue(workItem);
+                    work_item_queue.Enqueue(work_item);
                     item_added.Set();
                 }
             }
@@ -96,29 +96,29 @@ namespace Gorilla.Commons.Infrastructure.Threading
                 }
             }
 
-            Thread CreateThread(bool autoStart)
+            Thread create_thread(bool auto_start)
             {
                 if (thread != null)
                 {
                     Debug.Assert(false);
                     return thread;
                 }
-                thread = new Thread(Run) {Name = "Synchronizer Worker Thread"};
-                if (autoStart)
+                thread = new Thread(run) {Name = "Synchronizer Worker Thread"};
+                if (auto_start)
                 {
                     thread.Start();
                 }
                 return thread;
             }
 
-            void Start()
+            void start()
             {
                 Debug.Assert(thread != null);
                 Debug.Assert(thread.IsAlive == false);
                 thread.Start();
             }
 
-            bool QueueEmpty
+            bool queue_empty
             {
                 get
                 {
@@ -135,7 +135,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
 
             WorkItem GetNext()
             {
-                if (QueueEmpty)
+                if (queue_empty)
                 {
                     return null;
                 }
@@ -145,11 +145,11 @@ namespace Gorilla.Commons.Infrastructure.Threading
                 }
             }
 
-            void Run()
+            void run()
             {
                 while (EndLoop == false)
                 {
-                    while (QueueEmpty == false)
+                    while (queue_empty == false)
                     {
                         if (EndLoop)
                         {
@@ -162,7 +162,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
                 }
             }
 
-            public void Kill()
+            public void kill()
             {
                 //Kill is called on client thread - must use cached thread object
                 Debug.Assert(thread != null);

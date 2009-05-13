@@ -7,7 +7,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
     public static class BitmapRegion
     {
         /// <summary>
-        /// Create and apply the region on the supplied control
+        /// create and apply the region on the supplied control
         /// </summary>
         /// <param name="control">The Control object to apply the region to</param>
         /// <param name="bitmap">The Bitmap object to create the region from</param>
@@ -76,7 +76,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         /// <returns>Calculated graphics path</returns>
         static GraphicsPath CalculateControlGraphicsPath(Bitmap bitmap)
         {
-            // Create GraphicsPath for our bitmap calculation
+            // create GraphicsPath for our bitmap calculation
             var graphicsPath = new GraphicsPath();
 
             // Use the top left pixel as our transparent color
@@ -101,7 +101,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
                         // Opaque pixel found, mark current position
                         colOpaquePixel = col;
 
-                        // Create another variable to set the current pixel position
+                        // create another variable to set the current pixel position
                         var colNext = col;
 
                         // Starting from current found opaque pixel, search for anymore opaque pixels 

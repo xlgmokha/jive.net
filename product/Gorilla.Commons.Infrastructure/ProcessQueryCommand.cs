@@ -22,7 +22,7 @@ namespace Gorilla.Commons.Infrastructure
         public void run(ICallback<T> callback)
         {
             var dto = query.fetch();
-            factory.create().run(new ActionCommand((Action) (()=> callback.run(dto))));
+            factory.create().run(new ActionCommand((Action) (() => callback.run(dto))));
         }
     }
 }

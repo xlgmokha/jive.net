@@ -77,8 +77,11 @@
     <Compile Include="Databinding\TextBoxDataBindingSpecs.cs" />
     <Compile Include="Databinding\TextPropertyBinding.cs" />
     <Compile Include="Helpers\BindableListBox.cs" />
+    <Compile Include="Helpers\BindableListBoxSpecs.cs" />
     <Compile Include="Helpers\BindableListExtensions.cs" />
     <Compile Include="Helpers\BindableListFactory.cs" />
+    <Compile Include="Helpers\BindableTextBox.cs" />
+    <Compile Include="Helpers\BindableTextBoxSpecs.cs" />
     <Compile Include="Helpers\BitmapRegion.cs" />
     <Compile Include="Helpers\ButtonExtensions.cs" />
     <Compile Include="Helpers\ComboBoxListControl.cs" />
@@ -93,8 +96,15 @@
     <Compile Include="Helpers\IBindableList.cs" />
     <Compile Include="Helpers\IEventTarget.cs" />
     <Compile Include="Helpers\IListControl.cs" />
+    <Compile Include="Helpers\ITextBoxCommand.cs" />
+    <Compile Include="Helpers\ITextControl.cs" />
     <Compile Include="Helpers\ListBoxListControl.cs" />
+    <Compile Include="Helpers\RebindTextBoxCommand.cs" />
+    <Compile Include="Helpers\RebindTextBoxCommandSpecs.cs" />
     <Compile Include="Helpers\SuspendLayout.cs" />
+    <Compile Include="Helpers\TextControl.cs" />
+    <Compile Include="Helpers\TextControlSpecs.cs" />
+    <Compile Include="Helpers\ValidateTextBoxCommandSpecs.cs" />
     <Compile Include="Keyboard\ShortcutKey.cs" />
     <Compile Include="Keyboard\ShortcutKeys.cs" />
     <Compile Include="Resources\ApplicationIcon.cs" />

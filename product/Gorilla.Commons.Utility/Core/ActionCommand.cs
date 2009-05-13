@@ -9,7 +9,6 @@ namespace Gorilla.Commons.Utility.Core
 
         public ActionCommand(Expression<Action> action) : this(action.Compile())
         {
-
         }
 
         public ActionCommand(Action action)

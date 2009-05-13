@@ -6,7 +6,7 @@ namespace Gorilla.Commons.Infrastructure.Registries
 {
     public class DefaultRegistry<T> : IRegistry<T>
     {
-        private readonly IDependencyRegistry registry;
+        readonly IDependencyRegistry registry;
 
         public DefaultRegistry(IDependencyRegistry registry)
         {

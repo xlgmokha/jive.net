@@ -1,5 +1,4 @@
 using System;
-using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 
 namespace Gorilla.Commons.Infrastructure.Transactions
@@ -29,7 +28,6 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         public void prepare(IDatabaseConnection connection)
         {
             connection.store(entity);
-            this.log().debug("saving: {0}", entity);
         }
     }
 

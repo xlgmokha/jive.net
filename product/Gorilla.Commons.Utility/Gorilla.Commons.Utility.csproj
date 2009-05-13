@@ -101,6 +101,7 @@
     <Compile Include="DateSpecs.cs" />
     <Compile Include="Extensions\CommandExtensions.cs" />
     <Compile Include="Extensions\ConfigurationExtensions.cs" />
+    <Compile Include="Extensions\ConfigurationExtensionsSpecs.cs" />
     <Compile Include="Extensions\ConversionExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensionsSpecs.cs" />
