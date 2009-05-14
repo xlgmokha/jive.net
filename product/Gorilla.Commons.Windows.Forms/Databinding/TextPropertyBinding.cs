@@ -1,4 +1,3 @@
-using System;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 
@@ -6,7 +5,7 @@ namespace Gorilla.Commons.Windows.Forms.Databinding
 {
     public class TextPropertyBinding<TypeToBindTo, PropertyType> : IPropertyBinding<PropertyType>
     {
-        private readonly IPropertyBinder<TypeToBindTo, PropertyType> binder;
+        readonly IPropertyBinder<TypeToBindTo, PropertyType> binder;
 
         public TextPropertyBinding(Control control, IPropertyBinder<TypeToBindTo, PropertyType> binder)
         {

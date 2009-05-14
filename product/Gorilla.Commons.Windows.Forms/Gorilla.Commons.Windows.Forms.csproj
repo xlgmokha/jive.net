@@ -65,6 +65,7 @@
     <Compile Include="Databinding\ComboBoxPropertyBinding.cs" />
     <Compile Include="Databinding\ControlBindingExtensions.cs" />
     <Compile Include="Databinding\Create.cs" />
+    <Compile Include="Databinding\CreateSpecs.cs" />
     <Compile Include="Databinding\DateTimePickerPropertyBinding.cs" />
     <Compile Include="Databinding\DateTimePropertyBindingSpecs.cs" />
     <Compile Include="Databinding\IPropertyBinding.cs" />
