@@ -4,38 +4,38 @@ using Gorilla.Commons.Utility.Core;
 
 namespace Gorilla.Commons.Utility.Extensions
 {
-    static public class SpecificationExtensions
+    public static class SpecificationExtensions
     {
-        static public IEnumerable<T> that_satisfy<T>(this IEnumerable<T> items_to_peek_in_to,
+        public static IEnumerable<T> that_satisfy<T>(this IEnumerable<T> items_to_peek_in_to,
                                                      Predicate<T> criteria_to_satisfy)
         {
             foreach (var item in items_to_peek_in_to ?? new List<T>())
                 if (item.satisfies(criteria_to_satisfy)) yield return item;
         }
 
-        static public bool satisfies<T>(this T item_to_interrogate, Predicate<T> criteria_to_satisfy)
+        public static bool satisfies<T>(this T item_to_interrogate, Predicate<T> criteria_to_satisfy)
         {
             return criteria_to_satisfy(item_to_interrogate);
         }
 
-        static public bool satisfies<T>(this T item_to_validate, ISpecification<T> criteria_to_satisfy)
+        public static bool satisfies<T>(this T item_to_validate, ISpecification<T> criteria_to_satisfy)
         {
             return item_to_validate.satisfies(criteria_to_satisfy.is_satisfied_by);
         }
 
-        static public ISpecification<T> and<T>(this ISpecification<T> left, ISpecification<T> right)
+        public static ISpecification<T> and<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new AndSpecification<T>(left, right);
+            return new PredicateSpecification<T>(x => left.is_satisfied_by(x) && right.is_satisfied_by(x));
         }
 
-        static public ISpecification<T> or<T>(this ISpecification<T> left, ISpecification<T> right)
+        public static ISpecification<T> or<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new OrSpecification<T>(left, right);
+            return new PredicateSpecification<T>(x => left.is_satisfied_by(x) || right.is_satisfied_by(x));
         }
 
-        static public ISpecification<T> not<T>(this ISpecification<T> original)
+        public static ISpecification<T> not<T>(this ISpecification<T> original)
         {
-            return new NotSpecification<T>(original);
+            return new PredicateSpecification<T>(x => !original.is_satisfied_by(x));
         }
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
   <project name="gorilla.commons">	
+	<property name="nant.settings.currentframework" value="net-3.5" />
 	<property name="project.name" value="${project::get-name()}" />
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
