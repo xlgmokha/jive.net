@@ -73,6 +73,7 @@
     <Compile Include="Core\FuncSpecification.cs" />
     <Compile Include="Core\IBuilder.cs" />
     <Compile Include="Core\ICallback.cs" />
+    <Compile Include="Core\ICallbackCommand.cs" />
     <Compile Include="Core\ICommand.cs" />
     <Compile Include="Core\IConfiguration.cs" />
     <Compile Include="Core\Id.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Core\IIdentifiable.cs" />
     <Compile Include="Core\IImport.cs" />
     <Compile Include="Core\IMapper.cs" />
+    <Compile Include="Core\INotification.cs" />
     <Compile Include="Core\IParameterizedCommand.cs" />
     <Compile Include="Core\IParser.cs" />
     <Compile Include="Core\IQuery.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Core\IVisitable.cs" />
     <Compile Include="Core\IVisitor.cs" />
     <Compile Include="Core\Mapper.cs" />
+    <Compile Include="Core\NotificationMessage.cs" />
     <Compile Include="Core\NotSpecification.cs" />
     <Compile Include="Core\NotSpecificationSpecs.cs" />
     <Compile Include="Core\OrSpecification.cs" />

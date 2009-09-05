@@ -1,6 +1,4 @@
-using Gorilla.Commons.Utility.Core;
-
-namespace Gorilla.Commons.Infrastructure
+namespace Gorilla.Commons.Utility.Core
 {
     public interface ICallbackCommand<T> : IParameterizedCommand<ICallback<T>>
     {
