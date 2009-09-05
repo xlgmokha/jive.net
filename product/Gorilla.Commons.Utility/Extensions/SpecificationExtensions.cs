@@ -25,17 +25,17 @@ namespace Gorilla.Commons.Utility.Extensions
 
         static public ISpecification<T> and<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new AndSpecification<T>(left, right);
+            return new PredicateSpecification<T>(x => left.is_satisfied_by(x) && right.is_satisfied_by(x));
         }
 
         static public ISpecification<T> or<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new OrSpecification<T>(left, right);
+            return new PredicateSpecification<T>(x => left.is_satisfied_by(x) || right.is_satisfied_by(x));
         }
 
         static public ISpecification<T> not<T>(this ISpecification<T> original)
         {
-            return new NotSpecification<T>(original);
+            return new PredicateSpecification<T>(x => !original.is_satisfied_by(x));
         }
     }
 }

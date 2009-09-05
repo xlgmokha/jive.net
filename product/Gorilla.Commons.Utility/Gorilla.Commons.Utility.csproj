@@ -75,6 +75,7 @@
     <Compile Include="Core\ICallback.cs" />
     <Compile Include="Core\ICommand.cs" />
     <Compile Include="Core\IConfiguration.cs" />
+    <Compile Include="Core\Id.cs" />
     <Compile Include="Core\IDisposableCommand.cs" />
     <Compile Include="Core\IFactory.cs" />
     <Compile Include="Core\IIdentifiable.cs" />

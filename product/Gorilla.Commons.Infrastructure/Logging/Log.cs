@@ -4,14 +4,14 @@ using Gorilla.Commons.Infrastructure.Logging.Console;
 
 namespace Gorilla.Commons.Infrastructure.Logging
 {
-    public static class Log
+    static public class Log
     {
-        public static ILogger For<T>(T item_to_create_logger_for)
+        static public ILogger For<T>(T item_to_create_logger_for)
         {
             return For(typeof (T));
         }
 
-        public static ILogger For(Type type_to_create_a_logger_for)
+        static public ILogger For(Type type_to_create_a_logger_for)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
             }
             catch
             {
-                return new ConsoleLogger();
+                return new TextLogger(System.Console.Out);
             }
         }
     }

@@ -95,7 +95,6 @@
     <Compile Include="Castle\DynamicProxy\Interceptors\RaiseEventInterceptor.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\RunOnUIThread.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\UnitOfWorkInterceptor.cs" />
     <Compile Include="Castle\Windsor\WindsorExtensions.cs" />
     <Compile Include="IDependencyRegistration.cs" />
     <Compile Include="Log4Net\Log4NetLogFactory.cs" />
