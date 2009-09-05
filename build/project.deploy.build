@@ -52,16 +52,6 @@
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 
-		<property name="app.output" value="gorilla.commons.windows.forms.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.windows.forms" />
-		<call target="app.compile" />
-		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
-
-		<property name="app.output" value="gorilla.commons.windows.forms.thirdparty.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.windows.forms.thirdparty" />
-		<call target="app.compile" />
-		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
-
 		<!--
 		<property name="app.output" value="gorilla.testing.dll" />
 		<property name="product.dir" value="${base.dir}\product\gorilla.commons.testing" />
