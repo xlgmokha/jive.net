@@ -71,10 +71,6 @@
     <Compile Include="Container\Resolve.cs" />
     <Compile Include="Container\ResolveSpecs.cs" />
     <Compile Include="Debugging\Launch.cs" />
-    <Compile Include="Eventing\EventAggregator.cs" />
-    <Compile Include="Eventing\EventAggregatorSpecs.cs" />
-    <Compile Include="Eventing\IEvent.cs" />
-    <Compile Include="Eventing\IEventSubscriber.cs" />
     <Compile Include="FileSystem\ApplicationFile.cs" />
     <Compile Include="FileSystem\IFile.cs" />
     <Compile Include="Logging\TextLogger.cs" />
@@ -96,29 +92,6 @@
     <Compile Include="Reflection\IAssembly.cs" />
     <Compile Include="Registries\DefaultRegistry.cs" />
     <Compile Include="Registries\DefaultRegistrySpecs.cs" />
-    <Compile Include="Threading\AsynchronousCommandProcessor.cs" />
-    <Compile Include="Threading\BackgroundThread.cs" />
-    <Compile Include="Threading\BackgroundThreadFactory.cs" />
-    <Compile Include="Threading\BackgroundThreadFactorySpecs.cs" />
-    <Compile Include="Threading\BackgroundThreadSpecs.cs" />
-    <Compile Include="Threading\CommandProcessor.cs" />
-    <Compile Include="Threading\CommandProcessorSpecs.cs" />
-    <Compile Include="Threading\ICommandProcessor.cs" />
-    <Compile Include="Threading\IntervalTimer.cs" />
-    <Compile Include="Threading\IntervalTimerSpecs.cs" />
-    <Compile Include="Threading\ITimerClient.cs" />
-    <Compile Include="Threading\IWorkerThread.cs" />
-    <Compile Include="Threading\SynchronizationContextFactory.cs" />
-    <Compile Include="Threading\SynchronizedCommand.cs" />
-    <Compile Include="Threading\SynchronizedContext.cs" />
-    <Compile Include="Threading\Synchronizer.cs" />
-    <Compile Include="Threading\ThreadingExtensions.cs" />
-    <Compile Include="Threading\TimerFactory.cs" />
-    <Compile Include="Threading\TimerFactorySpecs.cs" />
-    <Compile Include="Threading\WorkerThread.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Threading\WorkItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

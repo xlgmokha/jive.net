@@ -92,8 +92,6 @@
     <Compile Include="Autofac\AutofacDependencyRegistry.cs" />
     <Compile Include="Autofac\AutofacDependencyRegistryBuilder.cs" />
     <Compile Include="Autofac\AutofacSpecs.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\RaiseEventInterceptor.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnUIThread.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SynchronizedInterceptor.cs" />
     <Compile Include="Castle\Windsor\WindsorExtensions.cs" />
     <Compile Include="IDependencyRegistration.cs" />
@@ -108,8 +106,6 @@
     <Compile Include="Castle\DynamicProxy\Interceptors\IMethodCallTracker.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTracker.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTrackerSpecs.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptorSpecs.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SelectiveInterceptor.cs" />
     <Compile Include="Castle\DynamicProxy\IProxyBuilder.cs" />
     <Compile Include="Castle\DynamicProxy\IProxyFactory.cs" />
