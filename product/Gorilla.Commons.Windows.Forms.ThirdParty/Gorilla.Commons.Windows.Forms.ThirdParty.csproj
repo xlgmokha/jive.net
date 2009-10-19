@@ -50,14 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Krypton\BindableListExtensions.cs" />
-    <Compile Include="Krypton\KryptonComboBoxListControl.cs" />
-    <Compile Include="Krypton\KryptonListBoxListControl.cs" />
-    <Compile Include="Krypton\KryptonTextControl.cs" />
-    <Compile Include="Krypton\TextBoxExtensions.cs" />
-    <Compile Include="Krypton\ListboxExtensions.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>

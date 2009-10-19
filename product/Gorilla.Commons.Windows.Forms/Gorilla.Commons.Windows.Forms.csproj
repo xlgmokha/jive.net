@@ -59,63 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Databinding\BindingSelector.cs" />
-    <Compile Include="Databinding\BindingSelectorSpecs.cs" />
-    <Compile Include="Databinding\ComboBoxDataBindingSpecs.cs" />
-    <Compile Include="Databinding\ComboBoxPropertyBinding.cs" />
-    <Compile Include="Databinding\ControlBindingExtensions.cs" />
-    <Compile Include="Databinding\Create.cs" />
-    <Compile Include="Databinding\CreateSpecs.cs" />
-    <Compile Include="Databinding\DateTimePickerPropertyBinding.cs" />
-    <Compile Include="Databinding\DateTimePropertyBindingSpecs.cs" />
-    <Compile Include="Databinding\IPropertyBinding.cs" />
-    <Compile Include="Databinding\ListboxExtensions.cs" />
-    <Compile Include="Databinding\PropertyBinder.cs" />
-    <Compile Include="Databinding\PropertyBinderSpecs.cs" />
-    <Compile Include="Databinding\PropertyInspector.cs" />
-    <Compile Include="Databinding\PropertyInspectorFactory.cs" />
-    <Compile Include="Databinding\PropertyInspectorSpecs.cs" />
-    <Compile Include="Databinding\TextBoxDataBindingSpecs.cs" />
-    <Compile Include="Databinding\TextBoxExtensions.cs" />
-    <Compile Include="Databinding\TextPropertyBinding.cs" />
-    <Compile Include="Helpers\BindableListBox.cs" />
-    <Compile Include="Helpers\BindableListBoxSpecs.cs" />
-    <Compile Include="Helpers\BindableListExtensions.cs" />
-    <Compile Include="Helpers\BindableListFactory.cs" />
-    <Compile Include="Helpers\BindableTextBox.cs" />
-    <Compile Include="Helpers\BindableTextBoxExtensions.cs" />
-    <Compile Include="Helpers\BindableTextBoxExtensionsSpecs.cs" />
-    <Compile Include="Helpers\BindableTextBoxSpecs.cs" />
-    <Compile Include="Helpers\BitmapRegion.cs" />
-    <Compile Include="Helpers\ButtonExtensions.cs" />
-    <Compile Include="Helpers\ComboBoxListControl.cs" />
-    <Compile Include="Helpers\ControlAdapter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Helpers\ControlExtensions.cs" />
-    <Compile Include="Helpers\Events.cs" />
-    <Compile Include="Helpers\EventTrigger.cs" />
-    <Compile Include="Helpers\EventTriggerExtensions.cs" />
-    <Compile Include="Helpers\EventTriggerSpecs.cs" />
-    <Compile Include="Helpers\IBindableList.cs" />
-    <Compile Include="Helpers\IEventTarget.cs" />
-    <Compile Include="Helpers\IListControl.cs" />
-    <Compile Include="Helpers\ITextBoxCommand.cs" />
-    <Compile Include="Helpers\ITextControl.cs" />
-    <Compile Include="Helpers\ListBoxListControl.cs" />
-    <Compile Include="Helpers\RebindTextBoxCommand.cs" />
-    <Compile Include="Helpers\RebindTextBoxCommandSpecs.cs" />
-    <Compile Include="Helpers\SuspendLayout.cs" />
-    <Compile Include="Helpers\TextControl.cs" />
-    <Compile Include="Helpers\TextControlSpecs.cs" />
-    <Compile Include="Helpers\ValidateTextBoxCommandSpecs.cs" />
-    <Compile Include="Keyboard\ShortcutKey.cs" />
-    <Compile Include="Keyboard\ShortcutKeys.cs" />
-    <Compile Include="Resources\ApplicationIcon.cs" />
-    <Compile Include="Resources\ApplicationImage.cs" />
-    <Compile Include="Resources\HybridIcon.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>Gorilla.Commons.Infrastructure</Name>

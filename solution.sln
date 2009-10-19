@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure.ThirdParty", "product\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Windows.Forms", "product\Gorilla.Commons.Windows.Forms\Gorilla.Commons.Windows.Forms.csproj", "{54B55B2B-A58F-45DF-A446-234C9D70DC0B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Windows.Forms.ThirdParty", "product\Gorilla.Commons.Windows.Forms.ThirdParty\Gorilla.Commons.Windows.Forms.ThirdParty.csproj", "{8050731D-48B2-4636-9D1C-2B6D052F39DC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Build", "build\Gorilla.Commons.Build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Utility", "product\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
@@ -33,14 +29,6 @@ Global
 		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU

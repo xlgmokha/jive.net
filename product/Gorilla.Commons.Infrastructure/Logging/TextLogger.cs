@@ -5,15 +5,11 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Infrastructure.Logging.Console
 {
-    public class ConsoleLogger : ILogger
+    public class TextLogger : ILogger
     {
         readonly TextWriter writer;
 
-        public ConsoleLogger() : this(System.Console.Out)
-        {
-        }
-
-        public ConsoleLogger(TextWriter writer)
+        public TextLogger(TextWriter writer)
         {
             this.writer = writer;
         }
@@ -25,7 +21,7 @@ namespace Gorilla.Commons.Infrastructure.Logging.Console
 
         public void debug(string formatted_string, params object[] arguments)
         {
-            writer.WriteLine("Thread: {0}, {1}", Thread.CurrentThread.ManagedThreadId,
+            writer.WriteLine("[{0}] - {1}", Thread.CurrentThread.ManagedThreadId,
                              formatted_string.formatted_using(arguments));
         }
 

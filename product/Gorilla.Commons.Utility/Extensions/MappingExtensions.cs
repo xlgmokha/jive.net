@@ -12,6 +12,11 @@ namespace Gorilla.Commons.Utility.Extensions
             return conversion(item);
         }
 
+        public static Output map_using<Input, Output>(this Input item, IMapper<Input, Output> mapper)
+        {
+            return map_using(item, x => mapper.map_from(x));
+        }
+
         public static IEnumerable<Output> map_all_using<Input, Output>(this IEnumerable<Input> items,
                                                                        Converter<Input, Output> mapper)
         {
@@ -21,7 +26,7 @@ namespace Gorilla.Commons.Utility.Extensions
         public static IEnumerable<Output> map_all_using<Input, Output>(this IEnumerable<Input> items,
                                                                        IMapper<Input, Output> mapper)
         {
-            return null == items ? new List<Output>() : items.Select(x => mapper.map_from(x));
+            return map_all_using(items, x => mapper.map_from(x));
         }
 
         public static IMapper<Left, Right> then<Left, Middle, Right>(this IMapper<Left, Middle> left,
