@@ -4,7 +4,7 @@ using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors
 {
     [Concern(typeof (MethodCallTracker<>))]
     public class behaves_like_method_call_tracker :
@@ -23,18 +23,18 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
         static IEnumerable<string> result;
 
         context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            invocation
-                                .is_told_to(s => s.Method)
-                                .it_will_return(typeof (IAnInterface).GetMethod("ValueReturningMethodWithAnArgument"));
-                        };
+        {
+            invocation = an<IInvocation>();
+            invocation
+                .is_told_to(s => s.Method)
+                .it_will_return(typeof (IAnInterface).GetMethod("ValueReturningMethodWithAnArgument"));
+        };
 
         because b = () =>
-                        {
-                            sut.Intercept(invocation);
-                            result = sut.methods_to_intercept();
-                        };
+        {
+            sut.Intercept(invocation);
+            result = sut.methods_to_intercept();
+        };
 
         it should_return_all_the_methods_that_are_specified_for_interception =
             () => result.should_contain(typeof (IAnInterface).GetMethod("ValueReturningMethodWithAnArgument").Name);

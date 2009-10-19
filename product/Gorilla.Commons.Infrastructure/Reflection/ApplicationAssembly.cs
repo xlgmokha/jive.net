@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace Gorilla.Commons.Infrastructure.Reflection
 {
-    public class ApplicationAssembly : IAssembly
+    public class ApplicationAssembly : Assembly
     {
-        readonly Assembly assembly;
+        readonly System.Reflection.Assembly assembly;
 
-        public ApplicationAssembly(Assembly assembly)
+        public ApplicationAssembly(System.Reflection.Assembly assembly)
         {
             this.assembly = assembly;
         }

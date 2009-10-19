@@ -8,8 +8,8 @@
     <ProjectGuid>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gorilla.Commons.Infrastructure</RootNamespace>
-    <AssemblyName>Gorilla.Commons.Infrastructure</AssemblyName>
+    <RootNamespace>gorilla.commons.infrastructure</RootNamespace>
+    <AssemblyName>gorilla.commons.infrastructure</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -63,16 +63,16 @@
   <ItemGroup>
     <Compile Include="Cloning\BinarySerializer.cs" />
     <Compile Include="Cloning\BinarySerializerSpecs.cs" />
-    <Compile Include="Cloning\ISerializer.cs" />
-    <Compile Include="Cloning\Prototype.cs" />
     <Compile Include="Cloning\Serializer.cs" />
+    <Compile Include="Cloning\Prototype.cs" />
+    <Compile Include="Cloning\FileStreamSerializer.cs" />
     <Compile Include="Container\DependencyResolutionException.cs" />
-    <Compile Include="Container\IDependencyRegistry.cs" />
+    <Compile Include="Container\DependencyRegistry.cs" />
     <Compile Include="Container\Resolve.cs" />
     <Compile Include="Container\ResolveSpecs.cs" />
     <Compile Include="Debugging\Launch.cs" />
     <Compile Include="FileSystem\ApplicationFile.cs" />
-    <Compile Include="FileSystem\IFile.cs" />
+    <Compile Include="FileSystem\File.cs" />
     <Compile Include="Logging\TextLogger.cs" />
     <Compile Include="Logging\LogFactory.cs" />
     <Compile Include="Logging\Loggable.cs" />
@@ -81,22 +81,22 @@
     <Compile Include="Logging\LoggingExtensions.cs" />
     <Compile Include="Logging\LogSpecs.cs" />
     <Compile Include="Proxies\ExceptionExtensions.cs" />
-    <Compile Include="Proxies\IInterceptor.cs" />
-    <Compile Include="Proxies\IInvocation.cs" />
+    <Compile Include="Proxies\Interceptor.cs" />
+    <Compile Include="Proxies\Invocation.cs" />
     <Compile Include="Proxies\MethodCallInvocation.cs" />
     <Compile Include="Proxies\ProxyFactory.cs" />
     <Compile Include="Proxies\ProxyFactorySpecs.cs" />
     <Compile Include="Proxies\RemotingProxyFactory.cs" />
     <Compile Include="Reflection\ApplicationAssembly.cs" />
     <Compile Include="Reflection\EnvironmentExtensions.cs" />
-    <Compile Include="Reflection\IAssembly.cs" />
+    <Compile Include="Reflection\Assembly.cs" />
     <Compile Include="Registries\DefaultRegistry.cs" />
     <Compile Include="Registries\DefaultRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+    <ProjectReference Include="..\Gorilla.Commons.Testing\test.helpers.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>Gorilla.Commons.Testing</Name>
+      <Name>test.helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>

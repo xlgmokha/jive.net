@@ -7,9 +7,9 @@ using MbUnit.Framework;
 namespace Gorilla.Commons.Infrastructure.Cloning
 {
     [Concern(typeof (BinarySerializer<TestItem>))]
-    public abstract class when_a_file_is_specified_to_serialize_an_item_to : concerns_for<ISerializer<TestItem>, BinarySerializer<TestItem>>
+    public abstract class when_a_file_is_specified_to_serialize_an_item_to : concerns_for<Serializer<TestItem>, BinarySerializer<TestItem>>
     {
-        public override ISerializer<TestItem> create_sut()
+        public override Serializer<TestItem> create_sut()
         {
             return new BinarySerializer<TestItem>(file_name);
         }

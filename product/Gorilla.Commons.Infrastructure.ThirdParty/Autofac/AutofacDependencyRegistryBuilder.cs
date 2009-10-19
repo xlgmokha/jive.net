@@ -3,11 +3,14 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using AutofacContrib.DynamicProxy2;
+using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Infrastructure.Autofac;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Autofac
+namespace gorilla.commons.infrastructure.thirdparty.Autofac
 {
     public class AutofacDependencyRegistryBuilder : IDependencyRegistration
     {
@@ -51,20 +54,20 @@ namespace Gorilla.Commons.Infrastructure.Autofac
                 builder.Register(implementation).As(contract).FactoryScoped();
         }
 
-        public void proxy<T>(Configuration<IProxyBuilder<T>> configuration, Func<T> target)
+        public void proxy<T>(Configuration<ProxyBuilder<T>> configuration, Func<T> target)
         {
-            var proxy_builder = new ProxyBuilder<T>();
+            var proxy_builder = new CastleDynamicProxyBuilder<T>();
             configuration.configure(proxy_builder);
             builder.Register(x => proxy_builder.create_proxy_for(target)).As<T>().FactoryScoped();
         }
 
         public void proxy<T, Configuration>(Func<T> target)
-            where Configuration : Configuration<IProxyBuilder<T>>, new()
+            where Configuration : Configuration<ProxyBuilder<T>>, new()
         {
             proxy(new Configuration(), target);
         }
 
-        public IDependencyRegistry build()
+        public DependencyRegistry build()
         {
             return new AutofacDependencyRegistry(container);
         }

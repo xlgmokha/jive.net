@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor
 {
-    public class WindsorDependencyRegistry : IDependencyRegistration, IDependencyRegistry
+    public class WindsorDependencyRegistry : IDependencyRegistration, DependencyRegistry
     {
         readonly IWindsorContainer underlying_container;
 
@@ -23,7 +25,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
             //return underlying_container.Kernel.Resolve<Interface>();
         }
 
-        public IEnumerable<Interface> all_the<Interface>()
+        public IEnumerable<Interface> get_all<Interface>()
         {
             return underlying_container.ResolveAll<Interface>();
         }
@@ -58,20 +60,20 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
             return "{0}-{1}".formatted_using(interface_type.FullName, implementation_type.FullName);
         }
 
-        public void proxy<T>(Configuration<IProxyBuilder<T>> configuration, Func<T> target)
+        public void proxy<T>(Configuration<ProxyBuilder<T>> configuration, Func<T> target)
         {
-            var builder = new ProxyBuilder<T>();
+            var builder = new CastleDynamicProxyBuilder<T>();
             configuration.configure(builder);
             singleton(() => builder.create_proxy_for(target));
         }
 
         public void proxy<T, Configuration>(Func<T> target)
-            where Configuration : Configuration<IProxyBuilder<T>>, new()
+            where Configuration : Configuration<ProxyBuilder<T>>, new()
         {
             proxy(new Configuration(), target);
         }
 
-        public IDependencyRegistry build()
+        public DependencyRegistry build()
         {
             return this;
         }

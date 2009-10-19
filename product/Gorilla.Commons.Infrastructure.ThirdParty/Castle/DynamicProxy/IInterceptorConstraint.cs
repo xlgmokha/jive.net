@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
-    public interface IInterceptorConstraint<TypeToPutConstraintOn> : IConstraintSelector<TypeToPutConstraintOn>
+    public interface IInterceptorConstraint<TypeToPutConstraintOn> : ConstraintSelector<TypeToPutConstraintOn>
     {
         IEnumerable<string> methods_to_intercept();
     }

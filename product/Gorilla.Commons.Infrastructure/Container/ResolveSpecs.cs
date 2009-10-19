@@ -15,7 +15,7 @@ namespace Gorilla.Commons.Infrastructure.Container
     {
         context c = () =>
                         {
-                            registry = an<IDependencyRegistry>();
+                            registry = an<DependencyRegistry>();
                             presenter = an<Command>();
                             registry.is_told_to(x => x.get_a<Command>()).it_will_return(presenter);
                             Resolve.initialize_with(registry);
@@ -30,7 +30,7 @@ namespace Gorilla.Commons.Infrastructure.Container
 
         after_each_observation a = () => Resolve.initialize_with(null);
 
-        static IDependencyRegistry registry;
+        static DependencyRegistry registry;
         static Command result;
         static Command presenter;
     }
@@ -40,7 +40,7 @@ namespace Gorilla.Commons.Infrastructure.Container
     {
         context c = () =>
                         {
-                            registry = an<IDependencyRegistry>();
+                            registry = an<DependencyRegistry>();
                             registry.is_told_to(x => x.get_a<Command>()).it_will_throw(new Exception());
                             Resolve.initialize_with(registry);
                         };
@@ -52,7 +52,7 @@ namespace Gorilla.Commons.Infrastructure.Container
         it should_throw_a_dependency_resolution_exception =
             () => the_call.should_have_thrown<DependencyResolutionException<Command>>();
 
-        static IDependencyRegistry registry;
+        static DependencyRegistry registry;
         static Action the_call;
     }
 }

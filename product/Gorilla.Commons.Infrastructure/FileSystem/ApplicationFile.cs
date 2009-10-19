@@ -1,8 +1,6 @@
-using System.IO;
-
 namespace Gorilla.Commons.Infrastructure.FileSystem
 {
-    public class ApplicationFile : IFile
+    public class ApplicationFile : File
     {
         public ApplicationFile(string path)
         {
@@ -13,17 +11,17 @@ namespace Gorilla.Commons.Infrastructure.FileSystem
 
         public virtual bool does_the_file_exist()
         {
-            return !string.IsNullOrEmpty(path) && File.Exists(path);
+            return !string.IsNullOrEmpty(path) && System.IO.File.Exists(path);
         }
 
         public void copy_to(string other_path)
         {
-            File.Copy(path, other_path, true);
+            System.IO.File.Copy(path, other_path, true);
         }
 
         public void delete()
         {
-            File.Delete(path);
+            System.IO.File.Delete(path);
         }
 
         public static implicit operator ApplicationFile(string file_path)

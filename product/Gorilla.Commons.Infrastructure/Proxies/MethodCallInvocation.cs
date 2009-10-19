@@ -5,17 +5,17 @@ using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Proxies
 {
-    public class MethodCallInvocation<T> : IInvocation
+    public class MethodCallInvocation<T> : Invocation
     {
         readonly IMethodCallMessage call;
         readonly T target;
-        readonly Stack<IInterceptor> interceptors;
+        readonly Stack<Interceptor> interceptors;
 
-        public MethodCallInvocation(IEnumerable<IInterceptor> interceptors, IMethodCallMessage call, T target)
+        public MethodCallInvocation(IEnumerable<Interceptor> interceptors, IMethodCallMessage call, T target)
         {
             this.call = call;
             this.target = target;
-            this.interceptors = new Stack<IInterceptor>(interceptors);
+            this.interceptors = new Stack<Interceptor>(interceptors);
             arguments = call.Properties["__Args"].downcast_to<object[]>();
             method = call.MethodBase.downcast_to<MethodInfo>();
         }

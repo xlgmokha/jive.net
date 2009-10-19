@@ -9,13 +9,13 @@ namespace Gorilla.Commons.Infrastructure
     {
         context c = () =>
                         {
-                            test_container = dependency<IDependencyRegistry>();
+                            test_container = dependency<DependencyRegistry>();
                             Resolve.initialize_with(test_container);
                         };
 
         after_each_observation a = () => Resolve.initialize_with(null);
 
-        protected static IDependencyRegistry test_container;
+        protected static DependencyRegistry test_container;
     }
 
     [Concern(typeof (Lazy))]

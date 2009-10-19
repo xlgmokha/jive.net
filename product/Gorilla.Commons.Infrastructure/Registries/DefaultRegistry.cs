@@ -7,16 +7,16 @@ namespace Gorilla.Commons.Infrastructure.Registries
 {
     public class DefaultRegistry<T> : Registry<T>
     {
-        readonly IDependencyRegistry registry;
+        readonly DependencyRegistry registry;
 
-        public DefaultRegistry(IDependencyRegistry registry)
+        public DefaultRegistry(DependencyRegistry registry)
         {
             this.registry = registry;
         }
 
         public IEnumerable<T> all()
         {
-            return registry.all_the<T>();
+            return registry.get_all<T>();
         }
 
         public IEnumerator<T> GetEnumerator()

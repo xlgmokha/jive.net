@@ -13,7 +13,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
             () =>
                 {
                     var factory = an<LogFactory>();
-                    var registry = an<IDependencyRegistry>();
+                    var registry = an<DependencyRegistry>();
                     logger = an<Logger>();
                     registry.is_told_to(x => x.get_a<LogFactory>()).it_will_return(factory);
                     factory.is_told_to(x => x.create_for(typeof (string))).it_will_return(logger);

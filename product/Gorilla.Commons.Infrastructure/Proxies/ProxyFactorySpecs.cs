@@ -25,7 +25,7 @@ namespace Gorilla.Commons.Infrastructure.Proxies
 
             static Person marshal_mathers;
             static IPerson some_celebrity;
-            static IInterceptor interceptors;
+            static Interceptor interceptors;
         }
 
         public interface IPerson
@@ -48,9 +48,9 @@ namespace Gorilla.Commons.Infrastructure.Proxies
             }
         }
 
-        public class MyNameIsSlimShadyInterceptor : IInterceptor
+        public class MyNameIsSlimShadyInterceptor : Interceptor
         {
-            public void intercept(IInvocation invocation)
+            public void intercept(Invocation invocation)
             {
                 invocation.proceed();
                 invocation.return_value = "slim shady";

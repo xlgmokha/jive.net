@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Testing", "product\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.helpers", "product\Gorilla.Commons.Testing\test.helpers.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure", "product\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "product\Gorilla.Commons.Infrastructure\infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure.ThirdParty", "product\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty", "product\Gorilla.Commons.Infrastructure.ThirdParty\infrastructure.thirdparty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Build", "build\Gorilla.Commons.Build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\Gorilla.Commons.Utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
 EndProject

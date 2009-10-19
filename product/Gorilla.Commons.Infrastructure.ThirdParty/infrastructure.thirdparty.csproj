@@ -8,8 +8,8 @@
     <ProjectGuid>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gorilla.Commons.Infrastructure</RootNamespace>
-    <AssemblyName>Gorilla.Commons.Infrastructure.ThirdParty</AssemblyName>
+    <RootNamespace>gorilla.commons.infrastructure.thirdparty</RootNamespace>
+    <AssemblyName>gorilla.commons.infrastructure.thirdparty</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -97,7 +97,7 @@
     <Compile Include="IDependencyRegistration.cs" />
     <Compile Include="Log4Net\Log4NetLogFactory.cs" />
     <Compile Include="Log4Net\Log4NetLogger.cs" />
-    <Compile Include="Castle\DynamicProxy\IConstraintSelector.cs" />
+    <Compile Include="Castle\DynamicProxy\ConstraintSelector.cs" />
     <Compile Include="Castle\DynamicProxy\IInterceptorConstraint.cs" />
     <Compile Include="Castle\DynamicProxy\IInterceptorConstraintFactory.cs" />
     <Compile Include="Castle\DynamicProxy\IMethodCallTrackerFactory.cs" />
@@ -107,19 +107,19 @@
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTracker.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTrackerSpecs.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SelectiveInterceptor.cs" />
-    <Compile Include="Castle\DynamicProxy\IProxyBuilder.cs" />
-    <Compile Include="Castle\DynamicProxy\IProxyFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyFactory.cs" />
     <Compile Include="Lazy.cs" />
     <Compile Include="Castle\DynamicProxy\LazyLoadedInterceptor.cs" />
     <Compile Include="LazySpecs.cs" />
-    <Compile Include="Castle\DynamicProxy\ProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\CastleDynamicProxyBuilder.cs" />
     <Compile Include="Castle\DynamicProxy\ProxyBuilderSpecs.cs" />
-    <Compile Include="Castle\DynamicProxy\ProxyFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\CastleDynamicProxyFactory.cs" />
     <Compile Include="Castle\DynamicProxy\ProxyFactorySpecs.cs" />
     <Compile Include="Castle\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Castle\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Castle\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
-    <Compile Include="Castle\Windsor\Configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ComponentExclusionSpecification.cs" />
     <Compile Include="Castle\Windsor\Configuration\LogComponent.cs" />
     <Compile Include="Castle\Windsor\Configuration\LoggingInterceptor.cs" />
     <Compile Include="Castle\Windsor\Configuration\RegisterComponentContract.cs" />
@@ -128,13 +128,13 @@
     <Compile Include="Castle\Windsor\WindsorDependencyRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
+    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
-      <Name>Gorilla.Commons.Infrastructure</Name>
+      <Name>infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+    <ProjectReference Include="..\Gorilla.Commons.Testing\test.helpers.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>Gorilla.Commons.Testing</Name>
+      <Name>test.helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>

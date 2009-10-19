@@ -4,10 +4,10 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor
 {
     [Concern(typeof (WindsorDependencyRegistry))]
-    public abstract class behaves_like_windsor_dependency_registry : concerns_for<IDependencyRegistry, WindsorDependencyRegistry>
+    public abstract class behaves_like_windsor_dependency_registry : concerns_for<DependencyRegistry, WindsorDependencyRegistry>
     {
     }
 
@@ -21,11 +21,11 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
         it should_not_return_null = () => result.should_not_be_null();
 
         context c = () =>
-                        {
-                            var container = the_dependency<IWindsorContainer>();
-                            var bird = new BlueBird();
-                            container.is_told_to(x => x.Resolve<IBird>()).it_will_return(bird).Repeat.Any();
-                        };
+        {
+            var container = the_dependency<IWindsorContainer>();
+            var bird = new BlueBird();
+            container.is_told_to(x => x.Resolve<IBird>()).it_will_return(bird).Repeat.Any();
+        };
 
         because b = () => { result = sut.get_a<IBird>(); };
 

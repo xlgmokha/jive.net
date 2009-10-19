@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Container;
 
 namespace Gorilla.Commons.Infrastructure.Autofac
 {
-    internal class AutofacDependencyRegistry : IDependencyRegistry
+    internal class AutofacDependencyRegistry : DependencyRegistry
     {
         readonly Func<IContainer> container;
 
@@ -19,7 +19,7 @@ namespace Gorilla.Commons.Infrastructure.Autofac
             return container().Resolve<Interface>();
         }
 
-        public IEnumerable<Interface> all_the<Interface>()
+        public IEnumerable<Interface> get_all<Interface>()
         {
             return container().Resolve<IEnumerable<Interface>>();
         }

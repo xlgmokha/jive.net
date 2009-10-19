@@ -128,9 +128,9 @@
     <Compile Include="Year.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+    <ProjectReference Include="..\Gorilla.Commons.Testing\test.helpers.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>Gorilla.Commons.Testing</Name>
+      <Name>test.helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors
 {
     public interface IMethodCallTracker<TypeToProxy> : IInterceptor
     {

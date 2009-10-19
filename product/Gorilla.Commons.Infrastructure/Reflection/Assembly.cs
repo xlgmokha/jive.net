@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Gorilla.Commons.Infrastructure.Reflection
 {
-    public interface IAssembly
+    public interface Assembly
     {
         IEnumerable<Type> all_types();
     }

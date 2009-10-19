@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace Gorilla.Commons.Infrastructure.Proxies
 {
-    public interface IInvocation
+    public interface Invocation
     {
         void proceed();
         object[] arguments { get; }

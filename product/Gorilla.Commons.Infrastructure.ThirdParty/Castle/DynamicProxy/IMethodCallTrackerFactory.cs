@@ -1,7 +1,7 @@
 using Castle.DynamicProxy;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     public interface IMethodCallTrackerFactory
     {

@@ -8,9 +8,9 @@ namespace Gorilla.Commons.Infrastructure.Proxies
     public class RemotingProxyFactory<T> : RealProxy
     {
         readonly T target;
-        readonly IEnumerable<IInterceptor> interceptors;
+        readonly IEnumerable<Interceptor> interceptors;
 
-        public RemotingProxyFactory(T target, IEnumerable<IInterceptor> interceptors) : base(typeof (T))
+        public RemotingProxyFactory(T target, IEnumerable<Interceptor> interceptors) : base(typeof (T))
         {
             this.target = target;
             this.interceptors = interceptors;

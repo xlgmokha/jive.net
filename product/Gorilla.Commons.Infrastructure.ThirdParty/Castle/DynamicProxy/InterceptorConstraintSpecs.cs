@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     [Concern(typeof (InterceptorConstraint<>))]
     public abstract class behaves_like_constraint : concerns_for<IInterceptorConstraint<string>, InterceptorConstraint<string>>
@@ -23,12 +23,12 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
             () => result.should_be_equal_to(methods_to_intercept);
 
         context c = () =>
-                        {
-                            methods_to_intercept = new List<string>();
-                            method_call_tracker
-                                .is_told_to(t => t.methods_to_intercept())
-                                .it_will_return(methods_to_intercept);
-                        };
+        {
+            methods_to_intercept = new List<string>();
+            method_call_tracker
+                .is_told_to(t => t.methods_to_intercept())
+                .it_will_return(methods_to_intercept);
+        };
 
         because b = () => { result = sut.methods_to_intercept(); };
     }
@@ -42,10 +42,10 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         const int target_of_interception = 7;
 
         context c = () =>
-                        {
-                            method_call_tracker = the_dependency<IMethodCallTracker<int>>();
-                            method_call_tracker.is_told_to(t => t.target).it_will_return(target_of_interception);
-                        };
+        {
+            method_call_tracker = the_dependency<IMethodCallTracker<int>>();
+            method_call_tracker.is_told_to(t => t.target).it_will_return(target_of_interception);
+        };
 
         because b = () => { result = sut.intercept_on; };
 

@@ -5,27 +5,27 @@ using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
-    [Concern(typeof(ProxyFactory))]
-    public abstract class behaves_like_proxy_factory : concerns_for<IProxyFactory, ProxyFactory>
+    [Concern(typeof(CastleDynamicProxyFactory))]
+    public abstract class behaves_like_proxy_factory : concerns_for<ProxyFactory, CastleDynamicProxyFactory>
     {
-        public override IProxyFactory create_sut()
+        public override ProxyFactory create_sut()
         {
-            return new ProxyFactory();
+            return new CastleDynamicProxyFactory();
         }
     }
 
-    [Concern(typeof(ProxyFactory))]
+    [Concern(typeof(CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_with_a_target : behaves_like_proxy_factory
     {
         it should_forward_all_calls_to_the_target = () => target.was_told_to(x => x.Open());
 
         it should_return_a_proxy_to_the_target = () =>
-                                                     {
-                                                         AssertionExtensions.should_not_be_null(result);
-                                                         result.GetType().should_not_be_equal_to(target.GetType());
-                                                     };
+        {
+            AssertionExtensions.should_not_be_null(result);
+            result.GetType().should_not_be_equal_to(target.GetType());
+        };
 
         it should_allow_the_interceptors_to_intercept_all_calls =
             () => AssertionExtensions.should_be_true(interceptor.recieved_call);
@@ -33,18 +33,18 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         context c = () => { target = the_dependency<IDbConnection>(); };
 
         because b = () =>
-                        {
-                            interceptor = new TestInterceptor();
-                            result = sut.create_proxy_for(() => target, interceptor);
-                            result.Open();
-                        };
+        {
+            interceptor = new TestInterceptor();
+            result = sut.create_proxy_for(() => target, interceptor);
+            result.Open();
+        };
 
         static IDbConnection target;
         static IDbConnection result;
         static TestInterceptor interceptor;
     }
 
-    [Concern(typeof(ProxyFactory))]
+    [Concern(typeof(CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_of_a_target_but_a_call_has_not_been_made_to_the_proxy_yet :
         behaves_like_proxy_factory
     {
@@ -59,7 +59,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
         static IDisposable result;
     }
 
-    [Concern(typeof(ProxyFactory))]
+    [Concern(typeof(CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_of_a_component_that_does_not_implement_an_interface : behaves_like_proxy_factory
     {
         it should_return_a_proxy = () => AssertionExtensions.should_not_be_null(result);
