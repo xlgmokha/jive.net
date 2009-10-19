@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Registries
 {
     [Concern(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository :
-        concerns_for<IRegistry<int>, DefaultRegistry<int>>
+        concerns_for<Registry<int>, DefaultRegistry<int>>
     {
         it should_leverage_the_resolver_to_retrieve_all_the_implementations =
             () => registry.was_told_to(r => r.all_the<int>());
@@ -22,7 +22,7 @@ namespace Gorilla.Commons.Infrastructure.Registries
                             registry.is_told_to(r => r.all_the<int>()).it_will_return(items_to_return);
                         };
 
-        public override IRegistry<int> create_sut()
+        public override Registry<int> create_sut()
         {
             return new DefaultRegistry<int>(registry);
         }

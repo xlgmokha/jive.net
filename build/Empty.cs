@@ -1,7 +1,4 @@
-namespace MyMoney.Build
+namespace Gorilla.Commons.Build
 {
-    public class Empty
-    {
-        
-    }
+    public class Empty {}
 }

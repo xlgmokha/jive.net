@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Registries
 {
-    public class DefaultRegistry<T> : IRegistry<T>
+    public class DefaultRegistry<T> : Registry<T>
     {
         readonly IDependencyRegistry registry;
 
@@ -16,6 +17,16 @@ namespace Gorilla.Commons.Infrastructure.Registries
         public IEnumerable<T> all()
         {
             return registry.all_the<T>();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return all().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace Gorilla.Commons.Infrastructure
     public class when_calling_different_methods_on_an_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_only_load_the_object_once =
-            () => MockingExtensions.was_told_to(test_container, x => x.get_a<ITargetObject>()).only_once();
+            () => test_container.was_told_to(x => x.get_a<ITargetObject>()).only_once();
 
         context c = () =>
                         {
@@ -155,7 +155,7 @@ namespace Gorilla.Commons.Infrastructure
     public class when_calling_a_generic_method_on_a_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_forward_the_call_to_the_target =
-            () => MockingExtensions.was_told_to(target, x => x.ValueReturningMethodWithAnArgument("blah"));
+            () => target.was_told_to(x => x.ValueReturningMethodWithAnArgument("blah"));
 
         it should_return_the_correct_result = () => result.should_be_equal_to("hooray");
 

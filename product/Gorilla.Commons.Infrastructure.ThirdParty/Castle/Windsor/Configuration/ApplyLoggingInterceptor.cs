@@ -9,7 +9,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
         public void configure(ComponentRegistration registration)
         {
             var implementation = registration.Implementation;
-            if (typeof (ILoggable).IsAssignableFrom(implementation))
+            if (typeof (Loggable).IsAssignableFrom(implementation))
             {
                 registration
                     .Interceptors(new InterceptorReference(typeof (ILoggingInterceptor)))

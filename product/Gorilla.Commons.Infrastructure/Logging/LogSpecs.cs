@@ -12,10 +12,10 @@ namespace Gorilla.Commons.Infrastructure.Logging
         context c =
             () =>
                 {
-                    var factory = an<ILogFactory>();
+                    var factory = an<LogFactory>();
                     var registry = an<IDependencyRegistry>();
-                    logger = an<ILogger>();
-                    registry.is_told_to(x => x.get_a<ILogFactory>()).it_will_return(factory);
+                    logger = an<Logger>();
+                    registry.is_told_to(x => x.get_a<LogFactory>()).it_will_return(factory);
                     factory.is_told_to(x => x.create_for(typeof (string))).it_will_return(logger);
 
                     Resolve.initialize_with(registry);
@@ -25,7 +25,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
 
         after_each_observation a = () => Resolve.initialize_with(null);
 
-        static ILogger result;
-        static ILogger logger;
+        static Logger result;
+        static Logger logger;
     }
 }

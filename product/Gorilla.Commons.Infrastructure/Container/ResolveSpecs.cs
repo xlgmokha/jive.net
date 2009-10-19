@@ -1,7 +1,7 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Container
 {
@@ -16,23 +16,23 @@ namespace Gorilla.Commons.Infrastructure.Container
         context c = () =>
                         {
                             registry = an<IDependencyRegistry>();
-                            presenter = an<ICommand>();
-                            registry.is_told_to(x => x.get_a<ICommand>()).it_will_return(presenter);
+                            presenter = an<Command>();
+                            registry.is_told_to(x => x.get_a<Command>()).it_will_return(presenter);
                             Resolve.initialize_with(registry);
                         };
 
-        because b = () => { result = Resolve.the<ICommand>(); };
+        because b = () => { result = Resolve.the<Command>(); };
 
         it should_leverage_the_underlying_container_it_was_initialized_with =
-            () => registry.was_told_to(x => x.get_a<ICommand>());
+            () => registry.was_told_to(x => x.get_a<Command>());
 
         it should_return_the_resolved_dependency = () => result.should_be_equal_to(presenter);
 
         after_each_observation a = () => Resolve.initialize_with(null);
 
         static IDependencyRegistry registry;
-        static ICommand result;
-        static ICommand presenter;
+        static Command result;
+        static Command presenter;
     }
 
     [Concern(typeof(Resolve))]
@@ -41,16 +41,16 @@ namespace Gorilla.Commons.Infrastructure.Container
         context c = () =>
                         {
                             registry = an<IDependencyRegistry>();
-                            registry.is_told_to(x => x.get_a<ICommand>()).it_will_throw(new Exception());
+                            registry.is_told_to(x => x.get_a<Command>()).it_will_throw(new Exception());
                             Resolve.initialize_with(registry);
                         };
 
-        because b = () => { the_call = call.to(() => Resolve.the<ICommand>()); };
+        because b = () => { the_call = call.to(() => Resolve.the<Command>()); };
 
         after_each_observation a = () => Resolve.initialize_with(null);
 
         it should_throw_a_dependency_resolution_exception =
-            () => the_call.should_have_thrown<DependencyResolutionException<ICommand>>();
+            () => the_call.should_have_thrown<DependencyResolutionException<Command>>();
 
         static IDependencyRegistry registry;
         static Action the_call;

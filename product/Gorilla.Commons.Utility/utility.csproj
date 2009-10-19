@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gorilla.commons.utility</RootNamespace>
+    <AssemblyName>gorilla.commons.utility</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clock.cs" />
+    <Compile Include="AnonymousCommand.cs" />
+    <Compile Include="AndSpecification.cs" />
+    <Compile Include="AnonymousDisposable.cs" />
+    <Compile Include="ChainedCommand.cs" />
+    <Compile Include="ChainedConfiguration.cs" />
+    <Compile Include="ChainedMapper.cs" />
+    <Compile Include="EmptyCallback.cs" />
+    <Compile Include="EmptyCommand.cs" />
+    <Compile Include="DefaultConstructorFactory.cs" />
+    <Compile Include="FactoryDelegate.cs" />
+    <Compile Include="FilteredVisitor.cs" />
+    <Compile Include="FuncSpecification.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="Callback.cs" />
+    <Compile Include="CallbackCommand.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ComponentFactory.cs" />
+    <Compile Include="Id.cs" />
+    <Compile Include="DisposableCommand.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Identifiable.cs" />
+    <Compile Include="Import.cs" />
+    <Compile Include="Mapper.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="ParameterizedCommand.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="Specification.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="SubjectOf.cs" />
+    <Compile Include="ValueReturningVisitor.cs" />
+    <Compile Include="Visitable.cs" />
+    <Compile Include="Visitor.cs" />
+    <Compile Include="AnonymousMapper.cs" />
+    <Compile Include="NotificationMessage.cs" />
+    <Compile Include="NotSpecification.cs" />
+    <Compile Include="NotSpecificationSpecs.cs" />
+    <Compile Include="OrSpecification.cs" />
+    <Compile Include="OrSpecificationSpecs.cs" />
+    <Compile Include="PredicateSpecification.cs" />
+    <Compile Include="PredicateSpecificationSpecs.cs" />
+    <Compile Include="Date.cs" />
+    <Compile Include="DateSpecs.cs" />
+    <Compile Include="CommandExtensions.cs" />
+    <Compile Include="ConfigurationExtensions.cs" />
+    <Compile Include="ConfigurationExtensionsSpecs.cs" />
+    <Compile Include="ConversionExtensions.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EnumerableExtensionsSpecs.cs" />
+    <Compile Include="FuncExtensions.cs" />
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="ListExtensionsSpecs.cs" />
+    <Compile Include="MappingExtensions.cs" />
+    <Compile Include="MappingExtensionsSpecs.cs" />
+    <Compile Include="NumericConversions.cs" />
+    <Compile Include="NumericConversionsSpecs.cs" />
+    <Compile Include="RegistryExtensions.cs" />
+    <Compile Include="SpecificationExtensionsSpecs.cs" />
+    <Compile Include="SpecificationExtensions.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="TypeExtensionsSpecs.cs" />
+    <Compile Include="VisitorExtensions.cs" />
+    <Compile Include="Percent.cs" />
+    <Compile Include="PercentSpecs.cs" />
+    <Compile Include="Year.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

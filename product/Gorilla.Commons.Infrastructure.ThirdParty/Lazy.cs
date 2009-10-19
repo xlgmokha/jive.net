@@ -3,7 +3,7 @@ using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure
 {

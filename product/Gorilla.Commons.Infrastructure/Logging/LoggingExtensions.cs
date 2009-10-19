@@ -4,7 +4,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
 {
     public static class LoggingExtensions
     {
-        public static ILogger log<T>(this T item_to_log)
+        public static Logger log<T>(this T item_to_log)
         {
             return Log.For(item_to_log);
         }

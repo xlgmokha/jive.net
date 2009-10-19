@@ -7,14 +7,14 @@ using log4net.Config;
 
 namespace Gorilla.Commons.Infrastructure.Log4Net
 {
-    public class Log4NetLogFactory : ILogFactory
+    public class Log4NetLogFactory : LogFactory
     {
         public Log4NetLogFactory()
         {
             XmlConfigurator.Configure(PathToConfigFile());
         }
 
-        public ILogger create_for(Type type_to_create_logger_for)
+        public Logger create_for(Type type_to_create_logger_for)
         {
             return new Log4NetLogger(LogManager.GetLogger(type_to_create_logger_for));
         }

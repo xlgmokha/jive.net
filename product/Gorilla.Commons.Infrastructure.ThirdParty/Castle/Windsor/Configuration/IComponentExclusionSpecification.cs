@@ -1,9 +1,9 @@
 using System;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
 {
-    public interface IComponentExclusionSpecification : ISpecification<Type>
+    public interface IComponentExclusionSpecification : Specification<Type>
     {
     }
 }

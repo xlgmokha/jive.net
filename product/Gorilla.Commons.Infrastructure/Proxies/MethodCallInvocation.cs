@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Proxies
 {

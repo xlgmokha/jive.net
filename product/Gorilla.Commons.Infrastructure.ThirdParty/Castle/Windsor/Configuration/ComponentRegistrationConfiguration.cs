@@ -1,10 +1,9 @@
 using Castle.MicroKernel.Registration;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
 {
-    public interface IRegistrationConfiguration : IConfiguration<ComponentRegistration>
+    public interface IRegistrationConfiguration : Configuration<ComponentRegistration>
     {
     }
 
@@ -12,8 +11,8 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
     {
         public void configure(ComponentRegistration registration)
         {
-            ConfigurationExtensions.then(new RegisterComponentContract()
-                          .then(new ConfigureComponentLifestyle()), new ApplyLoggingInterceptor())
+            new RegisterComponentContract()
+                .then(new ConfigureComponentLifestyle()).then(new ApplyLoggingInterceptor())
                 //.then(new LogComponent())
                 .configure(registration);
         }

@@ -136,9 +136,9 @@
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+    <ProjectReference Include="..\Gorilla.Commons.Utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
-      <Name>Gorilla.Commons.Utility</Name>
+      <Name>utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

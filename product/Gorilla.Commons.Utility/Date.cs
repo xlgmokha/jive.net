@@ -1,6 +1,6 @@
 using System;
 using System.Globalization;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Utility
 {

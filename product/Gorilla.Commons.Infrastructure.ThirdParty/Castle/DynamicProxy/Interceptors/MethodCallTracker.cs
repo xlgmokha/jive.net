@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {

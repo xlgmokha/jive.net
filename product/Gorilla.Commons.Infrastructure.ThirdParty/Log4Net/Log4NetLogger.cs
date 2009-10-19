@@ -4,7 +4,7 @@ using log4net;
 
 namespace Gorilla.Commons.Infrastructure.Log4Net
 {
-    public class Log4NetLogger : ILogger
+    public class Log4NetLogger : Logger
     {
         readonly ILog log;
 

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Build", "build\Gorilla.Commons.Build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Utility", "product\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\Gorilla.Commons.Utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

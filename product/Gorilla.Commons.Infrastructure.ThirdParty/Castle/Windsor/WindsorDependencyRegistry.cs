@@ -4,8 +4,7 @@ using Castle.Core;
 using Castle.Windsor;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
@@ -59,7 +58,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
             return "{0}-{1}".formatted_using(interface_type.FullName, implementation_type.FullName);
         }
 
-        public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target)
+        public void proxy<T>(Configuration<IProxyBuilder<T>> configuration, Func<T> target)
         {
             var builder = new ProxyBuilder<T>();
             configuration.configure(builder);
@@ -67,7 +66,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor
         }
 
         public void proxy<T, Configuration>(Func<T> target)
-            where Configuration : IConfiguration<IProxyBuilder<T>>, new()
+            where Configuration : Configuration<IProxyBuilder<T>>, new()
         {
             proxy(new Configuration(), target);
         }

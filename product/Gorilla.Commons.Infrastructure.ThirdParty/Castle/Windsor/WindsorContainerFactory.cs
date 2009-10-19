@@ -1,9 +1,9 @@
 using Castle.Windsor;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
-    public interface IWindsorContainerFactory : IFactory<IWindsorContainer>
+    public interface IWindsorContainerFactory : Factory<IWindsorContainer>
     {
     }
 

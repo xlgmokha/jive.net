@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Threading;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Logging.Console
+namespace Gorilla.Commons.Infrastructure.Logging
 {
-    public class TextLogger : ILogger
+    public class TextLogger : Logger
     {
         readonly TextWriter writer;
 
