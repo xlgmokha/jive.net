@@ -38,17 +38,17 @@
 		<delete dir="${build.artifacts.dir}" />
 
 		<property name="app.output" value="gorilla.commons.utility.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.utility" />
+		<property name="product.dir" value="${base.dir}\product\utility" />
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 
 		<property name="app.output" value="gorilla.commons.infrastructure.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.infrastructure" />
+		<property name="product.dir" value="${base.dir}\product\infrastructure" />
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 
 		<property name="app.output" value="gorilla.commons.infrastructure.thirdparty.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.infrastructure.thirdparty" />
+		<property name="product.dir" value="${base.dir}\product\infrastructure.thirdparty" />
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 
@@ -58,7 +58,7 @@
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 		<!--
 		<property name="app.output" value="gorilla.testing.dll" />
-		<property name="product.dir" value="${base.dir}\product\gorilla.commons.testing" />
+		<property name="product.dir" value="${base.dir}\product\testing" />
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 		-->
