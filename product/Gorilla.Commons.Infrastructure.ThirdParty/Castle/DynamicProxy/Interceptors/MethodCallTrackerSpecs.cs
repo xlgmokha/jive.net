@@ -6,17 +6,17 @@ using Gorilla.Commons.Testing;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors
 {
-    [Concern(typeof (MethodCallTracker<>))]
+    [Concern(typeof (CastleDynamicMethodCallTracker<>))]
     public class behaves_like_method_call_tracker :
-        concerns_for<IMethodCallTracker<IAnInterface>, MethodCallTracker<IAnInterface>>
+        concerns_for<MethodCallTracker<IAnInterface>, CastleDynamicMethodCallTracker<IAnInterface>>
     {
-        public override IMethodCallTracker<IAnInterface> create_sut()
+        public override MethodCallTracker<IAnInterface> create_sut()
         {
-            return new MethodCallTracker<IAnInterface>();
+            return new CastleDynamicMethodCallTracker<IAnInterface>();
         }
     }
 
-    [Concern(typeof (MethodCallTracker<>))]
+    [Concern(typeof (CastleDynamicMethodCallTracker<>))]
     public class when_tracking_the_calls_to_intercept_on_a_type : behaves_like_method_call_tracker
     {
         static IInvocation invocation;

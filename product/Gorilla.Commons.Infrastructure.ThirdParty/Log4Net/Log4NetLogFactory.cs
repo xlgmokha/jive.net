@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Reflection;
 using log4net;
 using log4net.Config;
 
-namespace Gorilla.Commons.Infrastructure.Log4Net
+namespace gorilla.commons.infrastructure.thirdparty.Log4Net
 {
     public class Log4NetLogFactory : LogFactory
     {

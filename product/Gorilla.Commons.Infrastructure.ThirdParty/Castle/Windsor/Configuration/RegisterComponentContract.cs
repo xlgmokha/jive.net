@@ -1,8 +1,8 @@
 using Castle.MicroKernel.Registration;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration
 {
-    public class RegisterComponentContract : IRegistrationConfiguration
+    public class RegisterComponentContract : RegistrationConfiguration
     {
         public void configure(ComponentRegistration registration)
         {

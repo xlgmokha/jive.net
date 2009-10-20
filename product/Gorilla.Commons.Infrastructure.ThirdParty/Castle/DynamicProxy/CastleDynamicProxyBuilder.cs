@@ -2,14 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     public class CastleDynamicProxyBuilder<TypeToProxy> : ProxyBuilder<TypeToProxy>
     {
-        readonly IDictionary<IInterceptor, IInterceptorConstraint<TypeToProxy>> constraints;
+        readonly IDictionary<IInterceptor, InterceptorConstraint<TypeToProxy>> constraints;
         readonly ProxyFactory proxy_factory;
         readonly IInterceptorConstraintFactory constraint_factory;
 
@@ -21,7 +20,7 @@ namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
         {
             this.proxy_factory = proxy_factory;
             this.constraint_factory = constraint_factory;
-            constraints = new Dictionary<IInterceptor, IInterceptorConstraint<TypeToProxy>>();
+            constraints = new Dictionary<IInterceptor, InterceptorConstraint<TypeToProxy>>();
         }
 
         public ConstraintSelector<TypeToProxy> add_interceptor<Interceptor>(Interceptor interceptor)

@@ -5,15 +5,15 @@ using Gorilla.Commons.Testing;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
-    [Concern(typeof (InterceptorConstraint<>))]
-    public abstract class behaves_like_constraint : concerns_for<IInterceptorConstraint<string>, InterceptorConstraint<string>>
+    [Concern(typeof (CastleDynamicInterceptorConstraint<>))]
+    public abstract class behaves_like_constraint : concerns_for<InterceptorConstraint<string>, CastleDynamicInterceptorConstraint<string>>
     {
-        context c = () => { method_call_tracker = the_dependency<IMethodCallTracker<string>>(); };
+        context c = () => { method_call_tracker = the_dependency<MethodCallTracker<string>>(); };
 
-        protected static IMethodCallTracker<string> method_call_tracker;
+        protected static MethodCallTracker<string> method_call_tracker;
     }
 
-    [Concern(typeof (InterceptorConstraint<>))]
+    [Concern(typeof (CastleDynamicInterceptorConstraint<>))]
     public class when_asking_for_all_the_methods_to_intercept : behaves_like_constraint
     {
         static IEnumerable<string> result;
@@ -33,17 +33,17 @@ namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
         because b = () => { result = sut.methods_to_intercept(); };
     }
 
-    [Concern(typeof (InterceptorConstraint<int>))]
+    [Concern(typeof (CastleDynamicInterceptorConstraint<int>))]
     public class when_asking_for_the_target_of_the_interception_constrain :
-        concerns_for<IInterceptorConstraint<int>, InterceptorConstraint<int>>
+        concerns_for<InterceptorConstraint<int>, CastleDynamicInterceptorConstraint<int>>
     {
-        static IMethodCallTracker<int> method_call_tracker;
+        static MethodCallTracker<int> method_call_tracker;
         static int result;
         const int target_of_interception = 7;
 
         context c = () =>
         {
-            method_call_tracker = the_dependency<IMethodCallTracker<int>>();
+            method_call_tracker = the_dependency<MethodCallTracker<int>>();
             method_call_tracker.is_told_to(t => t.target).it_will_return(target_of_interception);
         };
 

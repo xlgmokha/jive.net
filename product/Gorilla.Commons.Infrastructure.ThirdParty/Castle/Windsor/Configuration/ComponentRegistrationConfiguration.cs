@@ -1,13 +1,9 @@
 using Castle.MicroKernel.Registration;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration
 {
-    public interface IRegistrationConfiguration : Configuration<ComponentRegistration>
-    {
-    }
-
-    public class ComponentRegistrationConfiguration : IRegistrationConfiguration
+    public class ComponentRegistrationConfiguration : RegistrationConfiguration
     {
         public void configure(ComponentRegistration registration)
         {

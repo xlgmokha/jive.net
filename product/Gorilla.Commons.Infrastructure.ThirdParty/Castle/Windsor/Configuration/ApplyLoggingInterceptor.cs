@@ -2,9 +2,9 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Gorilla.Commons.Infrastructure.Logging;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration
 {
-    public class ApplyLoggingInterceptor : IRegistrationConfiguration
+    public class ApplyLoggingInterceptor : RegistrationConfiguration
     {
         public void configure(ComponentRegistration registration)
         {
@@ -12,7 +12,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
             if (typeof (Loggable).IsAssignableFrom(implementation))
             {
                 registration
-                    .Interceptors(new InterceptorReference(typeof (ILoggingInterceptor)))
+                    .Interceptors(new InterceptorReference(typeof (LoggingInterceptor)))
                     .First
                     .If((k, m) => true);
             }

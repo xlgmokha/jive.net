@@ -1,4 +1,4 @@
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     public interface ConstraintSelector<TypeToPutConstraintOn>
     {

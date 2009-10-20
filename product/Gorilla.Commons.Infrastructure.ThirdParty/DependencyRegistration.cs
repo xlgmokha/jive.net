@@ -1,11 +1,11 @@
 using System;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure
+namespace gorilla.commons.infrastructure.thirdparty
 {
-    public interface IDependencyRegistration : Builder<DependencyRegistry>
+    public interface DependencyRegistration : Builder<DependencyRegistry>
     {
         void singleton<Contract, Implementation>() where Implementation : Contract;
         void singleton<Contract>(Func<Contract> instance_of_the_contract);

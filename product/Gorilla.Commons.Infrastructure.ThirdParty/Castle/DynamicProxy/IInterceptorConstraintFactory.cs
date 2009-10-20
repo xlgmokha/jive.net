@@ -2,25 +2,25 @@ namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     public interface IInterceptorConstraintFactory
     {
-        IInterceptorConstraint<Type> CreateFor<Type>();
+        InterceptorConstraint<Type> CreateFor<Type>();
     }
 
     public class InterceptorConstraintFactory : IInterceptorConstraintFactory
     {
-        readonly IMethodCallTrackerFactory factory;
+        readonly MethodCallTrackerFactory factory;
 
-        public InterceptorConstraintFactory() : this(new MethodCallTrackerFactory())
+        public InterceptorConstraintFactory() : this(new CastleDynamicMethodCallTrackerFactory())
         {
         }
 
-        public InterceptorConstraintFactory(IMethodCallTrackerFactory factory)
+        public InterceptorConstraintFactory(MethodCallTrackerFactory factory)
         {
             this.factory = factory;
         }
 
-        public IInterceptorConstraint<Type> CreateFor<Type>()
+        public InterceptorConstraint<Type> CreateFor<Type>()
         {
-            return new InterceptorConstraint<Type>(factory.create_for<Type>());
+            return new CastleDynamicInterceptorConstraint<Type>(factory.create_for<Type>());
         }
     }
 }

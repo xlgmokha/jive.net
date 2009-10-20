@@ -1,22 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
-    public interface IInterceptorConstraint<TypeToPutConstraintOn> : ConstraintSelector<TypeToPutConstraintOn>
+    public class CastleDynamicInterceptorConstraint<TypeToPutConstraintOn> : InterceptorConstraint<TypeToPutConstraintOn>
     {
-        IEnumerable<string> methods_to_intercept();
-    }
-
-    public class InterceptorConstraint<TypeToPutConstraintOn> : IInterceptorConstraint<TypeToPutConstraintOn>
-    {
-        readonly IMethodCallTracker<TypeToPutConstraintOn> call_tracker;
+        readonly MethodCallTracker<TypeToPutConstraintOn> call_tracker;
         bool intercept_all_calls;
 
-        public InterceptorConstraint(IMethodCallTracker<TypeToPutConstraintOn> call_tracker)
+        public CastleDynamicInterceptorConstraint(MethodCallTracker<TypeToPutConstraintOn> call_tracker)
         {
             this.call_tracker = call_tracker;
         }

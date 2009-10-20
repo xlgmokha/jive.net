@@ -2,15 +2,13 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.utility;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor
 {
-    public class WindsorDependencyRegistry : IDependencyRegistration, DependencyRegistry
+    public class WindsorDependencyRegistry : DependencyRegistration, DependencyRegistry
     {
         readonly IWindsorContainer underlying_container;
 

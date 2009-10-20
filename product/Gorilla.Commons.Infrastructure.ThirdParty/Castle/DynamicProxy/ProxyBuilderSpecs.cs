@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Testing;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy

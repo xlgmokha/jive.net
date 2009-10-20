@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure
+namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
     public static class Lazy
     {

@@ -2,7 +2,7 @@ using System;
 using Gorilla.Commons.Infrastructure.Logging;
 using log4net;
 
-namespace Gorilla.Commons.Infrastructure.Log4Net
+namespace gorilla.commons.infrastructure.thirdparty.Log4Net
 {
     public class Log4NetLogger : Logger
     {
