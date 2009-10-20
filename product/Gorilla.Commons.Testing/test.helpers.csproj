@@ -8,8 +8,8 @@
     <ProjectGuid>{44E65096-9657-4716-90F8-4535BABE8039}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gorilla.Commons.Testing</RootNamespace>
-    <AssemblyName>Gorilla.Commons.Testing</AssemblyName>
+    <RootNamespace>gorilla.commons.testing</RootNamespace>
+    <AssemblyName>gorilla.commons.testing</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

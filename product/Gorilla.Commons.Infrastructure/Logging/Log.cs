@@ -18,7 +18,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
             }
             catch
             {
-                return new TextLogger(System.Console.Out);
+                return new TextLogger(Console.Out);
             }
         }
     }

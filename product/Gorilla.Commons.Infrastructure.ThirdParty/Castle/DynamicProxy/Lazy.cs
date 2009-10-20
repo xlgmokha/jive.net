@@ -1,8 +1,8 @@
 using System;
 using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
+using gorilla.commons.infrastructure.thirdparty.castle.dynamicproxy;
 using gorilla.commons.utility;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Autofac;
 using Gorilla.Commons.Infrastructure.Container;
 
-namespace Gorilla.Commons.Infrastructure.Autofac
+namespace gorilla.commons.infrastructure.thirdparty.autofac
 {
     internal class AutofacDependencyRegistry : DependencyRegistry
     {

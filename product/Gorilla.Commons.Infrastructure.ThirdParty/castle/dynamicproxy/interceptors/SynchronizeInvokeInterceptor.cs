@@ -3,13 +3,13 @@ using System.ComponentModel;
 using Castle.Core.Interceptor;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
+namespace gorilla.commons.infrastructure.thirdparty.castle.dynamicproxy.interceptors
 {
-    public interface ISynchronizedInterceptor : IInterceptor
+    public interface SynchronizedInterceptor : IInterceptor
     {
     }
 
-    public class SynchronizedInterceptor<T> : ISynchronizedInterceptor where T : ISynchronizeInvoke
+    public class SynchronizeInvokeInterceptor<T> : SynchronizedInterceptor where T : ISynchronizeInvoke
     {
         public void Intercept(IInvocation invocation)
         {

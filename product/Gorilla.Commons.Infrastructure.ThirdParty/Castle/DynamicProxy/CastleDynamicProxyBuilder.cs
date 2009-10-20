@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {

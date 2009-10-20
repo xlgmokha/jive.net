@@ -1,7 +1,7 @@
 using System;
 using Castle.Core.Interceptor;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
+namespace gorilla.commons.infrastructure.thirdparty.castle.dynamicproxy
 {
     internal class LazyLoadedInterceptor<T> : IInterceptor
     {
