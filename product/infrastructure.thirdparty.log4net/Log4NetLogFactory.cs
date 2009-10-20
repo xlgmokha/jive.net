@@ -19,7 +19,7 @@ namespace gorilla.commons.infrastructure.thirdparty.Log4Net
             return new Log4NetLogger(LogManager.GetLogger(type_to_create_logger_for));
         }
 
-        private FileInfo PathToConfigFile()
+        FileInfo PathToConfigFile()
         {
             return new FileInfo(Path.Combine(this.startup_directory(), "log4net.config.xml"));
         }

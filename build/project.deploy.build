@@ -52,6 +52,10 @@
 		<call target="app.compile" />
 		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 
+		<property name="app.output" value="gorilla.commons.infrastructure.thirdparty.log4net.dll" />
+		<property name="product.dir" value="${base.dir}\product\infrastructure.thirdparty.log4net" />
+		<call target="app.compile" />
+		<copy file="${build.compile.dir}\${app.output}" tofile="${build.artifacts.dir}\${app.output}" />
 		<!--
 		<property name="app.output" value="gorilla.testing.dll" />
 		<property name="product.dir" value="${base.dir}\product\gorilla.commons.testing" />

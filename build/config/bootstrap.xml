@@ -15,7 +15,7 @@
   
   <Target Name="Bootstrapper">
     <GenerateBootstrapper 
-		ApplicationFile="gorilla.commons.infrastructure.thirdparty.dll.application" 
+		ApplicationFile="gorilla.commons.infrastructure.thirdparty.log4net.dll.application" 
 		ApplicationName="My Money by mOKhan.ca" 
 		ApplicationUrl="http://mokhan.ca/GorillaCommons/"
 		BootstrapperItems="@(BootstrapperFile)" 

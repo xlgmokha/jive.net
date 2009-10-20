@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\Gorilla.Commons.Utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty.log4net", "product\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj", "{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

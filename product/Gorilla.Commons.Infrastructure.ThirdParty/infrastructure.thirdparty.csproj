@@ -99,8 +99,6 @@
     <Compile Include="Castle\Windsor\Configuration\LoggingInterceptor.cs" />
     <Compile Include="Castle\Windsor\WindsorExtensions.cs" />
     <Compile Include="DependencyRegistration.cs" />
-    <Compile Include="Log4Net\Log4NetLogFactory.cs" />
-    <Compile Include="Log4Net\Log4NetLogger.cs" />
     <Compile Include="Castle\DynamicProxy\ConstraintSelector.cs" />
     <Compile Include="Castle\DynamicProxy\InterceptorConstraint.cs" />
     <Compile Include="Castle\DynamicProxy\IInterceptorConstraintFactory.cs" />
