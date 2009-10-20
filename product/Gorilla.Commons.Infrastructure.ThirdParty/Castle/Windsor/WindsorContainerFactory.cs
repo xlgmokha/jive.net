@@ -1,13 +1,9 @@
 using Castle.Windsor;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Castle.Windsor
+namespace gorilla.commons.infrastructure.thirdparty.Castle.Windsor
 {
-    public interface IWindsorContainerFactory : Factory<IWindsorContainer>
-    {
-    }
-
-    public class WindsorContainerFactory : IWindsorContainerFactory
+    public class WindsorContainerFactory : Factory<IWindsorContainer>
     {
         public IWindsorContainer create()
         {

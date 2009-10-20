@@ -3,16 +3,16 @@ using Gorilla.Commons.Testing;
 
 namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
 {
-    [Concern(typeof (InterceptorConstraintFactory))]
+    [Concern(typeof (CastleDynamicInterceptorConstraintFactory))]
     public abstract class behaves_like_constraint_factory :
-        concerns_for<IInterceptorConstraintFactory, InterceptorConstraintFactory>
+        concerns_for<InterceptorConstraintFactory, CastleDynamicInterceptorConstraintFactory>
     {
         context c = () => { method_call_tracker_factory = the_dependency<MethodCallTrackerFactory>(); };
 
         protected static MethodCallTrackerFactory method_call_tracker_factory;
     }
 
-    [Concern(typeof (InterceptorConstraintFactory))]
+    [Concern(typeof (CastleDynamicInterceptorConstraintFactory))]
     public class when_creating_a_constraint_for_a_type_to_intercept_on : behaves_like_constraint_factory
     {
         static InterceptorConstraint<string> result;

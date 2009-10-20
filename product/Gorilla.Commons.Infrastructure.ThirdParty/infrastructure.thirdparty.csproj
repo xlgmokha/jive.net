@@ -93,6 +93,7 @@
     <Compile Include="Autofac\AutofacDependencyRegistryBuilder.cs" />
     <Compile Include="Autofac\AutofacSpecs.cs" />
     <Compile Include="Castle\DynamicProxy\CastleDynamicInterceptorConstraint.cs" />
+    <Compile Include="Castle\DynamicProxy\CastleDynamicInterceptorConstraintFactory.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SynchronizedInterceptor.cs" />
     <Compile Include="Castle\DynamicProxy\CastleDynamicMethodCallTrackerFactory.cs" />
     <Compile Include="Castle\Windsor\Configuration\RegistrationConfiguration.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="DependencyRegistration.cs" />
     <Compile Include="Castle\DynamicProxy\ConstraintSelector.cs" />
     <Compile Include="Castle\DynamicProxy\InterceptorConstraint.cs" />
-    <Compile Include="Castle\DynamicProxy\IInterceptorConstraintFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\InterceptorConstraintFactory.cs" />
     <Compile Include="Castle\DynamicProxy\MethodCallTrackerFactory.cs" />
     <Compile Include="Castle\DynamicProxy\InterceptorConstraintFactorySpecs.cs" />
     <Compile Include="Castle\DynamicProxy\InterceptorConstraintSpecs.cs" />

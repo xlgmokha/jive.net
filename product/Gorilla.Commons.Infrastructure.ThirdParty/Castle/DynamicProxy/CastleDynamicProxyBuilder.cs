@@ -10,13 +10,13 @@ namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
     {
         readonly IDictionary<IInterceptor, InterceptorConstraint<TypeToProxy>> constraints;
         readonly ProxyFactory proxy_factory;
-        readonly IInterceptorConstraintFactory constraint_factory;
+        readonly InterceptorConstraintFactory constraint_factory;
 
-        public CastleDynamicProxyBuilder() : this(new CastleDynamicProxyFactory(), new InterceptorConstraintFactory())
+        public CastleDynamicProxyBuilder() : this(new CastleDynamicProxyFactory(), new CastleDynamicInterceptorConstraintFactory())
         {
         }
 
-        public CastleDynamicProxyBuilder(ProxyFactory proxy_factory, IInterceptorConstraintFactory constraint_factory)
+        public CastleDynamicProxyBuilder(ProxyFactory proxy_factory, InterceptorConstraintFactory constraint_factory)
         {
             this.proxy_factory = proxy_factory;
             this.constraint_factory = constraint_factory;
