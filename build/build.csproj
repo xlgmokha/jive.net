@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="config\AssemblyInfo.cs.template" />
-    <None Include="config\bootStrap.xml.template" />
     <None Include="local.properties.xml.template" />
     <None Include="project.build" />
     <None Include="project.test.build" />

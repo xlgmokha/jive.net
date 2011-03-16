@@ -1,5 +1,5 @@
 <project name="local.properties">
-	<property name="debug" value="false" />
+	<property name="project.config" value="DEBUG" />
 	<property name="assembly.title" value="Gorilla.Commons" />
 	<property name="assembly.description" value="common libraries" />
 	<property name="assembly.company" value="http://mokhan.ca" />

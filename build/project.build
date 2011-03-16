@@ -8,12 +8,8 @@
 	
 	<property name="build.dir" value="${base.dir}\build" />
 	<property name="build.tools.dir" value="${build.dir}\tools" />
-	<property name="build.lib.dir" value="${build.dir}\lib" />
-	<property name="build.resources.dir" value="${build.dir}\resources" />
-	<property name="build.icons.dir" value="${build.resources.dir}\icons" />
 	<property name="build.config.dir" value="${build.dir}\config" />
 	<property name="build.compile.dir" value="${build.dir}\compile" />
-	<property name="build.artifacts.dir" value="${build.dir}\artifacts" />
 	
 	<property name="app.output" value="${project.name}.dll" />
 	
@@ -28,39 +24,16 @@
 		<mkdir dir="${build.compile.dir}" />
 	</target>
 	
-	<target name="app.compile" depends="init">
-		<csc output="${build.compile.dir}\${app.output}" debug="${debug}" target="library" win32icon="${build.icons.dir}\mokhan.ico" keyfile="${build.config.dir}\mokhan.snk">
-			<sources>
-				<include name="${product.dir}\**\*.cs" />
-				<include name="${build.config.dir}\**\*.cs" />
-				<exclude name="${product.dir}\**\AssemblyInfo.cs" />
-				<exclude name="${product.dir}\**\*Specs.cs" />
-			</sources>			
-			<references>
-				<include name="${build.lib.dir}\**\*.dll" />
-				<include name="${build.artifacts.dir}\**\*.dll" />
-			</references>
-			<resources dynamicprefix="true">
-				<include name="${product.dir}\**\*.resx" />
-			</resources>
-			<resources>
-				<include name="${build.lib.dir}\app\*.licenses" />
-			</resources>
-			<arg value="/nowin32manifest" />
-		</csc>
+	<target name="compile" depends="init">
+    <property name="msbuild.exe" value="${framework::get-framework-directory('net-4.0')}\msbuild.exe" />
+    <exec program="${msbuild.exe}" commandline='${base.dir}\solution.sln /t:Clean;Rebuild /p:Configuration=${project.config} /p:OutDir=${build.compile.dir}\ /p:Platform="Any CPU" /v:q' />
 	</target>
 
 	<target name="expand.template.file">
 		<copy file="${target}.template" tofile="${target}" overwrite="true">
-			<filterchain>
-				<replacetokens>
-					<token key="log.level" value="${log.level}" />
-					<token key="assembly.title" value="${assembly.title}" />
-					<token key="assembly.description" value="${assembly.description}" />
-					<token key="assembly.company" value="${assembly.company}" />
-					<token key="assembly.version" value="${assembly.version}" />
-				</replacetokens>
-			</filterchain>
+      <filterchain>
+        <expandproperties />
+      </filterchain>
 		</copy>
 	</target>
 	
