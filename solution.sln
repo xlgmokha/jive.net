@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.helpers", "product\testing\test.helpers.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "specs", "product\testing\specs.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "product\infrastructure\infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
 EndProject
@@ -24,7 +24,6 @@ Global
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8505B10-85C7-45F4-B039-D364DD556D7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

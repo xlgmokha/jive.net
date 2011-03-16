@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>gorilla.commons.infrastructure</RootNamespace>
     <AssemblyName>gorilla.commons.infrastructure</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,22 +53,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
-    </Reference>
-    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
-    </Reference>
-    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -83,14 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cloning\BinarySerializer.cs" />
-    <Compile Include="cloning\BinarySerializerSpecs.cs" />
     <Compile Include="cloning\Serializer.cs" />
     <Compile Include="cloning\Prototype.cs" />
     <Compile Include="cloning\FileStreamSerializer.cs" />
     <Compile Include="container\DependencyResolutionException.cs" />
     <Compile Include="container\DependencyRegistry.cs" />
     <Compile Include="container\Resolve.cs" />
-    <Compile Include="container\ResolveSpecs.cs" />
     <Compile Include="debugging\Launch.cs" />
     <Compile Include="filesystem\ApplicationFile.cs" />
     <Compile Include="filesystem\File.cs" />
@@ -100,25 +83,18 @@
     <Compile Include="logging\Logger.cs" />
     <Compile Include="logging\Log.cs" />
     <Compile Include="logging\LoggingExtensions.cs" />
-    <Compile Include="logging\LogSpecs.cs" />
     <Compile Include="proxies\ExceptionExtensions.cs" />
     <Compile Include="proxies\Interceptor.cs" />
     <Compile Include="proxies\Invocation.cs" />
     <Compile Include="proxies\MethodCallInvocation.cs" />
     <Compile Include="proxies\ProxyFactory.cs" />
-    <Compile Include="proxies\ProxyFactorySpecs.cs" />
     <Compile Include="proxies\RemotingProxyFactory.cs" />
     <Compile Include="reflection\ApplicationAssembly.cs" />
     <Compile Include="reflection\EnvironmentExtensions.cs" />
     <Compile Include="reflection\Assembly.cs" />
     <Compile Include="registries\DefaultRegistry.cs" />
-    <Compile Include="registries\DefaultRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility</Name>

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>gorilla.commons.utility</RootNamespace>
     <AssemblyName>gorilla.commons.utility</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,18 +53,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
-    </Reference>
-    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -117,42 +106,23 @@
     <Compile Include="AnonymousMapper.cs" />
     <Compile Include="NotificationMessage.cs" />
     <Compile Include="NotSpecification.cs" />
-    <Compile Include="NotSpecificationSpecs.cs" />
     <Compile Include="OrSpecification.cs" />
-    <Compile Include="OrSpecificationSpecs.cs" />
     <Compile Include="PredicateSpecification.cs" />
-    <Compile Include="PredicateSpecificationSpecs.cs" />
     <Compile Include="Date.cs" />
-    <Compile Include="DateSpecs.cs" />
     <Compile Include="CommandExtensions.cs" />
     <Compile Include="ConfigurationExtensions.cs" />
-    <Compile Include="ConfigurationExtensionsSpecs.cs" />
     <Compile Include="ConversionExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="FuncExtensions.cs" />
     <Compile Include="ListExtensions.cs" />
-    <Compile Include="ListExtensionsSpecs.cs" />
     <Compile Include="MappingExtensions.cs" />
-    <Compile Include="MappingExtensionsSpecs.cs" />
     <Compile Include="NumericConversions.cs" />
-    <Compile Include="NumericConversionsSpecs.cs" />
     <Compile Include="RegistryExtensions.cs" />
-    <Compile Include="SpecificationExtensionsSpecs.cs" />
     <Compile Include="SpecificationExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TypeExtensions.cs" />
-    <Compile Include="TypeExtensionsSpecs.cs" />
-    <Compile Include="VisitorExtensions.cs" />
     <Compile Include="Percent.cs" />
-    <Compile Include="PercentSpecs.cs" />
     <Compile Include="Year.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

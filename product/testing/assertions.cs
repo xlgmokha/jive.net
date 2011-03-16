@@ -2,100 +2,92 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using MbUnit.Framework;
+using Machine.Specifications;
 
 namespace Gorilla.Commons.Testing
 {
-    public static class Assertions
+    static public class Assertions
     {
         [AssertionMethod]
-        public static void should_be_equal_to<T>(this T item_to_validate, T expected_value)
+        static public void should_be_equal_to<T>(this T item_to_validate, T expected_value)
         {
-            Assert.AreEqual(expected_value, item_to_validate);
+            item_to_validate.ShouldEqual(expected_value);
         }
 
         [AssertionMethod]
-        public static void should_be_the_same_instance_as<T>(this T left, T right)
+        static public void should_be_the_same_instance_as<T>(this T left, T right)
         {
-            Assert.IsTrue(ReferenceEquals(left, right));
+            ReferenceEquals(left, right).ShouldBeTrue();
         }
 
         [AssertionMethod]
-        public static void should_be_null<T>(this T item)
+        static public void should_be_null<T>(this T item)
         {
-            Assert.IsNull(item);
+            item.ShouldBeNull();
         }
 
         [AssertionMethod]
-        public static void should_not_be_null<T>(this T item) where T : class
+        static public void should_not_be_null<T>(this T item) where T : class
         {
-            Assert.IsNotNull(item);
+            item.ShouldNotBeNull();
         }
 
         [AssertionMethod]
-        public static void should_be_greater_than<T>(this T actual, T expected) where T : IComparable
+        static public void should_be_greater_than<T>(this T actual, T expected) where T : IComparable
         {
-            Assert.GreaterThan(actual, expected);
+            actual.ShouldBeGreaterThan(expected);
         }
 
         [AssertionMethod]
-        public static void should_be_less_than(this int actual, int expected)
+        static public void should_be_less_than(this int actual, int expected)
         {
-            Assert.Less(actual, expected);
+            actual.ShouldBeLessThan(expected);
         }
 
         [AssertionMethod]
-        public static void should_contain<T>(this IEnumerable<T> items_to_peek_in_to, T items_to_look_for)
+        static public void should_contain<T>(this IEnumerable<T> items_to_peek_in_to, T items_to_look_for)
         {
             items_to_peek_in_to.Contains(items_to_look_for).should_be_true();
         }
 
         [AssertionMethod]
-        public static void should_not_contain<T>(this IEnumerable<T> items_to_peek_into, T item_to_look_for)
+        static public void should_not_contain<T>(this IEnumerable<T> items_to_peek_into, T item_to_look_for)
         {
             items_to_peek_into.Contains(item_to_look_for).should_be_false();
         }
 
         [AssertionMethod]
-        public static void should_be_an_instance_of<T>(this object item)
+        static public void should_be_an_instance_of<T>(this object item)
         {
             item.should_be_an_instance_of(typeof (T));
         }
 
         [AssertionMethod]
-        public static void should_be_an_instance_of(this object item, Type type)
+        static public void should_be_an_instance_of(this object item, Type type)
         {
-            Assert.IsInstanceOfType(type, item);
+            item.ShouldBe(type);
         }
 
         [AssertionMethod]
-        public static void should_have_thrown<TheException>(this Action action) where TheException : Exception
+        static public void should_have_thrown<TheException>(this Action action) where TheException : Exception
         {
-            try
-            {
-                action();
-                Assert.Fail("the_exception_was_not_thrown");
-            }
-            catch (Exception e)
-            {
-                should_be_an_instance_of<TheException>(e);
-            }
+            typeof (TheException).ShouldBeThrownBy(action);
         }
 
         [AssertionMethod]
-        public static void should_be_true(this bool item)
+        static public void should_be_true(this bool item)
         {
-            Assert.IsTrue(item);
+            item.ShouldBeTrue();
         }
 
         [AssertionMethod]
-        public static void should_be_false(this bool item)
+        static public void should_be_false(this bool item)
         {
-            Assert.IsFalse(item);
+            item.ShouldBeFalse();
         }
 
         [AssertionMethod]
-        public static void should_contain<T>(this IEnumerable<T> items, params T[] items_to_find)
+        static public void should_contain<T>(this IEnumerable<T> items, params T[] items_to_find)
         {
             foreach (var item_to_find in items_to_find)
             {
@@ -104,16 +96,16 @@ namespace Gorilla.Commons.Testing
         }
 
         [AssertionMethod]
-        public static void should_only_contain<T>(this IEnumerable<T> items, params T[] itemsToFind)
+        static public void should_only_contain<T>(this IEnumerable<T> items, params T[] itemsToFind)
         {
             items.Count().should_be_equal_to(itemsToFind.Length);
             items.should_contain(itemsToFind);
         }
 
         [AssertionMethod]
-        public static void should_be_equal_ignoring_case(this string item, string other)
+        static public void should_be_equal_ignoring_case(this string item, string other)
         {
-            StringAssert.AreEqualIgnoreCase(item, other);
+            item.ShouldBeEqualIgnoringCase(other);
         }
     }
 }

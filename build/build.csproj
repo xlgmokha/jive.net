@@ -76,17 +76,13 @@
     <None Include="project.deploy.build" />
     <None Include="project.install.build" />
     <None Include="project.test.build" />
-    <None Include="tools\psake\build_utilities.ps1" />
-    <None Include="tools\psake\psake.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="local.properties.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empty.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="tools\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
