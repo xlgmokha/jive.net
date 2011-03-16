@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
   <project name="gorilla.commons">	
-	<property name="nant.settings.currentframework" value="net-3.5" />
+	<property name="nant.settings.currentframework" value="net-4.0" />
 	<property name="project.name" value="${project::get-name()}" />
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
@@ -18,14 +18,9 @@
 	<property name="app.output" value="${project.name}.dll" />
 	
 	<include buildfile="project.test.build" />
-	<include buildfile="project.test.reports.build" />
-	<include buildfile="project.deploy.build" />
-	<include buildfile="project.install.build" />
-	<include buildfile="project.ci.build" />
 	<include buildfile="local.properties.xml" />
 		
 	<target name="clean">
-		<exec program="taskkill.exe" commandline="/f /im ${editor.exe} /FI &quot;STATUS eq RUNNING&quot;"  />
 		<delete dir="${build.compile.dir}" />
 	</target>
 	
