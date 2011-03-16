@@ -4,7 +4,7 @@ using Machine.Specifications;
 
 namespace gorilla.commons.testing.unit.utility
 {
-    [Concern(typeof (MappingExtensions))]
+    [Subject(typeof (MappingExtensions))]
     public class when_transforming_type_A_to_type_B_then_C
     {
         It should_return_the_correct_result = () => result.should_be_equal_to(1);

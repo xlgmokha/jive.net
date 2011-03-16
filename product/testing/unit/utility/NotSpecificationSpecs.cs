@@ -6,7 +6,7 @@ namespace gorilla.commons.testing.unit.utility
 {
     public class NotSpecificationSpecs
     {
-        [Concern(typeof (NotSpecification<>))]
+        [Subject(typeof (NotSpecification<>))]
         public class when_checking_if_a_condition_is_not_met
         {
             static protected Specification<int> criteria;
@@ -25,7 +25,7 @@ namespace gorilla.commons.testing.unit.utility
             }
         }
 
-        [Concern(typeof (NotSpecification<>))]
+        [Subject(typeof (NotSpecification<>))]
         public class when_a_condition_is_not_met : when_checking_if_a_condition_is_not_met
         {
             Establish c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
@@ -40,7 +40,7 @@ namespace gorilla.commons.testing.unit.utility
             static bool result;
         }
 
-        [Concern(typeof (NotSpecification<>))]
+        [Subject(typeof (NotSpecification<>))]
         public class when_a_condition_is_met : when_checking_if_a_condition_is_not_met
         {
             Establish c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);

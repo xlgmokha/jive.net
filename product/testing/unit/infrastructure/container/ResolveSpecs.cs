@@ -6,10 +6,10 @@ using Machine.Specifications;
 
 namespace gorilla.commons.testing.unit.infrastructure.container
 {
-    [Concern(typeof (Resolve))]
+    [Subject(typeof (Resolve))]
     public abstract class behaves_like_a_inversion_of_control_container
     {
-        [Concern(typeof (Resolve))]
+        [Subject(typeof (Resolve))]
         public class when_resolving_a_dependency_using_the_container : behaves_like_a_inversion_of_control_container
         {
             Establish c = () =>
@@ -37,7 +37,7 @@ namespace gorilla.commons.testing.unit.infrastructure.container
             static Command presenter;
         }
 
-        [Concern(typeof (Resolve))]
+        [Subject(typeof (Resolve))]
         public class when_resolving_a_dependency_that_is_not_registered_ : behaves_like_a_inversion_of_control_container
         {
             Establish c = () =>

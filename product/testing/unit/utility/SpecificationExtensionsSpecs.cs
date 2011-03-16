@@ -18,7 +18,7 @@ namespace gorilla.commons.testing.unit.utility
             static protected Specification<int> right;
         }
 
-        [Concern(typeof (SpecificationExtensions))]
+        [Subject(typeof (SpecificationExtensions))]
         public class when_checking_if_two_conditions_are_met_and_they_are : when_evaluating_two_conditions
         {
             It should_return_true = () => result.should_be_true();
@@ -37,7 +37,7 @@ namespace gorilla.commons.testing.unit.utility
             static bool result;
         }
 
-        [Concern(typeof (SpecificationExtensions))]
+        [Subject(typeof (SpecificationExtensions))]
         public class when_checking_if_one_of_two_conditions_are_met_and_the_left_one_is_not : when_evaluating_two_conditions
         {
             It should_return_true = () => result.should_be_true();
@@ -56,7 +56,7 @@ namespace gorilla.commons.testing.unit.utility
             static bool result;
         }
 
-        [Concern(typeof (SpecificationExtensions))]
+        [Subject(typeof (SpecificationExtensions))]
         public class when_checking_if_one_of_two_conditions_are_met_and_the_right_one_is_not :
             when_evaluating_two_conditions
         {

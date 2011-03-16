@@ -6,7 +6,7 @@ using Machine.Specifications;
 
 namespace gorilla.commons.testing.unit.infrastructure.cloning
 {
-    [Concern(typeof (BinarySerializer<TestItem>))]
+    [Subject(typeof (BinarySerializer<TestItem>))]
     public abstract class when_a_file_is_specified_to_serialize_an_item_to
     {
         static Serializer<TestItem> create_sut()
@@ -30,7 +30,7 @@ namespace gorilla.commons.testing.unit.infrastructure.cloning
         static protected Serializer<TestItem> sut;
     }
 
-    [Concern(typeof (BinarySerializer<TestItem>))]
+    [Subject(typeof (BinarySerializer<TestItem>))]
     public class when_serializing_an_item : when_a_file_is_specified_to_serialize_an_item_to
     {
         It should_serialize_the_item_to_a_file = () => File.Exists(file_name).should_be_true();
@@ -38,7 +38,7 @@ namespace gorilla.commons.testing.unit.infrastructure.cloning
         Because b = () => sut.serialize(new TestItem(string.Empty));
     }
 
-    [Concern(typeof (BinarySerializer<TestItem>))]
+    [Subject(typeof (BinarySerializer<TestItem>))]
     public class when_deserializing_an_item : when_a_file_is_specified_to_serialize_an_item_to
     {
         It should_be_able_to_deserialize_from_a_serialized_file = () => result.should_be_equal_to(original);

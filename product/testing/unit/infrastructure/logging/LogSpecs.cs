@@ -5,7 +5,7 @@ using Machine.Specifications;
 
 namespace gorilla.commons.testing.unIt.infrastructure.logging
 {
-    [Concern(typeof (Log))]
+    [Subject(typeof (Log))]
     public class when_creating_a_logger_for_a_particular_type
     {
         It should_return_the_logger_created_for_that_type = () => result.should_be_equal_to(logger);

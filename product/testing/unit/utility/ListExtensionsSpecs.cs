@@ -7,7 +7,7 @@ namespace gorilla.commons.testing.unit.utility
 {
     public class ListExtensionsSpecs
     {
-        [Concern(typeof (ListExtensions))]
+        [Subject(typeof (ListExtensions))]
         public class when_adding_an_item_to_a_list
         {
             Because b = () =>
@@ -21,7 +21,7 @@ namespace gorilla.commons.testing.unit.utility
             static List<string> list;
         }
 
-        [Concern(typeof (ListExtensions))]
+        [Subject(typeof (ListExtensions))]
         public abstract class when_asked_to_only_add_an_item_to_a_list_if_a_condition_is_not_met
         {
             Establish c = () =>
@@ -32,7 +32,7 @@ namespace gorilla.commons.testing.unit.utility
             static protected List<string> list;
         }
 
-        [Concern(typeof (ListExtensions))]
+        [Subject(typeof (ListExtensions))]
         public class when_the_condition_is_not_met : when_asked_to_only_add_an_item_to_a_list_if_a_condition_is_not_met
         {
             Because b = () => list.add("mo").unless(x => false);
@@ -40,7 +40,7 @@ namespace gorilla.commons.testing.unit.utility
             It should_add_the_item_to_the_list = () => list.should_contain("mo");
         }
 
-        [Concern(typeof (ListExtensions))]
+        [Subject(typeof (ListExtensions))]
         public class when_the_condition_is_met : when_asked_to_only_add_an_item_to_a_list_if_a_condition_is_not_met
         {
             Because b = () => list.add("mo").unless(x => true);
@@ -48,7 +48,7 @@ namespace gorilla.commons.testing.unit.utility
             It should_not_add_the_item_to_the_list = () => list.should_not_contain("mo");
         }
 
-        [Concern(typeof (ListExtensions))]
+        [Subject(typeof (ListExtensions))]
         public class when_some_of_the_items_meet_the_conditions_and_some_do_not :
             when_asked_to_only_add_an_item_to_a_list_if_a_condition_is_not_met
         {

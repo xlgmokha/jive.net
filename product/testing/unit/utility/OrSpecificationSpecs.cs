@@ -6,7 +6,7 @@ namespace gorilla.commons.testing.unit.utility
 {
     public class OrSpecificationSpecs
     {
-        [Concern(typeof (OrSpecification<>))]
+        [Subject(typeof (OrSpecification<>))]
         public abstract class when_checking_if_one_of_two_conditions_are_met
         {
             static Specification<int> create_sut()
@@ -26,7 +26,7 @@ namespace gorilla.commons.testing.unit.utility
             static protected Specification<int> sut;
         }
 
-        [Concern(typeof (OrSpecification<>))]
+        [Subject(typeof (OrSpecification<>))]
         public class when_one_of_the_conditions_is_met : when_checking_if_one_of_two_conditions_are_met
         {
             It should_return_true = () => result.should_be_true();
@@ -41,7 +41,7 @@ namespace gorilla.commons.testing.unit.utility
             static bool result;
         }
 
-        [Concern(typeof (OrSpecification<>))]
+        [Subject(typeof (OrSpecification<>))]
         public class when_the_second_condition_is_met : when_checking_if_one_of_two_conditions_are_met
         {
             It should_return_true = () => result.should_be_true();
@@ -56,7 +56,7 @@ namespace gorilla.commons.testing.unit.utility
             static bool result;
         }
 
-        [Concern(typeof (OrSpecification<>))]
+        [Subject(typeof (OrSpecification<>))]
         public class when_neither_conditions_are_met : when_checking_if_one_of_two_conditions_are_met
         {
             It should_return_false = () => result.should_be_false();

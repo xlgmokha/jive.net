@@ -6,7 +6,7 @@ namespace gorilla.commons.testing.unit.infrastructure.proxies
 {
     public class ProxyFactorySpecs
     {
-        [Concern(typeof (ProxyFactory))]
+        [Subject(typeof (ProxyFactory))]
         public class when_proxying_a_class_with_interceptors_applied
         {
             Establish c = () =>

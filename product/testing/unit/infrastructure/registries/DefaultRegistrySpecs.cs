@@ -7,7 +7,7 @@ using Machine.Specifications;
 
 namespace gorilla.commons.testing.unit.infrastructure.registries
 {
-    [Concern(typeof (DefaultRegistry<int>))]
+    [Subject(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository
     {
         It should_leverage_the_resolver_to_retrieve_all_the_implementations =

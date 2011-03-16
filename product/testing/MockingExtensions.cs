@@ -8,9 +8,9 @@ namespace Gorilla.Commons.Testing
 {
     public static class MockingExtensions
     {
-        public static MethodCallOccurance<T> was_told_to<T>(this T mocked_item, Action<T> action_to_perform)
+        public static void was_told_to<T>(this T mocked_item, Action<T> action_to_perform)
         {
-            return new MethodCallOccurance<T>(mocked_item, action_to_perform);
+            mocked_item.AssertWasCalled(action_to_perform);
         }
 
         public static void was_not_told_to<T>(this T mocked_item, Action<T> action_to_perform)
