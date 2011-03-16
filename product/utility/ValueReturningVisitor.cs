@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface ValueReturningVisitor<Value, T> : Visitor<T>
+    public interface ValueReturningVisitor<out Value, in T> : Visitor<T>
     {
         Value value { get; }
         void reset();

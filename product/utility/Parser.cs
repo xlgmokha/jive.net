@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface Parser<T>
+    public interface Parser<out T>
     {
         T parse();
     }

@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface Configuration<T>
+    public interface Configuration<in T>
     {
         void configure(T item);
     }

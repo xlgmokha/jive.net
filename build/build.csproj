@@ -68,7 +68,9 @@
   <ItemGroup>
     <None Include="config\AssemblyInfo.cs.template" />
     <None Include="local.properties.xml.template" />
-    <None Include="project.build" />
+    <None Include="project.build">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="local.properties.xml" />

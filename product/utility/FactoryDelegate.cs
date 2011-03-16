@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public delegate Out FactoryDelegate<In, Out>(In input);
+    public delegate Out FactoryDelegate<in In, out Out>(In input);
 
-    public delegate Out FactoryDelegate<Out>();
+    public delegate Out FactoryDelegate<out Out>();
 }

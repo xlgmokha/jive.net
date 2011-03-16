@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface Factory<T>
+    public interface Factory<out T>
     {
         T create();
     }

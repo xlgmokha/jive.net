@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface ParameterizedCommand<T>
+    public interface ParameterizedCommand<in T>
     {
         void run(T item);
     }

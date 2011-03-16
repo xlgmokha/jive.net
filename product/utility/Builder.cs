@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface Builder<T>
+    public interface Builder<out T>
     {
         T build();
     }

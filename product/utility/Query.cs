@@ -1,11 +1,11 @@
 namespace gorilla.commons.utility
 {
-    public interface Query<TOutput>
+    public interface Query<out TOutput>
     {
         TOutput fetch();
     }
 
-    public interface Query<TInput, TOutput>
+    public interface Query<in TInput, out TOutput>
     {
         TOutput fetch(TInput item);
     }

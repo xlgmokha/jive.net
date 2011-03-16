@@ -1,6 +1,6 @@
 namespace gorilla.commons.utility
 {
-    public interface CallbackCommand<T> : ParameterizedCommand<Callback<T>>
+    public interface CallbackCommand<out T> : ParameterizedCommand<Callback<T>>
     {
     }
 }

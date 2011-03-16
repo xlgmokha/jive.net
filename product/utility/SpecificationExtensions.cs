@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace gorilla.commons.utility
 {
@@ -8,7 +9,7 @@ namespace gorilla.commons.utility
         static public IEnumerable<T> that_satisfy<T>(this IEnumerable<T> items_to_peek_in_to,
                                                      Predicate<T> criteria_to_satisfy)
         {
-            foreach (var item in items_to_peek_in_to ?? new List<T>())
+            foreach (var item in items_to_peek_in_to ?? Enumerable.Empty<T>())
                 if (item.satisfies(criteria_to_satisfy)) yield return item;
         }
 
