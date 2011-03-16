@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public class AnonymousCommand : Command
     {

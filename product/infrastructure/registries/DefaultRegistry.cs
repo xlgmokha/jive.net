@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Gorilla.Commons.Infrastructure.Container;
-using gorilla.commons.utility;
+using gorilla.infrastructure.container;
+using gorilla.utility;
 
-namespace Gorilla.Commons.Infrastructure.Registries
+namespace gorilla.infrastructure.registries
 {
     public class DefaultRegistry<T> : Registry<T>
     {

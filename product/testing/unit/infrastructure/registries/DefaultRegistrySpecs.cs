@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Registries;
-using Gorilla.Commons.Testing;
-using gorilla.commons.utility;
+using gorilla.infrastructure.container;
+using gorilla.infrastructure.registries;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.infrastructure.registries
+namespace specs.unit.infrastructure.registries
 {
     [Subject(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository

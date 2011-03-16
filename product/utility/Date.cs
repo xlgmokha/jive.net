@@ -1,8 +1,7 @@
 using System;
 using System.Globalization;
-using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Utility
+namespace gorilla.utility
 {
     [Serializable]
     public class Date :  IComparable<Date>, IComparable, IEquatable<Date>

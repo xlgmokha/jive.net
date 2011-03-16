@@ -1,7 +1,7 @@
 using System;
-using Gorilla.Commons.Infrastructure.Container;
+using gorilla.infrastructure.container;
 
-namespace Gorilla.Commons.Infrastructure.Logging
+namespace gorilla.infrastructure.logging
 {
     static public class Log
     {

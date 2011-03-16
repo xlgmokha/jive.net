@@ -1,6 +1,6 @@
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Gorilla.Commons.Infrastructure.Cloning
+namespace gorilla.infrastructure.cloning
 {
     public class BinarySerializer<T> : FileStreamSerializer<T>
     {

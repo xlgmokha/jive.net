@@ -1,8 +1,7 @@
-using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.utility
+namespace specs.unit.utility
 {
     public class DateSpecs
     {

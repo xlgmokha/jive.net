@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Gorilla.Commons.Infrastructure.Container
+namespace gorilla.infrastructure.container
 {
     public interface DependencyRegistry
     {

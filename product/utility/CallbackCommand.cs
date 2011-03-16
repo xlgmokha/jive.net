@@ -1,4 +1,4 @@
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public interface CallbackCommand<out T> : ParameterizedCommand<Callback<T>>
     {

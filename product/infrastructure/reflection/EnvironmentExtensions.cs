@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Infrastructure.Reflection
+namespace gorilla.infrastructure.reflection
 {
     public static class EnvironmentExtensions
     {

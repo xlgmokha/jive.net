@@ -1,6 +1,6 @@
 using System;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     static public class FuncExtensions
     {

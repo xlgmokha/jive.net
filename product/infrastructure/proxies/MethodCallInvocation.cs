@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
-using gorilla.commons.utility;
+using gorilla.utility;
 
-namespace Gorilla.Commons.Infrastructure.Proxies
+namespace gorilla.infrastructure.proxies
 {
     public class MethodCallInvocation<T> : Invocation
     {

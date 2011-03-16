@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using gorilla.commons.utility;
+using gorilla.utility;
 
-namespace gorilla.commons.testing.unit.utility
+namespace specs.unit.utility
 {
     static public class VisitorExtensions
     {

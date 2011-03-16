@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Machine.Specifications;
 
-namespace Gorilla.Commons.Testing
+namespace specs
 {
     static public class Assertions
     {

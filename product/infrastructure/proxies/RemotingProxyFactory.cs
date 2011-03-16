@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Proxies;
-using gorilla.commons.utility;
+using gorilla.utility;
 
-namespace Gorilla.Commons.Infrastructure.Proxies
+namespace gorilla.infrastructure.proxies
 {
     public class RemotingProxyFactory<T> : RealProxy
     {

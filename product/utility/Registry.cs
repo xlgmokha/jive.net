@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public interface Registry<out T> : IEnumerable<T>
     {

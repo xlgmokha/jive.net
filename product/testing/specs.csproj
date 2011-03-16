@@ -8,7 +8,7 @@
     <ProjectGuid>{44E65096-9657-4716-90F8-4535BABE8039}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gorilla.commons.testing</RootNamespace>
+    <RootNamespace>specs</RootNamespace>
     <AssemblyName>specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

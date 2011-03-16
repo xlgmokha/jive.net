@@ -1,10 +1,9 @@
 using System;
 using System.IO;
-using Gorilla.Commons.Infrastructure.Cloning;
-using Gorilla.Commons.Testing;
+using gorilla.infrastructure.cloning;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.infrastructure.cloning
+namespace specs.unit.infrastructure.cloning
 {
     [Subject(typeof (BinarySerializer<TestItem>))]
     public abstract class when_a_file_is_specified_to_serialize_an_item_to

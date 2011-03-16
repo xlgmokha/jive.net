@@ -1,4 +1,4 @@
-namespace Gorilla.Commons.Infrastructure.Logging
+namespace gorilla.infrastructure.logging
 {
     public interface Loggable
     {

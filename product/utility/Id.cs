@@ -1,6 +1,6 @@
 using System;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     [Serializable]
     public class Id<T>

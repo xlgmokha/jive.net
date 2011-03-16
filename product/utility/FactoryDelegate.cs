@@ -1,4 +1,4 @@
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public delegate Out FactoryDelegate<in In, out Out>(In input);
 

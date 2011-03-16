@@ -1,7 +1,7 @@
 using System;
-using gorilla.commons.utility;
+using gorilla.utility;
 
-namespace Gorilla.Commons.Infrastructure.Container
+namespace gorilla.infrastructure.container
 {
     public class DependencyResolutionException<T> : Exception
     {

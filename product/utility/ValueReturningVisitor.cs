@@ -1,4 +1,4 @@
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public interface ValueReturningVisitor<out Value, in T> : Visitor<T>
     {

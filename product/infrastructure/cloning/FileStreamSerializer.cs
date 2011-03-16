@@ -1,7 +1,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace Gorilla.Commons.Infrastructure.Cloning
+namespace gorilla.infrastructure.cloning
 {
     public class FileStreamSerializer<T> : Serializer<T>
     {

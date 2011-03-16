@@ -1,4 +1,4 @@
-namespace Gorilla.Commons.Infrastructure.Proxies
+namespace gorilla.infrastructure.proxies
 {
     static public class ProxyFactory
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Rhino.Mocks;
 
-namespace Gorilla.Commons.Testing
+namespace specs
 {
     static public class Create
     {

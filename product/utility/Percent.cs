@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace Gorilla.Commons.Utility
+namespace gorilla.utility
 {
     public class Percent
     {

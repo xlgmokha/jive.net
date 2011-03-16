@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Gorilla.Commons.Infrastructure.Proxies
+namespace gorilla.infrastructure.proxies
 {
     public interface Invocation
     {

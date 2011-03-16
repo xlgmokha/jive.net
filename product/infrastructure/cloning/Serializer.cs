@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Infrastructure.Cloning
+namespace gorilla.infrastructure.cloning
 {
     public interface Serializer<T> : IDisposable
     {

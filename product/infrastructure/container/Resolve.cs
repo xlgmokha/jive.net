@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Infrastructure.Container
+namespace gorilla.infrastructure.container
 {
     static public class Resolve
     {

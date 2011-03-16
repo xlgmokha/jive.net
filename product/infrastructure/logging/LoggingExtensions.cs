@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Infrastructure.Logging
+namespace gorilla.infrastructure.logging
 {
     public static class LoggingExtensions
     {

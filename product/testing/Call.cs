@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Testing
+namespace specs
 {
     static public class call
     {

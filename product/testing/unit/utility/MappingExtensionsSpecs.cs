@@ -1,8 +1,7 @@
-using Gorilla.Commons.Testing;
-using gorilla.commons.utility;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.utility
+namespace specs.unit.utility
 {
     [Subject(typeof (MappingExtensions))]
     public class when_transforming_type_A_to_type_B_then_C

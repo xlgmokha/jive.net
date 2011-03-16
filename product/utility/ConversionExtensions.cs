@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public static class ConversionExtensions
     {

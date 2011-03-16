@@ -8,8 +8,8 @@
     <ProjectGuid>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gorilla.commons.utility</RootNamespace>
-    <AssemblyName>gorilla.commons.utility</AssemblyName>
+    <RootNamespace>gorilla.utility</RootNamespace>
+    <AssemblyName>gorilla.utility</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

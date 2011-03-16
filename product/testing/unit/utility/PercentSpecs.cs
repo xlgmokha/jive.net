@@ -1,8 +1,7 @@
-using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.utility
+namespace specs.unit.utility
 {
     [Subject(typeof (Percent))]
     public class when_comparing_fifty_divided_by_one_hundred_to_fifty_percent

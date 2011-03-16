@@ -1,9 +1,8 @@
 using System.Data;
-using Gorilla.Commons.Testing;
-using gorilla.commons.utility;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.utility
+namespace specs.unit.utility
 {
     public class ConfigurationExtensionsSpecs
     {

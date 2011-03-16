@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Gorilla.Commons.Infrastructure.Cloning
+namespace gorilla.infrastructure.cloning
 {
     public interface IPrototype
     {

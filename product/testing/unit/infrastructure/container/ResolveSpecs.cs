@@ -1,10 +1,9 @@
 using System;
-using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Testing;
-using gorilla.commons.utility;
+using gorilla.infrastructure.container;
+using gorilla.utility;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.infrastructure.container
+namespace specs.unit.infrastructure.container
 {
     [Subject(typeof (Resolve))]
     public abstract class behaves_like_a_inversion_of_control_container

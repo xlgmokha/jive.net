@@ -1,8 +1,7 @@
-using Gorilla.Commons.Infrastructure.Proxies;
-using Gorilla.Commons.Testing;
+using gorilla.infrastructure.proxies;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unit.infrastructure.proxies
+namespace specs.unit.infrastructure.proxies
 {
     public class ProxyFactorySpecs
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Gorilla.Commons.Infrastructure.Reflection
+namespace gorilla.infrastructure.reflection
 {
     public interface Assembly
     {

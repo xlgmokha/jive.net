@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-  <project name="gorilla.commons">	
-	<property name="project.name" value="${project::get-name()}" />
-
+<project name="gorilla.commons" default="test">	
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
-	<property name="product.dir" value="${base.dir}\product" />
 	
 	<property name="build.dir" value="${base.dir}\build" />
 	<property name="build.tools.dir" value="${build.dir}\tools" />

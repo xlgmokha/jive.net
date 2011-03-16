@@ -1,9 +1,8 @@
-using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Testing;
+using gorilla.infrastructure.container;
+using gorilla.infrastructure.logging;
 using Machine.Specifications;
 
-namespace gorilla.commons.testing.unIt.infrastructure.logging
+namespace specs.unit.infrastructure.logging
 {
     [Subject(typeof (Log))]
     public class when_creating_a_logger_for_a_particular_type

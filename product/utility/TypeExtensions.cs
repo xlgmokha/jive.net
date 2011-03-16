@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public static class TypeExtensions
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Utility
+namespace gorilla.utility
 {
     public static class Clock
     {

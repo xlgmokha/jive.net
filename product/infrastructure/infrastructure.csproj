@@ -8,8 +8,8 @@
     <ProjectGuid>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gorilla.commons.infrastructure</RootNamespace>
-    <AssemblyName>gorilla.commons.infrastructure</AssemblyName>
+    <RootNamespace>gorilla.infrastructure</RootNamespace>
+    <AssemblyName>gorilla.infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -74,9 +74,6 @@
     <Compile Include="container\DependencyResolutionException.cs" />
     <Compile Include="container\DependencyRegistry.cs" />
     <Compile Include="container\Resolve.cs" />
-    <Compile Include="debugging\Launch.cs" />
-    <Compile Include="filesystem\ApplicationFile.cs" />
-    <Compile Include="filesystem\File.cs" />
     <Compile Include="logging\TextLogger.cs" />
     <Compile Include="logging\LogFactory.cs" />
     <Compile Include="logging\Loggable.cs" />

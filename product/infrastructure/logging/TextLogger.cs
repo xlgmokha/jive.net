@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Threading;
-using gorilla.commons.utility;
+using gorilla.utility;
 
-namespace Gorilla.Commons.Infrastructure.Logging
+namespace gorilla.infrastructure.logging
 {
     public class TextLogger : Logger
     {

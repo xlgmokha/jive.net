@@ -1,4 +1,4 @@
-namespace gorilla.commons.utility
+namespace gorilla.utility
 {
     public class DefaultConstructorFactory<T> : ComponentFactory<T> where T : new()
     {
