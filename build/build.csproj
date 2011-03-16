@@ -69,7 +69,6 @@
     <None Include="config\AssemblyInfo.cs.template" />
     <None Include="local.properties.xml.template" />
     <None Include="project.build" />
-    <None Include="project.test.build" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="local.properties.xml" />

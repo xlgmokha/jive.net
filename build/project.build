@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
   <project name="gorilla.commons">	
-	<property name="nant.settings.currentframework" value="net-4.0" />
 	<property name="project.name" value="${project::get-name()}" />
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
@@ -11,9 +10,6 @@
 	<property name="build.config.dir" value="${build.dir}\config" />
 	<property name="build.compile.dir" value="${build.dir}\compile" />
 	
-	<property name="app.output" value="${project.name}.dll" />
-	
-	<include buildfile="project.test.build" />
 	<include buildfile="local.properties.xml" />
 		
 	<target name="clean">
@@ -37,4 +33,14 @@
 		</copy>
 	</target>
 	
+	<target name="run.test" depends="compile">
+  	<property name="xunit.cons.exe" value="${base.dir}/thirdparty/mspec/mspec.exe" />
+		<exec program="${xunit.cons.exe}" workingdir="${build.compile.dir}" commandline="${xunit.arguments}" />
+	</target>
+
+	<target name="test">
+		<property name="xunit.arguments" value="-t --html ${build.compile.dir} ${build.compile.dir}/specs.dll" />
+		<call target="run.test" />
+	</target>
+    
 </project>
