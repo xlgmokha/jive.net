@@ -16,3 +16,4 @@ compile
 artifacts
 installation
 *.user
+%APPDATA%
