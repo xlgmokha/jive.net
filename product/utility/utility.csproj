@@ -77,6 +77,7 @@
     <Compile Include="EmptyCallback.cs" />
     <Compile Include="EmptyCommand.cs" />
     <Compile Include="DefaultConstructorFactory.cs" />
+    <Compile Include="ExpressionExtensions.cs" />
     <Compile Include="FactoryDelegate.cs" />
     <Compile Include="FilteredVisitor.cs" />
     <Compile Include="FuncSpecification.cs" />
@@ -86,14 +87,16 @@
     <Compile Include="Command.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ComponentFactory.cs" />
+    <Compile Include="IContext.cs" />
     <Compile Include="Id.cs" />
     <Compile Include="DisposableCommand.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Identifiable.cs" />
     <Compile Include="Import.cs" />
+    <Compile Include="IScopedStorage.cs" />
+    <Compile Include="Key.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Notification.cs" />
-    <Compile Include="ParameterizedCommand.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Registry.cs" />

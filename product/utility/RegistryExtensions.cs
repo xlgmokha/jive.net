@@ -17,7 +17,7 @@ namespace gorilla.utility
             }
             catch (Exception exception)
             {
-                throw new Exception("Could Not Find an implementation of".formatted_using(typeof (K)), exception);
+                throw new Exception("Could Not Find an implementation of".format(typeof (K)), exception);
             }
         }
 

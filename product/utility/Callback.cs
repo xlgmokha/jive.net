@@ -4,7 +4,7 @@ namespace gorilla.utility
     {
     }
 
-    public interface Callback<in T> : ParameterizedCommand<T>
+    public interface Callback<in T> : Command<T>
     {
     }
 }

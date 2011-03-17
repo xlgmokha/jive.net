@@ -4,4 +4,9 @@ namespace gorilla.utility
     {
         void run();
     }
+
+    public interface Command<in T>
+    {
+        void run(T item);
+    }
 }

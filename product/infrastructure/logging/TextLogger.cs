@@ -22,7 +22,7 @@ namespace gorilla.infrastructure.logging
         public void debug(string formatted_string, params object[] arguments)
         {
             writer.WriteLine("[{0}] - {1}", Thread.CurrentThread.ManagedThreadId,
-                             formatted_string.formatted_using(arguments));
+                             formatted_string.format(arguments));
         }
 
         public void error(Exception e)

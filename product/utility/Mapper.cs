@@ -4,4 +4,9 @@ namespace gorilla.utility
     {
         Output map_from(Input item);
     }
+
+    public interface Mapper
+    {
+        Output map_from<Input, Output>(Input item);
+    }
 }

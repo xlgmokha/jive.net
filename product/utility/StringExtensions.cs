@@ -2,7 +2,7 @@ namespace gorilla.utility
 {
     static public class StringExtensions
     {
-        static public string formatted_using(this string formatted_string, params object[] arguments)
+        static public string format(this string formatted_string, params object[] arguments)
         {
             return string.Format(formatted_string, arguments);
         }
@@ -19,7 +19,7 @@ namespace gorilla.utility
 
         static public string to_string<T>(this T item)
         {
-            return "{0}".formatted_using(item);
+            return "{0}".format(item);
         }
     }
 }
