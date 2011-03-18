@@ -94,6 +94,7 @@
     <Compile Include="unit\utility\PredicateSpecificationSpecs.cs" />
     <Compile Include="unit\utility\SpecificationExtensionsSpecs.cs" />
     <Compile Include="unit\utility\TypeExtensionsSpecs.cs" />
+    <Compile Include="unit\utility\ValueTypeSpecs.cs" />
     <Compile Include="unit\utility\VisitorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
