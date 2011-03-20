@@ -1,6 +1,6 @@
 ﻿namespace gorilla.utility
 {
-    public interface IContext
+    public interface Context
     {
         bool contains<T>(Key<T> key);
         void add<T>(Key<T> key, T value);

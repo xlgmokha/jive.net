@@ -4,13 +4,13 @@ namespace gorilla.infrastructure.threading
 {
     public interface IBackgroundThread : DisposableCommand {}
 
-    public class BackgroundThread : IBackgroundThread
+    public class WorkderBackgroundThread : IBackgroundThread
     {
         readonly IWorkerThread worker_thread;
 
-        public BackgroundThread(DisposableCommand command_to_execute) : this(command_to_execute, new WorkerThread()) {}
+        public WorkderBackgroundThread(DisposableCommand command_to_execute) : this(command_to_execute, new WorkerThread()) {}
 
-        public BackgroundThread(DisposableCommand command_to_execute, IWorkerThread worker_thread)
+        public WorkderBackgroundThread(DisposableCommand command_to_execute, IWorkerThread worker_thread)
         {
             this.worker_thread = worker_thread;
             worker_thread.DoWork += (sender, e) => command_to_execute.run();

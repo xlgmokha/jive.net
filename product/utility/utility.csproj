@@ -79,7 +79,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ComponentFactory.cs" />
-    <Compile Include="IContext.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Id.cs" />
     <Compile Include="DisposableCommand.cs" />
     <Compile Include="Factory.cs" />
@@ -92,7 +92,9 @@
     <Compile Include="Parser.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Registry.cs" />
+    <Compile Include="ScopedContext.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SimpleContext.cs" />
     <Compile Include="Specification.cs" />
     <Compile Include="State.cs" />
     <Compile Include="SubjectOf.cs" />

@@ -21,12 +21,12 @@ namespace gorilla.infrastructure.threading
 
         public IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
         {
-            return new BackgroundThread(registry.get_a<CommandToExecute>());
+            return new WorkderBackgroundThread(registry.get_a<CommandToExecute>());
         }
 
         public IBackgroundThread create_for(Action action)
         {
-            return new BackgroundThread(new AnonymousDisposableCommand(action));
+            return new WorkderBackgroundThread(new AnonymousDisposableCommand(action));
         }
 
         class AnonymousDisposableCommand : DisposableCommand

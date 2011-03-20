@@ -6,7 +6,7 @@ namespace gorilla.infrastructure.threading
     {
         static public IBackgroundThread on_a_background_thread(this DisposableCommand command)
         {
-            return new BackgroundThread(command);
+            return new WorkderBackgroundThread(command);
         }
     }
 }

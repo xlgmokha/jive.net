@@ -91,7 +91,7 @@
     <Compile Include="reflection\Assembly.cs" />
     <Compile Include="registries\DefaultRegistry.cs" />
     <Compile Include="threading\AsynchronousCommandProcessor.cs" />
-    <Compile Include="threading\BackgroundThread.cs" />
+    <Compile Include="threading\WorkderBackgroundThread.cs" />
     <Compile Include="threading\BackgroundThreadFactory.cs" />
     <Compile Include="threading\CommandProcessor.cs" />
     <Compile Include="threading\CurrentThread.cs" />

@@ -6,7 +6,7 @@ using gorilla.utility;
 
 namespace gorilla.infrastructure.threading
 {
-    public class PerThread : IContext
+    public class PerThread : Context
     {
         readonly IDictionary<int, LocalDataStoreSlot> slots;
         readonly object mutex = new object();
