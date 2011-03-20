@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <project name="local.properties">
 	<property name="project.config" value="DEBUG" />
 	<property name="assembly.title" value="Gorilla.Commons" />
