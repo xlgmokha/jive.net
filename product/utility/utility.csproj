@@ -104,6 +104,7 @@
     <Compile Include="State.cs" />
     <Compile Include="SubjectOf.cs" />
     <Compile Include="ValueReturningVisitor.cs" />
+    <Compile Include="ValueType.cs" />
     <Compile Include="Visitable.cs" />
     <Compile Include="Visitor.cs" />
     <Compile Include="AnonymousMapper.cs" />
