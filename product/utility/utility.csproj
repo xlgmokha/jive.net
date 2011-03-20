@@ -57,14 +57,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clock.cs" />
@@ -100,6 +92,7 @@
     <Compile Include="Parser.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Registry.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Specification.cs" />
     <Compile Include="State.cs" />
     <Compile Include="SubjectOf.cs" />

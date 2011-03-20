@@ -82,6 +82,7 @@
     <Compile Include="unit\infrastructure\logging\LogSpecs.cs" />
     <Compile Include="unit\infrastructure\proxies\ProxyFactorySpecs.cs" />
     <Compile Include="unit\infrastructure\registries\DefaultRegistrySpecs.cs" />
+    <Compile Include="unit\utility\SettingsSpecs.cs" />
     <Compile Include="unit\utility\ConfigurationExtensionsSpecs.cs" />
     <Compile Include="unit\utility\DateSpecs.cs" />
     <Compile Include="unit\utility\EnumerableExtensionsSpecs.cs" />
