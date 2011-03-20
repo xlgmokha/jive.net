@@ -13,7 +13,7 @@ namespace gorilla.utility
 
         public T named<T>(string key)
         {
-            return settings[key].downcast_to<T>();
+            return settings[key].converted_to<T>();
         }
     }
 }

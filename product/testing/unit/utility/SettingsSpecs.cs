@@ -20,13 +20,13 @@ namespace specs.unit.utility
 
         public class when_pulling_out_a_setting : concern
         {
-            It should_return_the_correct_value = () => result.should_be_equal_to("blah");
+            It should_return_the_correct_value = () => result.should_be_true();
 
-            Establish context = () => { settings["the.key"] = "blah"; };
+            Establish context = () => { settings["the.key"] = "true"; };
 
-            Because of = () => { result = sut.named<string>("the.key"); };
+            Because of = () => { result = sut.named<bool>("the.key"); };
 
-            static string result;
+            static bool result;
         }
     }
 }

@@ -17,3 +17,4 @@ artifacts
 installation
 *.user
 %APPDATA%
+*.stackdump
