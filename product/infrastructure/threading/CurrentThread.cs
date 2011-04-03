@@ -2,7 +2,7 @@
 
 namespace gorilla.infrastructure.threading
 {
-    public class CurrentThread : IThread
+    public class CurrentThread : ApplicationThread
     {
         public T provide_slot_for<T>() where T : class, new()
         {

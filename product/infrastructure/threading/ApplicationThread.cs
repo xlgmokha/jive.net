@@ -1,6 +1,6 @@
 ﻿namespace gorilla.infrastructure.threading
 {
-    public interface IThread
+    public interface ApplicationThread
     {
         T provide_slot_for<T>() where T : class, new();
     }

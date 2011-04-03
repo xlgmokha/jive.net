@@ -2,9 +2,9 @@
 {
     public class ScopedContext : Context
     {
-        IScopedStorage storage;
+        ScopedStorage storage;
 
-        public ScopedContext(IScopedStorage storage)
+        public ScopedContext(ScopedStorage storage)
         {
             this.storage = storage;
         }

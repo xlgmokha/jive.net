@@ -2,7 +2,7 @@
 
 namespace gorilla.utility
 {
-    public interface IScopedStorage
+    public interface ScopedStorage
     {
         IDictionary provide_storage();
     }

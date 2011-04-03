@@ -6,8 +6,8 @@ namespace gorilla.infrastructure.threading
 {
     public interface IBackgroundThreadFactory
     {
-        IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand;
-        IBackgroundThread create_for(Action action);
+        BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand;
+        BackgroundThread create_for(Action action);
     }
 
     public class BackgroundThreadFactory : IBackgroundThreadFactory
@@ -19,12 +19,12 @@ namespace gorilla.infrastructure.threading
             this.registry = registry;
         }
 
-        public IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
+        public BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
         {
             return new WorkderBackgroundThread(registry.get_a<CommandToExecute>());
         }
 
-        public IBackgroundThread create_for(Action action)
+        public BackgroundThread create_for(Action action)
         {
             return new WorkderBackgroundThread(new AnonymousDisposableCommand(action));
         }

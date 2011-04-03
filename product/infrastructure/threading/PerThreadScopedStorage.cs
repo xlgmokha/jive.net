@@ -3,11 +3,11 @@ using gorilla.utility;
 
 namespace gorilla.infrastructure.threading
 {
-    public class PerThreadScopedStorage : IScopedStorage
+    public class PerThreadScopedStorage : ScopedStorage
     {
-        readonly IThread current_thread;
+        readonly ApplicationThread current_thread;
 
-        public PerThreadScopedStorage(IThread current_thread)
+        public PerThreadScopedStorage(ApplicationThread current_thread)
         {
             this.current_thread = current_thread;
         }

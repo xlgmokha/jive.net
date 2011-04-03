@@ -2,9 +2,7 @@ using gorilla.utility;
 
 namespace gorilla.infrastructure.threading
 {
-    public interface IBackgroundThread : DisposableCommand {}
-
-    public class WorkderBackgroundThread : IBackgroundThread
+    public class WorkderBackgroundThread : BackgroundThread
     {
         readonly IWorkerThread worker_thread;
 
