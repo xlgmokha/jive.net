@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using gorilla.utility;
 
 namespace gorilla.infrastructure.threading
 {
@@ -36,6 +37,12 @@ namespace gorilla.infrastructure.threading
             if (!timers.ContainsKey(client_to_stop_notifying)) return;
             timers[client_to_stop_notifying].Stop();
             timers[client_to_stop_notifying].Dispose();
+        }
+
+        public void Dispose()
+        {
+            timers.each(x => x.Value.Dispose());
+            timers.Clear();
         }
     }
 }
