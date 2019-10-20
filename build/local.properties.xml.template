@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<project name="local.properties">
-	<property name="project.config" value="DEBUG" />
-	<property name="assembly.title" value="Gorilla.Commons" />
-	<property name="assembly.description" value="common libraries" />
-	<property name="assembly.company" value="http://mokhan.ca" />
-	<property name="assembly.version" value="${datetime::get-year(datetime::now())}.${datetime::get-month(datetime::now())}.${datetime::get-day(datetime::now())}.${datetime::get-hour(datetime::now())}${datetime::get-minute(datetime::now())}" />
-</project>
