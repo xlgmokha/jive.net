@@ -1,6 +1,6 @@
-﻿using gorilla.utility;
+﻿using jive.utility;
 
-namespace gorilla.infrastructure.threading
+namespace jive.infrastructure.threading
 {
-    public interface BackgroundThread : DisposableCommand {}
+  public interface BackgroundThread : DisposableCommand {}
 }

@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface SubjectOf<in State> where State : utility.State
-    {
-        void change_state_to(State new_state);
-    }
+  public interface SubjectOf<in State> where State : utility.State
+  {
+    void change_state_to(State new_state);
+  }
 }

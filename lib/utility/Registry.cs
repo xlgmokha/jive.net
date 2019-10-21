@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Registry<out T> : IEnumerable<T>
-    {
-        IEnumerable<T> all();
-    }
+  public interface Registry<out T> : IEnumerable<T>
+  {
+    IEnumerable<T> all();
+  }
 }

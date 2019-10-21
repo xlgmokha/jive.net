@@ -1,6 +1,6 @@
 using System;
 
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface DisposableCommand : Command, IDisposable {}
+  public interface DisposableCommand : Command, IDisposable {}
 }

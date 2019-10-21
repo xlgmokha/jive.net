@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface ScopedStorage
-    {
-        IDictionary provide_storage();
-    }
+  public interface ScopedStorage
+  {
+    IDictionary provide_storage();
+  }
 }

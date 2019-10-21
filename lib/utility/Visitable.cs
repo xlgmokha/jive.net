@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Visitable<out T>
-    {
-        void accept(Visitor<T> visitor);
-    }
+  public interface Visitable<out T>
+  {
+    void accept(Visitor<T> visitor);
+  }
 }

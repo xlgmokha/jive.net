@@ -1,7 +1,7 @@
-namespace gorilla.infrastructure.proxies
+namespace jive.infrastructure.proxies
 {
-    public interface Interceptor
-    {
-        void intercept(Invocation invocation);
-    }
+  public interface Interceptor
+  {
+    void intercept(Invocation invocation);
+  }
 }

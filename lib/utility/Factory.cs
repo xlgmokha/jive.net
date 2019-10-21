@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Factory<out T>
-    {
-        T create();
-    }
+  public interface Factory<out T>
+  {
+    T create();
+  }
 }

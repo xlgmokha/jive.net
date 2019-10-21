@@ -1,4 +1,4 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface ComponentFactory<T> : Factory<T> where T : new() {}
+  public interface ComponentFactory<T> : Factory<T> where T : new() {}
 }

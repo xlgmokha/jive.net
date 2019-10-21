@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 
-namespace gorilla.infrastructure.container
+namespace jive.infrastructure.container
 {
-    public interface DependencyRegistry
-    {
-        Contract get_a<Contract>();
-        IEnumerable<Contract> get_all<Contract>();
-    }
+  public interface DependencyRegistry
+  {
+    Contract get_a<Contract>();
+    IEnumerable<Contract> get_all<Contract>();
+  }
 }

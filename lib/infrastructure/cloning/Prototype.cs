@@ -1,21 +1,21 @@
 using System.IO;
 
-namespace gorilla.infrastructure.cloning
+namespace jive.infrastructure.cloning
 {
-    public interface IPrototype
-    {
-        T clone<T>(T item);
-    }
+  public interface IPrototype
+  {
+    T clone<T>(T item);
+  }
 
-    public class Prototype : IPrototype
+  public class Prototype : IPrototype
+  {
+    public T clone<T>(T item)
     {
-        public T clone<T>(T item)
-        {
-            using (var serializer = new BinarySerializer<T>(Path.GetTempFileName()))
-            {
-                serializer.serialize(item);
-                return serializer.deserialize();
-            }
-        }
+      using (var serializer = new BinarySerializer<T>(Path.GetTempFileName()))
+      {
+        serializer.serialize(item);
+        return serializer.deserialize();
+      }
     }
+  }
 }

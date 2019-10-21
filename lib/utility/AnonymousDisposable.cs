@@ -1,19 +1,19 @@
 using System;
 
-namespace gorilla.utility
+namespace jive.utility
 {
-    public class AnonymousDisposable : IDisposable
+  public class AnonymousDisposable : IDisposable
+  {
+    readonly Action action;
+
+    public AnonymousDisposable(Action action)
     {
-        readonly Action action;
-
-        public AnonymousDisposable(Action action)
-        {
-            this.action = action;
-        }
-
-        public void Dispose()
-        {
-            action();
-        }
+      this.action = action;
     }
+
+    public void Dispose()
+    {
+      action();
+    }
+  }
 }

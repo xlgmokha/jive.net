@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Parser<out T>
-    {
-        T parse();
-    }
+  public interface Parser<out T>
+  {
+    T parse();
+  }
 }

@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Import<in T>
-    {
-        void import(T item);
-    }
+  public interface Import<in T>
+  {
+    void import(T item);
+  }
 }

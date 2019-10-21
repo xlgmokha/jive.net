@@ -1,9 +1,9 @@
 //using System.Collections.Generic;
 //using System.Reflection;
 //using System.Runtime.Remoting.Messaging;
-//using gorilla.utility;
+//using jive.utility;
 
-//namespace gorilla.infrastructure.proxies
+//namespace jive.infrastructure.proxies
 //{
     //public class MethodCallInvocation<T> : Invocation
     //{

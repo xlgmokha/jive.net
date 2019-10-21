@@ -1,33 +1,33 @@
 using System;
 
-namespace gorilla.infrastructure.container
+namespace jive.infrastructure.container
 {
-    static public class Resolve
+  static public class Resolve
+  {
+    static DependencyRegistry underlying_registry;
+    static bool initialized;
+
+    static public void initialize_with(DependencyRegistry registry)
     {
-        static DependencyRegistry underlying_registry;
-        static bool initialized;
-
-        static public void initialize_with(DependencyRegistry registry)
-        {
-            underlying_registry = registry;
-            initialized = registry != null;
-        }
-
-        static public DependencyToResolve the<DependencyToResolve>()
-        {
-            try
-            {
-                return underlying_registry.get_a<DependencyToResolve>();
-            }
-            catch (Exception e)
-            {
-                throw new DependencyResolutionException<DependencyToResolve>(e);
-            }
-        }
-
-        static public bool is_initialized()
-        {
-            return initialized;
-        }
+      underlying_registry = registry;
+      initialized = registry != null;
     }
+
+    static public DependencyToResolve the<DependencyToResolve>()
+    {
+      try
+      {
+        return underlying_registry.get_a<DependencyToResolve>();
+      }
+      catch (Exception e)
+      {
+        throw new DependencyResolutionException<DependencyToResolve>(e);
+      }
+    }
+
+    static public bool is_initialized()
+    {
+      return initialized;
+    }
+  }
 }

@@ -1,7 +1,6 @@
-namespace gorilla.infrastructure.logging
+namespace jive.infrastructure.logging
 {
-    public interface Loggable
-    {
-        
-    }
+  public interface Loggable
+  {
+  }
 }

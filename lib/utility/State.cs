@@ -1,6 +1,6 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface State
-    {
-    }
+  public interface State
+  {
+  }
 }

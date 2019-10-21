@@ -1,13 +1,13 @@
 using System;
-using gorilla.utility;
+using jive.utility;
 
-namespace gorilla.infrastructure.container
+namespace jive.infrastructure.container
 {
-    public class DependencyResolutionException<T> : Exception
+  public class DependencyResolutionException<T> : Exception
+  {
+    public DependencyResolutionException(Exception inner_exception)
+      : base("Could not resolve {0}".format(typeof (T).FullName), inner_exception)
     {
-        public DependencyResolutionException(Exception inner_exception)
-            : base("Could not resolve {0}".format(typeof (T).FullName), inner_exception)
-        {
-        }
     }
+  }
 }

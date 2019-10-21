@@ -1,19 +1,19 @@
 using System;
 
-namespace gorilla.utility
+namespace jive.utility
 {
-    public class FuncSpecification<T> : Specification<T>
+  public class FuncSpecification<T> : Specification<T>
+  {
+    Func<T, bool> condition;
+
+    public FuncSpecification(Func<T, bool> condition)
     {
-        Func<T, bool> condition;
-
-        public FuncSpecification(Func<T, bool> condition)
-        {
-            this.condition = condition;
-        }
-
-        public bool is_satisfied_by(T item)
-        {
-            return condition(item);
-        }
+      this.condition = condition;
     }
+
+    public bool is_satisfied_by(T item)
+    {
+      return condition(item);
+    }
+  }
 }

@@ -1,23 +1,23 @@
 using System.Threading;
-using gorilla.utility;
+using jive.utility;
 
-namespace gorilla.infrastructure.threading
+namespace jive.infrastructure.threading
 {
-    public interface ISynchronizationContext : Command<Command> {}
+  public interface ISynchronizationContext : Command<Command> {}
 
-    public class SynchronizedContext : ISynchronizationContext
+  public class SynchronizedContext : ISynchronizationContext
+  {
+    readonly SynchronizationContext context;
+
+    public SynchronizedContext(SynchronizationContext context)
     {
-        readonly SynchronizationContext context;
-
-        public SynchronizedContext(SynchronizationContext context)
-        {
-            this.context = context;
-        }
-
-        public void run(Command item)
-        {
-            context.Post(x => item.run(), new object());
-            //context.Send(x => item.run(), new object());
-        }
+      this.context = context;
     }
+
+    public void run(Command item)
+    {
+      context.Post(x => item.run(), new object());
+      //context.Send(x => item.run(), new object());
+    }
+  }
 }

@@ -1,12 +1,12 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Command
-    {
-        void run();
-    }
+  public interface Command
+  {
+    void run();
+  }
 
-    public interface Command<in T>
-    {
-        void run(T item);
-    }
+  public interface Command<in T>
+  {
+    void run(T item);
+  }
 }

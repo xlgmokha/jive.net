@@ -1,31 +1,31 @@
-using gorilla.utility;
+using jive.utility;
 using Machine.Specifications;
 
 namespace specs.unit.utility
 {
-    [Subject(typeof (NumericConversions))]
-    public class when_converting_a_valid_string_to_a_long
-    {
-        It should_return_the_correct_result = () => result.should_be_equal_to(88L);
+  [Subject(typeof (NumericConversions))]
+  public class when_converting_a_valid_string_to_a_long
+  {
+    It should_return_the_correct_result = () => result.should_be_equal_to(88L);
 
-        Establish c = () => { valid_numeric_string = "88"; };
+    Establish c = () => { valid_numeric_string = "88"; };
 
-        Because b = () => { result = valid_numeric_string.to_long(); };
+    Because b = () => { result = valid_numeric_string.to_long(); };
 
-        static long result;
-        static string valid_numeric_string;
-    }
+    static long result;
+    static string valid_numeric_string;
+  }
 
-    [Subject(typeof (NumericConversions))]
-    public class when_converting_a_valid_string_to_an_int 
-    {
-        It should_return_the_correct_result = () => result.should_be_equal_to(66);
+  [Subject(typeof (NumericConversions))]
+  public class when_converting_a_valid_string_to_an_int 
+  {
+    It should_return_the_correct_result = () => result.should_be_equal_to(66);
 
-        Establish c = () => { valid_numeric_string = "66"; };
+    Establish c = () => { valid_numeric_string = "66"; };
 
-        Because b = () => { result = valid_numeric_string.to_int(); };
+    Because b = () => { result = valid_numeric_string.to_int(); };
 
-        static int result;
-        static string valid_numeric_string;
-    }
+    static int result;
+    static string valid_numeric_string;
+  }
 }

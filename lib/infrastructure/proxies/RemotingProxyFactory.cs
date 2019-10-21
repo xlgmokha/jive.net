@@ -1,9 +1,9 @@
 //using System.Collections.Generic;
 //using System.Runtime.Remoting.Messaging;
 //using System.Runtime.Remoting.Proxies;
-//using gorilla.utility;
+//using jive.utility;
 
-//namespace gorilla.infrastructure.proxies
+//namespace jive.infrastructure.proxies
 //{
     //public class RemotingProxyFactory<T> : RealProxy
     //{

@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Configuration<in T>
-    {
-        void configure(T item);
-    }
+  public interface Configuration<in T>
+  {
+    void configure(T item);
+  }
 }

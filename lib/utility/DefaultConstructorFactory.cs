@@ -1,10 +1,10 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public class DefaultConstructorFactory<T> : ComponentFactory<T> where T : new()
+  public class DefaultConstructorFactory<T> : ComponentFactory<T> where T : new()
+  {
+    public T create()
     {
-        public T create()
-        {
-            return new T();
-        }
+      return new T();
     }
+  }
 }

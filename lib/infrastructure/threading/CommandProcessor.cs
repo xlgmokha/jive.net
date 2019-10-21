@@ -1,12 +1,12 @@
 using System;
-using gorilla.utility;
+using jive.utility;
 
-namespace gorilla.infrastructure.threading
+namespace jive.infrastructure.threading
 {
-    public interface CommandProcessor : Command
-    {
-        void add(Action command);
-        void add(Command command_to_process);
-        void stop();
-    }
+  public interface CommandProcessor : Command
+  {
+    void add(Action command);
+    void add(Command command_to_process);
+    void stop();
+  }
 }

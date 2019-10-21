@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Specification<in T>
-    {
-        bool is_satisfied_by(T item);
-    }
+  public interface Specification<in T>
+  {
+    bool is_satisfied_by(T item);
+  }
 }

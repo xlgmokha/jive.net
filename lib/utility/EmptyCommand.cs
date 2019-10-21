@@ -1,9 +1,9 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public class EmptyCommand : Command
+  public class EmptyCommand : Command
+  {
+    public void run()
     {
-        public void run()
-        {
-        }
     }
+  }
 }

@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Builder<out T>
-    {
-        T build();
-    }
+  public interface Builder<out T>
+  {
+    T build();
+  }
 }

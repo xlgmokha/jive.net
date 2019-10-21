@@ -1,49 +1,49 @@
 using System;
-using gorilla.infrastructure.container;
-using gorilla.utility;
+using jive.infrastructure.container;
+using jive.utility;
 
-namespace gorilla.infrastructure.threading
+namespace jive.infrastructure.threading
 {
-    public interface IBackgroundThreadFactory
+  public interface IBackgroundThreadFactory
+  {
+    BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand;
+    BackgroundThread create_for(Action action);
+  }
+
+  public class BackgroundThreadFactory : IBackgroundThreadFactory
+  {
+    readonly DependencyRegistry registry;
+
+    public BackgroundThreadFactory(DependencyRegistry registry)
     {
-        BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand;
-        BackgroundThread create_for(Action action);
+      this.registry = registry;
     }
 
-    public class BackgroundThreadFactory : IBackgroundThreadFactory
+    public BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
     {
-        readonly DependencyRegistry registry;
-
-        public BackgroundThreadFactory(DependencyRegistry registry)
-        {
-            this.registry = registry;
-        }
-
-        public BackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
-        {
-            return new WorkderBackgroundThread(registry.get_a<CommandToExecute>());
-        }
-
-        public BackgroundThread create_for(Action action)
-        {
-            return new WorkderBackgroundThread(new AnonymousDisposableCommand(action));
-        }
-
-        class AnonymousDisposableCommand : DisposableCommand
-        {
-            readonly Action action;
-
-            public AnonymousDisposableCommand(Action action)
-            {
-                this.action = action;
-            }
-
-            public void run()
-            {
-                action();
-            }
-
-            public void Dispose() {}
-        }
+      return new WorkderBackgroundThread(registry.get_a<CommandToExecute>());
     }
+
+    public BackgroundThread create_for(Action action)
+    {
+      return new WorkderBackgroundThread(new AnonymousDisposableCommand(action));
+    }
+
+    class AnonymousDisposableCommand : DisposableCommand
+    {
+      readonly Action action;
+
+      public AnonymousDisposableCommand(Action action)
+      {
+        this.action = action;
+      }
+
+      public void run()
+      {
+        action();
+      }
+
+      public void Dispose() {}
+    }
+  }
 }

@@ -1,4 +1,4 @@
-//using gorilla.infrastructure.proxies;
+//using jive.infrastructure.proxies;
 //using Machine.Specifications;
 
 //namespace specs.unit.infrastructure.proxies

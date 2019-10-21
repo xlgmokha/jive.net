@@ -1,4 +1,4 @@
-//namespace gorilla.infrastructure.proxies
+//namespace jive.infrastructure.proxies
 //{
     //static public class ProxyFactory
     //{

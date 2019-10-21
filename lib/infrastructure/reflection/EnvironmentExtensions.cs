@@ -1,12 +1,12 @@
 using System;
 
-namespace gorilla.infrastructure.reflection
+namespace jive.infrastructure.reflection
 {
-    public static class EnvironmentExtensions
+  public static class EnvironmentExtensions
+  {
+    public static string startup_directory<T>(this T item)
     {
-        public static string startup_directory<T>(this T item)
-        {
-            return AppDomain.CurrentDomain.BaseDirectory;
-        }
+      return AppDomain.CurrentDomain.BaseDirectory;
     }
+  }
 }

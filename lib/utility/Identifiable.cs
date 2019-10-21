@@ -1,7 +1,7 @@
-namespace gorilla.utility
+namespace jive.utility
 {
-    public interface Identifiable<T>
-    {
-        Id<T> id { get; }
-    }
+  public interface Identifiable<T>
+  {
+    Id<T> id { get; }
+  }
 }

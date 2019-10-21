@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace gorilla.infrastructure.reflection
+namespace jive.infrastructure.reflection
 {
-    public interface Assembly
-    {
-        IEnumerable<Type> all_types();
-    }
+  public interface Assembly
+  {
+    IEnumerable<Type> all_types();
+  }
 }

@@ -1,25 +1,25 @@
 using System;
-using gorilla.infrastructure.container;
+using jive.infrastructure.container;
 
-namespace gorilla.infrastructure.logging
+namespace jive.infrastructure.logging
 {
-    static public class Log
+  static public class Log
+  {
+    static public Logger For<T>(T item_to_create_logger_for)
     {
-        static public Logger For<T>(T item_to_create_logger_for)
-        {
-            return For(typeof (T));
-        }
-
-        static public Logger For(Type type_to_create_a_logger_for)
-        {
-            try
-            {
-                return Resolve.the<LogFactory>().create_for(type_to_create_a_logger_for);
-            }
-            catch
-            {
-                return new TextLogger(Console.Out);
-            }
-        }
+      return For(typeof (T));
     }
+
+    static public Logger For(Type type_to_create_a_logger_for)
+    {
+      try
+      {
+        return Resolve.the<LogFactory>().create_for(type_to_create_a_logger_for);
+      }
+      catch
+      {
+        return new TextLogger(Console.Out);
+      }
+    }
+  }
 }

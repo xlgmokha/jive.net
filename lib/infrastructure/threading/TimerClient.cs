@@ -1,7 +1,7 @@
-namespace gorilla.infrastructure.threading
+namespace jive.infrastructure.threading
 {
-    public interface TimerClient
-    {
-        void notify();
-    }
+  public interface TimerClient
+  {
+    void notify();
+  }
 }
