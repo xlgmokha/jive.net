@@ -10,6 +10,6 @@
     <PackageReference Include="Moq" Version="4.13.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\lib\lib.csproj" />
+    <ProjectReference Include="..\lib\jive.csproj" />
   </ItemGroup>
 </Project>
