@@ -1,5 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>jive</PackageId>
+    <PackageDescription>Add a little jive talk to your csharp.</PackageDescription>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSource>true</IncludeSource>
+    <RepositoryUrl>https://github.com/mokhan/jive.net</RepositoryUrl>
+    <Version>0.1.0</Version>
+    <Authors>mo khan</Authors>
+    <Company>https://www.mokhan.ca/</Company>
   </PropertyGroup>
 </Project>

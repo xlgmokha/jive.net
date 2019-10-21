@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using jive.utility;
+using jive;
 using Machine.Specifications;
 
 namespace specs.unit.utility

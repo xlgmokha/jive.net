@@ -1,6 +1,5 @@
 using System;
-using jive.container;
-using jive.utility;
+using jive;
 using Machine.Specifications;
 
 namespace specs.unit.container

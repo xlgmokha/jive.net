@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using jive.cloning;
+using jive;
 using Machine.Specifications;
 
 namespace specs.unit.cloning

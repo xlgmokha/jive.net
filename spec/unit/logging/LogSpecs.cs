@@ -1,5 +1,4 @@
-using jive.container;
-using jive.logging;
+using jive;
 using Machine.Specifications;
 
 namespace specs.unit.logging
