@@ -9,5 +9,6 @@
     <Version>0.1.0</Version>
     <Authors>mo khan</Authors>
     <Company>https://www.mokhan.ca/</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>
