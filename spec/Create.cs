@@ -6,16 +6,16 @@ using Moq;
 
 namespace specs
 {
-    static public class Create
+  static public class Create
+  {
+    static public Mock<Stub> an<Stub>() where Stub : class
     {
-        static public Mock<Stub> an<Stub>() where Stub : class
-        {
-            return An<Stub>();
-        }
-
-        static public Mock<ItemToStub> An<ItemToStub>() where ItemToStub : class
-        {
-            return new Mock<ItemToStub>();
-        }
+      return An<Stub>();
     }
+
+    static public Mock<ItemToStub> An<ItemToStub>() where ItemToStub : class
+    {
+      return new Mock<ItemToStub>();
+    }
+  }
 }

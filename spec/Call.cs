@@ -2,11 +2,11 @@ using System;
 
 namespace specs
 {
-    static public class call
+  static public class call
+  {
+    static public Action to(Action action)
     {
-        static public Action to(Action action)
-        {
-            return action;
-        }
+      return action;
     }
+  }
 }
