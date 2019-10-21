@@ -47,15 +47,15 @@ namespace specs
             items_to_peek_into.Contains(item_to_look_for).should_be_false();
         }
 
-        static public void should_be_an_instance_of<T>(this object item)
-        {
-            item.should_be_an_instance_of(typeof (T));
-        }
+        //static public void should_be_an_instance_of<T>(this object item)
+        //{
+            //item.should_be_an_instance_of(typeof (T));
+        //}
 
-        static public void should_be_an_instance_of(this object item, Type type)
-        {
-            item.ShouldBe(type);
-        }
+        //static public void should_be_an_instance_of(this object item, Type type)
+        //{
+            //item.ShouldBe(type);
+        //}
 
         static public void should_have_thrown<TheException>(this Action action) where TheException : Exception
         {

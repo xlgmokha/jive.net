@@ -10,7 +10,7 @@ namespace specs.unit.utility
         {
             static Specification<int> create_sut()
             {
-                return new OrSpecification<int>(left, right);
+                return new OrSpecification<int>(left.Object, right.Object);
             }
 
             Establish c = () =>
@@ -20,8 +20,8 @@ namespace specs.unit.utility
                 sut = create_sut();
             };
 
-            static protected Specification<int> left;
-            static protected Specification<int> right;
+            static protected Moq.Mock<Specification<int>> left;
+            static protected Moq.Mock<Specification<int>> right;
             static protected Specification<int> sut;
         }
 
@@ -30,7 +30,7 @@ namespace specs.unit.utility
         {
             It should_return_true = () => result.should_be_true();
 
-            Establish c = () => left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            Establish c = () => left.Setup(x => x.is_satisfied_by(1)).Returns(true);
 
             Because b = () =>
             {
@@ -45,7 +45,7 @@ namespace specs.unit.utility
         {
             It should_return_true = () => result.should_be_true();
 
-            Establish c = () => right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            Establish c = () => right.Setup(x => x.is_satisfied_by(1)).Returns(true);
 
             Because b = () =>
             {

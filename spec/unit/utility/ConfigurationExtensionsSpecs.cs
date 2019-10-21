@@ -1,4 +1,3 @@
-using System.Data;
 using gorilla.utility;
 using Machine.Specifications;
 
@@ -6,9 +5,13 @@ namespace specs.unit.utility
 {
     public class ConfigurationExtensionsSpecs
     {
+        public interface IDbCommand {
+          void Execute();
+        }
+
         public class when_configuring_an_item
         {
-            It should_return_the_item_that_was_configured_when_completed = () => result.should_be_equal_to(item);
+            It should_return_the_item_that_was_configured_when_completed = () => result.should_be_equal_to(item.Object);
 
             Establish context = () =>
             {
@@ -18,11 +21,11 @@ namespace specs.unit.utility
 
             Because of = () =>
             {
-                result = item.and_configure_with(configuration);
+                result = item.Object.and_configure_with(configuration.Object);
             };
 
-            static Configuration<IDbCommand> configuration;
-            static IDbCommand item;
+            static Moq.Mock<Configuration<IDbCommand>> configuration;
+            static Moq.Mock<IDbCommand> item;
             static IDbCommand result;
         }
     }

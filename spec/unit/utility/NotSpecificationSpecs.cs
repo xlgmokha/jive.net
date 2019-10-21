@@ -8,11 +8,11 @@ namespace specs.unit.utility
         [Subject(typeof (NotSpecification<>))]
         public class when_checking_if_a_condition_is_not_met
         {
-            static protected Specification<int> criteria;
+            static protected Moq.Mock<Specification<int>> criteria;
 
             Establish c = () =>
             {
-                criteria = Create.the_dependency<Specification<int>>();
+                criteria = Create.An<Specification<int>>();
                 sut = create_sut();
             };
 
@@ -20,14 +20,14 @@ namespace specs.unit.utility
 
             static Specification<int> create_sut()
             {
-                return new NotSpecification<int>(criteria);
+                return new NotSpecification<int>(criteria.Object);
             }
         }
 
         [Subject(typeof (NotSpecification<>))]
         public class when_a_condition_is_not_met : when_checking_if_a_condition_is_not_met
         {
-            Establish c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
+            Establish c = () => criteria.Setup(x => x.is_satisfied_by(1)).Returns(false);
 
             Because b = () =>
             {
@@ -42,7 +42,7 @@ namespace specs.unit.utility
         [Subject(typeof (NotSpecification<>))]
         public class when_a_condition_is_met : when_checking_if_a_condition_is_not_met
         {
-            Establish c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            Establish c = () => criteria.Setup(x => x.is_satisfied_by(1)).Returns(true);
 
             Because b = () =>
             {

@@ -7,7 +7,7 @@ namespace specs.unit.infrastructure.logging
     [Subject(typeof (Log))]
     public class when_creating_a_logger_for_a_particular_type
     {
-        It should_return_the_logger_created_for_that_type = () => result.should_be_equal_to(logger);
+        It should_return_the_logger_created_for_that_type = () => result.should_be_equal_to(logger.Object);
 
         Establish c =
             () =>
@@ -15,10 +15,10 @@ namespace specs.unit.infrastructure.logging
                 var factory = Create.an<LogFactory>();
                 var registry = Create.an<DependencyRegistry>();
                 logger = Create.an<Logger>();
-                registry.is_told_to(x => x.get_a<LogFactory>()).it_will_return(factory);
-                factory.is_told_to(x => x.create_for(typeof (string))).it_will_return(logger);
+                registry.Setup(x => x.get_a<LogFactory>()).Returns(factory.Object);
+                factory.Setup(x => x.create_for(typeof (string))).Returns(logger.Object);
 
-                Resolve.initialize_with(registry);
+                Resolve.initialize_with(registry.Object);
             };
 
         Because b = () =>
@@ -29,6 +29,6 @@ namespace specs.unit.infrastructure.logging
         Cleanup a = () => Resolve.initialize_with(null);
 
         static Logger result;
-        static Logger logger;
+        static Moq.Mock<Logger> logger;
     }
 }

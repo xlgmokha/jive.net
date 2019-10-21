@@ -15,8 +15,8 @@ namespace specs.unit.infrastructure.container
             {
                 registry = Create.an<DependencyRegistry>();
                 presenter = Create.an<Command>();
-                registry.is_told_to(x => x.get_a<Command>()).it_will_return(presenter);
-                Resolve.initialize_with(registry);
+                registry.Setup(x => x.get_a<Command>()).Returns(presenter.Object);
+                Resolve.initialize_with(registry.Object);
             };
 
             Because b = () =>
@@ -25,15 +25,15 @@ namespace specs.unit.infrastructure.container
             };
 
             It should_leverage_the_underlying_container_it_was_initialized_with =
-                () => registry.was_told_to(x => x.get_a<Command>());
+                () => registry.Verify(x => x.get_a<Command>());
 
-            It should_return_the_resolved_dependency = () => result.should_be_equal_to(presenter);
+            It should_return_the_resolved_dependency = () => result.should_be_equal_to(presenter.Object);
 
             Cleanup a = () => Resolve.initialize_with(null);
 
-            static DependencyRegistry registry;
+            static Moq.Mock<DependencyRegistry> registry;
             static Command result;
-            static Command presenter;
+            static Moq.Mock<Command> presenter;
         }
 
         [Subject(typeof (Resolve))]
@@ -42,8 +42,8 @@ namespace specs.unit.infrastructure.container
             Establish c = () =>
             {
                 registry = Create.an<DependencyRegistry>();
-                registry.is_told_to(x => x.get_a<Command>()).it_will_throw(new Exception());
-                Resolve.initialize_with(registry);
+                registry.Setup(x => x.get_a<Command>()).Throws(new Exception());
+                Resolve.initialize_with(registry.Object);
             };
 
             Because b = () =>
@@ -55,7 +55,7 @@ namespace specs.unit.infrastructure.container
 
             It should_throw_a_dependency_resolution_exception = () => the_call.should_have_thrown<DependencyResolutionException<Command>>();
 
-            static DependencyRegistry registry;
+            static Moq.Mock<DependencyRegistry> registry;
             static Action the_call;
         }
     }

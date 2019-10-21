@@ -13,8 +13,8 @@ namespace specs.unit.utility
                 right = Create.an<Specification<int>>();
             };
 
-            static protected Specification<int> left;
-            static protected Specification<int> right;
+            static protected Moq.Mock<Specification<int>> left;
+            static protected Moq.Mock<Specification<int>> right;
         }
 
         [Subject(typeof (SpecificationExtensions))]
@@ -24,13 +24,13 @@ namespace specs.unit.utility
 
             Establish c = () =>
             {
-                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
-                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                right.Setup(x => x.is_satisfied_by(1)).Returns(true);
+                left.Setup(x => x.is_satisfied_by(1)).Returns(true);
             };
 
             Because b = () =>
             {
-                result = left.or(right).is_satisfied_by(1);
+                result = left.Object.or(right.Object).is_satisfied_by(1);
             };
 
             static bool result;
@@ -43,13 +43,13 @@ namespace specs.unit.utility
 
             Establish c = () =>
             {
-                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
-                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
+                right.Setup(x => x.is_satisfied_by(1)).Returns(true);
+                left.Setup(x => x.is_satisfied_by(1)).Returns(false);
             };
 
             Because b = () =>
             {
-                result = left.or(right).is_satisfied_by(1);
+                result = left.Object.or(right.Object).is_satisfied_by(1);
             };
 
             static bool result;
@@ -63,13 +63,13 @@ namespace specs.unit.utility
 
             Establish c = () =>
             {
-                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
-                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                right.Setup(x => x.is_satisfied_by(1)).Returns(false);
+                left.Setup(x => x.is_satisfied_by(1)).Returns(true);
             };
 
             Because b = () =>
             {
-                result = left.or(right).is_satisfied_by(1);
+                result = left.Object.or(right.Object).is_satisfied_by(1);
             };
 
             static bool result;
